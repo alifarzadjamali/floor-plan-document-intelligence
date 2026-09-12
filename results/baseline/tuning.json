@@ -1,0 +1,1774 @@
+{
+  "selection_split": "val",
+  "samples": 100,
+  "selection_rule": "maximum unweighted mean of room IoU and wall IoU",
+  "best": {
+    "config": {
+      "adaptive_block_size": 31,
+      "adaptive_c": 12,
+      "line_kernel_fraction": 0.008,
+      "minimum_line_kernel": 5,
+      "wall_dilation_fraction": 0.0025,
+      "closing_kernel": 3,
+      "minimum_room_area_fraction": 0.0005,
+      "room_barrier_dilation_fraction": 0.003
+    },
+    "selection_score_room_wall_mean_iou": 0.407874951606885,
+    "metrics": {
+      "mean_iou_all_classes": 0.3000229624027072,
+      "mean_dice_all_classes": 0.3832473740915184,
+      "mean_iou_foreground": 0.2039374758034425,
+      "mean_dice_foreground": 0.2759070071805478,
+      "per_class": {
+        "background": {
+          "iou": 0.6843649087997661,
+          "dice": 0.8126088417354009,
+          "precision": 0.8360789938326605,
+          "recall": 0.7904204035275143,
+          "support_pixels": 136651351
+        },
+        "room": {
+          "iou": 0.6022533264247556,
+          "dice": 0.7517579355177434,
+          "precision": 0.8032316699282928,
+          "recall": 0.7064841041865886,
+          "support_pixels": 107084800
+        },
+        "wall": {
+          "iou": 0.21349657678901435,
+          "dice": 0.3518700932044477,
+          "precision": 0.24476996139152035,
+          "recall": 0.62560714567686,
+          "support_pixels": 16744334
+        },
+        "door": {
+          "iou": 0.0,
+          "dice": 0.0,
+          "precision": null,
+          "recall": 0.0,
+          "support_pixels": 1657880
+        },
+        "window": {
+          "iou": 0.0,
+          "dice": 0.0,
+          "precision": null,
+          "recall": 0.0,
+          "support_pixels": 4033881
+        }
+      },
+      "confusion_matrix": [
+        [
+          108012016,
+          15052883,
+          13586452,
+          0,
+          0
+        ],
+        [
+          16229439,
+          75653709,
+          15201652,
+          0,
+          0
+        ],
+        [
+          3545527,
+          2723432,
+          10475375,
+          0,
+          0
+        ],
+        [
+          408343,
+          367955,
+          881582,
+          0,
+          0
+        ],
+        [
+          993444,
+          388682,
+          2651755,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.008,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0025,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.407874951606885,
+      "metrics": {
+        "mean_iou_all_classes": 0.3000229624027072,
+        "mean_dice_all_classes": 0.3832473740915184,
+        "mean_iou_foreground": 0.2039374758034425,
+        "mean_dice_foreground": 0.2759070071805478,
+        "per_class": {
+          "background": {
+            "iou": 0.6843649087997661,
+            "dice": 0.8126088417354009,
+            "precision": 0.8360789938326605,
+            "recall": 0.7904204035275143,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.6022533264247556,
+            "dice": 0.7517579355177434,
+            "precision": 0.8032316699282928,
+            "recall": 0.7064841041865886,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21349657678901435,
+            "dice": 0.3518700932044477,
+            "precision": 0.24476996139152035,
+            "recall": 0.62560714567686,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            108012016,
+            15052883,
+            13586452,
+            0,
+            0
+          ],
+          [
+            16229439,
+            75653709,
+            15201652,
+            0,
+            0
+          ],
+          [
+            3545527,
+            2723432,
+            10475375,
+            0,
+            0
+          ],
+          [
+            408343,
+            367955,
+            881582,
+            0,
+            0
+          ],
+          [
+            993444,
+            388682,
+            2651755,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.008,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0015,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.40781404723815967,
+      "metrics": {
+        "mean_iou_all_classes": 0.2992673655704944,
+        "mean_dice_all_classes": 0.3826976787447707,
+        "mean_iou_foreground": 0.20390702361907984,
+        "mean_dice_foreground": 0.27586564390425683,
+        "per_class": {
+          "background": {
+            "iou": 0.6807087333761526,
+            "dice": 0.810025818106826,
+            "precision": 0.8121188073390008,
+            "recall": 0.8079435892294984,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.6022533264247556,
+            "dice": 0.7517579355177434,
+            "precision": 0.8032316699282928,
+            "recall": 0.7064841041865886,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21337476805156372,
+            "dice": 0.351704640099284,
+            "precision": 0.2575613446906935,
+            "recall": 0.5543177172648371,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            110406583,
+            15052883,
+            11191885,
+            0,
+            0
+          ],
+          [
+            18901420,
+            75653709,
+            12529671,
+            0,
+            0
+          ],
+          [
+            4739221,
+            2723432,
+            9281681,
+            0,
+            0
+          ],
+          [
+            530558,
+            367955,
+            759367,
+            0,
+            0
+          ],
+          [
+            1371025,
+            388682,
+            2274174,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.008,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0015,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.40476594811735817,
+      "metrics": {
+        "mean_iou_all_classes": 0.2984608323466487,
+        "mean_dice_all_classes": 0.38203604307630523,
+        "mean_iou_foreground": 0.20238297405867908,
+        "mean_dice_foreground": 0.2746737920896342,
+        "per_class": {
+          "background": {
+            "iou": 0.6827722654985273,
+            "dice": 0.8114850470229893,
+            "precision": 0.8169624299875392,
+            "recall": 0.8060806219178909,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5961571281831526,
+            "dice": 0.7469905282592528,
+            "precision": 0.7931580646248132,
+            "recall": 0.705901930059168,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21337476805156372,
+            "dice": 0.351704640099284,
+            "precision": 0.2575613446906935,
+            "recall": 0.5543177172648371,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            110152006,
+            15307460,
+            11191885,
+            0,
+            0
+          ],
+          [
+            18963762,
+            75591367,
+            12529671,
+            0,
+            0
+          ],
+          [
+            3981220,
+            3481433,
+            9281681,
+            0,
+            0
+          ],
+          [
+            490173,
+            408340,
+            759367,
+            0,
+            0
+          ],
+          [
+            1244016,
+            515691,
+            2274174,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.008,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.004,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.4014054519962107,
+      "metrics": {
+        "mean_iou_all_classes": 0.29732650295134533,
+        "mean_dice_all_classes": 0.38088408873306145,
+        "mean_iou_foreground": 0.20070272599810535,
+        "mean_dice_foreground": 0.2730486807123247,
+        "per_class": {
+          "background": {
+            "iou": 0.6838216107643053,
+            "dice": 0.8122257208160086,
+            "precision": 0.8619932075510509,
+            "recall": 0.767891244631749,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5915443146181366,
+            "dice": 0.7433588988818918,
+            "precision": 0.8093163195594244,
+            "recall": 0.6873420971043509,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21126658937428472,
+            "dice": 0.348835823967407,
+            "precision": 0.2290139911212421,
+            "recall": 0.7316302338450726,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            104933376,
+            14363455,
+            17354520,
+            0,
+            0
+          ],
+          [
+            13831193,
+            73603891,
+            19649716,
+            0,
+            0
+          ],
+          [
+            2168966,
+            2324707,
+            12250661,
+            0,
+            0
+          ],
+          [
+            254135,
+            333500,
+            1070245,
+            0,
+            0
+          ],
+          [
+            545744,
+            320211,
+            3167926,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.008,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0025,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.4010129801222512,
+      "metrics": {
+        "mean_iou_all_classes": 0.29668521069168496,
+        "mean_dice_all_classes": 0.3806718154836701,
+        "mean_iou_foreground": 0.2005064900611256,
+        "mean_dice_foreground": 0.27321099112267494,
+        "per_class": {
+          "background": {
+            "iou": 0.6814000932139225,
+            "dice": 0.8105151129276508,
+            "precision": 0.8289272402016628,
+            "recall": 0.7929031524906036,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.588529383455488,
+            "dice": 0.740973871286252,
+            "precision": 0.7986364577263271,
+            "recall": 0.6910772023667224,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21349657678901435,
+            "dice": 0.3518700932044477,
+            "precision": 0.24476996139152035,
+            "recall": 0.62560714567686,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            108351287,
+            14713612,
+            13586452,
+            0,
+            0
+          ],
+          [
+            17879284,
+            74003864,
+            15201652,
+            0,
+            0
+          ],
+          [
+            3180177,
+            3088782,
+            10475375,
+            0,
+            0
+          ],
+          [
+            396286,
+            380012,
+            881582,
+            0,
+            0
+          ],
+          [
+            905629,
+            476497,
+            2651755,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.012,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0025,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.39780371724386193,
+      "metrics": {
+        "mean_iou_all_classes": 0.2941251642800519,
+        "mean_dice_all_classes": 0.3788753123847239,
+        "mean_iou_foreground": 0.19890185862193097,
+        "mean_dice_foreground": 0.2720983264090492,
+        "per_class": {
+          "background": {
+            "iou": 0.6750183869125358,
+            "dice": 0.8059832562874226,
+            "precision": 0.8078542690798843,
+            "recall": 0.8041208901037502,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5809315830712619,
+            "dice": 0.734923116587615,
+            "precision": 0.7967294082753364,
+            "recall": 0.6820157389284006,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21467585141646195,
+            "dice": 0.35347018904858185,
+            "precision": 0.25362877771268877,
+            "recall": 0.5829491337189046,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            109884206,
+            14683569,
+            12083576,
+            0,
+            0
+          ],
+          [
+            20835221,
+            73033519,
+            13216060,
+            0,
+            0
+          ],
+          [
+            3798973,
+            3184266,
+            9761095,
+            0,
+            0
+          ],
+          [
+            442155,
+            368920,
+            846805,
+            0,
+            0
+          ],
+          [
+            1059282,
+            396380,
+            2578219,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.012,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0015,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.3968504420835609,
+      "metrics": {
+        "mean_iou_all_classes": 0.29313724632331867,
+        "mean_dice_all_classes": 0.3779244249451533,
+        "mean_iou_foreground": 0.19842522104178045,
+        "mean_dice_foreground": 0.27145121406540035,
+        "per_class": {
+          "background": {
+            "iou": 0.6719853474494715,
+            "dice": 0.8038172684641656,
+            "precision": 0.7882202298108894,
+            "recall": 0.820044025763053,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5809315830712619,
+            "dice": 0.734923116587615,
+            "precision": 0.7967294082753364,
+            "recall": 0.6820157389284006,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21276930109585995,
+            "dice": 0.35088173967398634,
+            "precision": 0.2662853001477006,
+            "recall": 0.5142563448626861,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            112060124,
+            14683569,
+            9907658,
+            0,
+            0
+          ],
+          [
+            23159200,
+            73033519,
+            10892081,
+            0,
+            0
+          ],
+          [
+            4949188,
+            3184266,
+            8610880,
+            0,
+            0
+          ],
+          [
+            561186,
+            368920,
+            727774,
+            0,
+            0
+          ],
+          [
+            1438848,
+            396380,
+            2198653,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.012,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.004,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.39405798587737073,
+      "metrics": {
+        "mean_iou_all_classes": 0.29262850414422015,
+        "mean_dice_all_classes": 0.3777611539955691,
+        "mean_iou_foreground": 0.19702899293868537,
+        "mean_dice_foreground": 0.2707041738741786,
+        "per_class": {
+          "background": {
+            "iou": 0.6750265489663595,
+            "dice": 0.805989074481131,
+            "precision": 0.8297491464946245,
+            "recall": 0.783551872824148,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5726225618562427,
+            "dice": 0.7282390266363069,
+            "precision": 0.8036315626060092,
+            "recall": 0.665779092831102,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21549340989849872,
+            "dice": 0.3545776688604075,
+            "precision": 0.23860633222053346,
+            "recall": 0.6898885318460561,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            107073422,
+            14050164,
+            15527765,
+            0,
+            0
+          ],
+          [
+            18593612,
+            71294821,
+            17196367,
+            0,
+            0
+          ],
+          [
+            2485519,
+            2707091,
+            11551724,
+            0,
+            0
+          ],
+          [
+            287080,
+            338368,
+            1032432,
+            0,
+            0
+          ],
+          [
+            603491,
+            325361,
+            3105029,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.018,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0025,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.39236242414699224,
+      "metrics": {
+        "mean_iou_all_classes": 0.2908372774997047,
+        "mean_dice_all_classes": 0.37642562514781797,
+        "mean_iou_foreground": 0.19618121207349612,
+        "mean_dice_foreground": 0.27002979658738485,
+        "per_class": {
+          "background": {
+            "iou": 0.6694615392045393,
+            "dice": 0.8020089393895503,
+            "precision": 0.7898362021798327,
+            "recall": 0.8145627554022499,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5691376427141384,
+            "dice": 0.7254145553855946,
+            "precision": 0.7910025481297469,
+            "recall": 0.6698705325125508,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.2155872055798461,
+            "dice": 0.3547046309639448,
+            "precision": 0.26328759585167344,
+            "recall": 0.5433701334433486,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            111311101,
+            14518391,
+            10821859,
+            0,
+            0
+          ],
+          [
+            23997176,
+            71732952,
+            11354672,
+            0,
+            0
+          ],
+          [
+            4069866,
+            3576097,
+            9098371,
+            0,
+            0
+          ],
+          [
+            448242,
+            397058,
+            812580,
+            0,
+            0
+          ],
+          [
+            1102963,
+            461622,
+            2469296,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.012,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0015,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.39208094373809166,
+      "metrics": {
+        "mean_iou_all_classes": 0.2915302514339685,
+        "mean_dice_all_classes": 0.37660352804806674,
+        "mean_iou_foreground": 0.19604047186904583,
+        "mean_dice_foreground": 0.26953133034104554,
+        "per_class": {
+          "background": {
+            "iou": 0.6734893696936592,
+            "dice": 0.8048923188761514,
+            "precision": 0.7900397871385866,
+            "recall": 0.8203139974810787,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5713925863803234,
+            "dice": 0.7272435816901959,
+            "precision": 0.7871070814202239,
+            "recall": 0.6758423324318671,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21276930109585995,
+            "dice": 0.35088173967398634,
+            "precision": 0.2662853001477006,
+            "recall": 0.5142563448626861,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            112097016,
+            14646677,
+            9907658,
+            0,
+            0
+          ],
+          [
+            23820278,
+            72372441,
+            10892081,
+            0,
+            0
+          ],
+          [
+            4145970,
+            3987484,
+            8610880,
+            0,
+            0
+          ],
+          [
+            513174,
+            416932,
+            727774,
+            0,
+            0
+          ],
+          [
+            1311373,
+            523855,
+            2198653,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.008,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.004,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.39199924767108296,
+      "metrics": {
+        "mean_iou_all_classes": 0.2921850046183446,
+        "mean_dice_all_classes": 0.3769010347114182,
+        "mean_iou_foreground": 0.19599962383554148,
+        "mean_dice_foreground": 0.26929081743136196,
+        "per_class": {
+          "background": {
+            "iou": 0.6769265277495573,
+            "dice": 0.8073419038316433,
+            "precision": 0.844893906871915,
+            "recall": 0.7729859106918013,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5727319059678811,
+            "dice": 0.728327445758041,
+            "precision": 0.8090331758829198,
+            "recall": 0.6622628981890988,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21126658937428472,
+            "dice": 0.348835823967407,
+            "precision": 0.2290139911212421,
+            "recall": 0.7316302338450726,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            105629569,
+            13667262,
+            17354520,
+            0,
+            0
+          ],
+          [
+            16516794,
+            70918290,
+            19649716,
+            0,
+            0
+          ],
+          [
+            2103231,
+            2390442,
+            12250661,
+            0,
+            0
+          ],
+          [
+            263348,
+            324287,
+            1070245,
+            0,
+            0
+          ],
+          [
+            508162,
+            357793,
+            3167926,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.018,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.004,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.39118417151226687,
+      "metrics": {
+        "mean_iou_all_classes": 0.2904347909648854,
+        "mean_dice_all_classes": 0.3764857519315566,
+        "mean_iou_foreground": 0.19559208575613343,
+        "mean_dice_foreground": 0.2700432419115684,
+        "per_class": {
+          "background": {
+            "iou": 0.6698056117998931,
+            "dice": 0.8022557920115093,
+            "precision": 0.8084558251697395,
+            "recall": 0.7961501310001684,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5630817096496772,
+            "dice": 0.7204763591992601,
+            "precision": 0.7988151995774402,
+            "recall": 0.6561304405480516,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21928663337485657,
+            "dice": 0.3596966084470135,
+            "precision": 0.2488489730782284,
+            "recall": 0.648617854851677,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            108794991,
+            13912117,
+            13944243,
+            0,
+            0
+          ],
+          [
+            21993080,
+            70261597,
+            14830123,
+            0,
+            0
+          ],
+          [
+            2831675,
+            3051985,
+            10860674,
+            0,
+            0
+          ],
+          [
+            300900,
+            360901,
+            996079,
+            0,
+            0
+          ],
+          [
+            650703,
+            370661,
+            3012517,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.018,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0015,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.003
+      },
+      "selection_score_room_wall_mean_iou": 0.3905628327515578,
+      "metrics": {
+        "mean_iou_all_classes": 0.28959334615455135,
+        "mean_dice_all_classes": 0.37507175706785867,
+        "mean_iou_foreground": 0.1952814163757789,
+        "mean_dice_foreground": 0.2688083078707505,
+        "per_class": {
+          "background": {
+            "iou": 0.6668410652696412,
+            "dice": 0.8001255538562914,
+            "precision": 0.7732459198315421,
+            "recall": 0.8289412740602908,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5691376427141384,
+            "dice": 0.7254145553855946,
+            "precision": 0.7910025481297469,
+            "recall": 0.6698705325125508,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21198802278897724,
+            "dice": 0.3498186760974074,
+            "precision": 0.27592807159700183,
+            "recall": 0.47775689376478037,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            113275945,
+            14518391,
+            8857015,
+            0,
+            0
+          ],
+          [
+            26003036,
+            71732952,
+            9348812,
+            0,
+            0
+          ],
+          [
+            5168516,
+            3576097,
+            7999721,
+            0,
+            0
+          ],
+          [
+            563763,
+            397058,
+            697059,
+            0,
+            0
+          ],
+          [
+            1482814,
+            461622,
+            2089445,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.012,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0025,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.39021335079767366,
+      "metrics": {
+        "mean_iou_all_classes": 0.2905298103009818,
+        "mean_dice_all_classes": 0.376022911723529,
+        "mean_iou_foreground": 0.19510667539883683,
+        "mean_dice_foreground": 0.26903193908229006,
+        "per_class": {
+          "background": {
+            "iou": 0.6722223499095618,
+            "dice": 0.8039868022884844,
+            "precision": 0.7996227030772239,
+            "recall": 0.8083987987795306,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5657508501788854,
+            "dice": 0.7226575672805785,
+            "precision": 0.7934801082088794,
+            "recall": 0.6634416836002869,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21467585141646195,
+            "dice": 0.35347018904858185,
+            "precision": 0.25362877771268877,
+            "recall": 0.5829491337189046,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            110468788,
+            14098987,
+            12083576,
+            0,
+            0
+          ],
+          [
+            22824220,
+            71044520,
+            13216060,
+            0,
+            0
+          ],
+          [
+            3449624,
+            3533615,
+            9761095,
+            0,
+            0
+          ],
+          [
+            423111,
+            387964,
+            846805,
+            0,
+            0
+          ],
+          [
+            985397,
+            470265,
+            2578219,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.012,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.004,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.3841722214441496,
+      "metrics": {
+        "mean_iou_all_classes": 0.28739562920919337,
+        "mean_dice_all_classes": 0.37360774319135215,
+        "mean_iou_foreground": 0.1920861107220748,
+        "mean_dice_foreground": 0.2666560298053199,
+        "per_class": {
+          "background": {
+            "iou": 0.6686337031576676,
+            "dice": 0.8014145967354814,
+            "precision": 0.812943841380835,
+            "recall": 0.7902077967747279,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5528510329898004,
+            "dice": 0.712046450360872,
+            "precision": 0.8049217737734365,
+            "recall": 0.6383866617857996,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21549340989849872,
+            "dice": 0.3545776688604075,
+            "precision": 0.23860633222053346,
+            "recall": 0.6898885318460561,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            107982963,
+            13140623,
+            15527765,
+            0,
+            0
+          ],
+          [
+            21526925,
+            68361508,
+            17196367,
+            0,
+            0
+          ],
+          [
+            2442683,
+            2749927,
+            11551724,
+            0,
+            0
+          ],
+          [
+            290743,
+            334705,
+            1032432,
+            0,
+            0
+          ],
+          [
+            586234,
+            342618,
+            3105029,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.018,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0015,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.38075418415391854,
+      "metrics": {
+        "mean_iou_all_classes": 0.2848544608144389,
+        "mean_dice_all_classes": 0.3712560228193925,
+        "mean_iou_foreground": 0.19037709207695927,
+        "mean_dice_foreground": 0.2647741689289665,
+        "per_class": {
+          "background": {
+            "iou": 0.6627639357643574,
+            "dice": 0.7971834383810964,
+            "precision": 0.7678013559163854,
+            "recall": 0.8289037771752436,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5495203455188599,
+            "dice": 0.7092779996184586,
+            "precision": 0.7782280359909924,
+            "recall": 0.6515513592965575,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21198802278897724,
+            "dice": 0.3498186760974074,
+            "precision": 0.27592807159700183,
+            "recall": 0.47775689376478037,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            113270821,
+            14523515,
+            8857015,
+            0,
+            0
+          ],
+          [
+            27964741,
+            69771247,
+            9348812,
+            0,
+            0
+          ],
+          [
+            4473267,
+            4271346,
+            7999721,
+            0,
+            0
+          ],
+          [
+            519571,
+            441250,
+            697059,
+            0,
+            0
+          ],
+          [
+            1297806,
+            646630,
+            2089445,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.018,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.0025,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.3807050262582098,
+      "metrics": {
+        "mean_iou_all_classes": 0.28465138799472345,
+        "mean_dice_all_classes": 0.3714830019026962,
+        "mean_iou_foreground": 0.1903525131291049,
+        "mean_dice_foreground": 0.2652238287817704,
+        "per_class": {
+          "background": {
+            "iou": 0.6618468874571979,
+            "dice": 0.796519694386399,
+            "precision": 0.775722045037485,
+            "recall": 0.8184632656869963,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5458228469365735,
+            "dice": 0.706190684163137,
+            "precision": 0.7855448656236077,
+            "recall": 0.6413979388297872,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.2155872055798461,
+            "dice": 0.3547046309639448,
+            "precision": 0.26328759585167344,
+            "recall": 0.5433701334433486,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            111844111,
+            13985381,
+            10821859,
+            0,
+            0
+          ],
+          [
+            27046158,
+            68683970,
+            11354672,
+            0,
+            0
+          ],
+          [
+            3835155,
+            3810808,
+            9098371,
+            0,
+            0
+          ],
+          [
+            436613,
+            408687,
+            812580,
+            0,
+            0
+          ],
+          [
+            1018616,
+            545969,
+            2469296,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "config": {
+        "adaptive_block_size": 31,
+        "adaptive_c": 12,
+        "line_kernel_fraction": 0.018,
+        "minimum_line_kernel": 5,
+        "wall_dilation_fraction": 0.004,
+        "closing_kernel": 3,
+        "minimum_room_area_fraction": 0.0005,
+        "room_barrier_dilation_fraction": 0.0015
+      },
+      "selection_score_room_wall_mean_iou": 0.3778448431394691,
+      "metrics": {
+        "mean_iou_all_classes": 0.2830060838601641,
+        "mean_dice_all_classes": 0.3705313795872269,
+        "mean_iou_foreground": 0.18892242156973454,
+        "mean_dice_foreground": 0.2644887144153046,
+        "per_class": {
+          "background": {
+            "iou": 0.6593407330218826,
+            "dice": 0.7947020402749162,
+            "precision": 0.7871829121289767,
+            "recall": 0.8023661983407687,
+            "support_pixels": 136651351
+          },
+          "room": {
+            "iou": 0.5364030529040816,
+            "dice": 0.6982582492142048,
+            "precision": 0.7982610839231532,
+            "recall": 0.6205218481054268,
+            "support_pixels": 107084800
+          },
+          "wall": {
+            "iou": 0.21928663337485657,
+            "dice": 0.3596966084470135,
+            "precision": 0.2488489730782284,
+            "recall": 0.648617854851677,
+            "support_pixels": 16744334
+          },
+          "door": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 1657880
+          },
+          "window": {
+            "iou": 0.0,
+            "dice": 0.0,
+            "precision": null,
+            "recall": 0.0,
+            "support_pixels": 4033881
+          }
+        },
+        "confusion_matrix": [
+          [
+            109644425,
+            13062683,
+            13944243,
+            0,
+            0
+          ],
+          [
+            25806219,
+            66448458,
+            14830123,
+            0,
+            0
+          ],
+          [
+            2886447,
+            2997213,
+            10860674,
+            0,
+            0
+          ],
+          [
+            309668,
+            352133,
+            996079,
+            0,
+            0
+          ],
+          [
+            640341,
+            381023,
+            3012517,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}

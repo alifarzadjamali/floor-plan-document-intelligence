@@ -51,6 +51,7 @@ uv pip install --python .venv\Scripts\python.exe -e ".[dev]"
 
 # Development: do not inspect test.
 .\.venv\Scripts\python.exe scripts\audit_dataset.py --splits train val
+.\.venv\Scripts\python.exe scripts\tune_baseline.py --max-samples 100
 .\.venv\Scripts\python.exe scripts\evaluate_baseline.py --split val
 
 # Only after configs/baseline.yaml is frozen.
@@ -65,10 +66,34 @@ Official `train.txt`, `val.txt`, and `test.txt` membership is never reshuffled.
 
 ## Results
 
-Measured audit and baseline tables are added here only after the full real-data
-runs finish. Machine-readable outputs live under `results/dataset_audit/` and
-`results/baseline/`; contact sheets make annotation alignment and baseline
-behaviour visually inspectable.
+The complete train/validation audit parsed all 4,600 files without corruption or
+annotation failure. Visual checks cover simple, dense, highest/lowest-resolution,
+opening-heavy and unusual-aspect plans.
+
+| Split | Plans | Rooms | Walls | Doors | Windows | Parse failures |
+|---|---:|---:|---:|---:|---:|---:|
+| Train | 4,200 | 45,002 | 110,624 | 42,004 | 36,985 | 0 |
+| Validation | 400 | 4,189 | 10,188 | 3,853 | 3,395 | 0 |
+
+Class imbalance is substantial. Training pixel frequencies are 54.55%
+background, 37.81% room, 5.76% wall, 0.59% door and 1.29% window.
+
+The frozen baseline achieved the following results over all 400 validation
+plans. Door/window scores are zero by design.
+
+| Class | IoU | Dice | Precision | Recall |
+|---|---:|---:|---:|---:|
+| Background | 0.719 | 0.836 | 0.847 | 0.826 |
+| Room | 0.632 | 0.774 | 0.825 | 0.730 |
+| Wall | 0.262 | 0.415 | 0.299 | 0.679 |
+| Door | 0.000 | 0.000 | n/a | 0.000 |
+| Window | 0.000 | 0.000 | n/a | 0.000 |
+
+Five-class mIoU is 0.323; mean foreground IoU is 0.223. Median baseline CPU
+inference time is 0.026 seconds per plan (annotation parsing and image I/O
+excluded). Machine-readable outputs live under `results/dataset_audit/` and
+`results/baseline/`; locally generated contact sheets make alignment and
+baseline behaviour visually inspectable.
 
 ## Baseline limitations
 
@@ -81,4 +106,3 @@ the learned model in the next phase, not to claim CAD-quality extraction.
 
 See [the methodology](docs/methodology.md), [data instructions](data/README.md),
 and [the public job reference](docs/job_reference/source.md) for detail.
-

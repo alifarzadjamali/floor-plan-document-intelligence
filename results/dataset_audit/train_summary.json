@@ -1,0 +1,101 @@
+{
+  "split": "train",
+  "official_split_size": 4200,
+  "audited_samples": 4200,
+  "valid_samples": 4200,
+  "failures": [],
+  "source_files": {
+    "images_present": 4200,
+    "annotations_present": 4200
+  },
+  "samples_without_target_pixels": 0,
+  "split_file_sha256": "80904159dfc4a732db9d8f77dbdd6374f74789986d9b3d4a4040b84268dc61e6",
+  "image_width": {
+    "min": 414.0,
+    "p25": 1048.0,
+    "median": 1415.0,
+    "p75": 1926.25,
+    "max": 14304.0,
+    "mean": 1604.1285714285714
+  },
+  "image_height": {
+    "min": 430.0,
+    "p25": 1030.0,
+    "median": 1315.0,
+    "p75": 1631.0,
+    "max": 6316.0,
+    "mean": 1406.8411904761904
+  },
+  "aspect_ratio": {
+    "min": 0.3058350100603622,
+    "p25": 0.7957218842077067,
+    "median": 1.1427665549415709,
+    "p75": 1.462247476348695,
+    "max": 4.181357649442756,
+    "mean": 1.1816639985718793
+  },
+  "room_count": {
+    "min": 0.0,
+    "p25": 6.0,
+    "median": 9.0,
+    "p75": 14.0,
+    "max": 101.0,
+    "mean": 10.714761904761906
+  },
+  "wall_count": {
+    "min": 1.0,
+    "p25": 17.0,
+    "median": 23.0,
+    "p75": 32.0,
+    "max": 205.0,
+    "mean": 26.33904761904762
+  },
+  "door_count": {
+    "min": 0.0,
+    "p25": 6.0,
+    "median": 8.0,
+    "p75": 13.0,
+    "max": 103.0,
+    "mean": 10.00095238095238
+  },
+  "window_count": {
+    "min": 0.0,
+    "p25": 4.0,
+    "median": 6.0,
+    "p75": 11.0,
+    "max": 92.0,
+    "mean": 8.80595238095238
+  },
+  "object_totals": {
+    "room": 45002,
+    "wall": 110624,
+    "door": 42004,
+    "window": 36985
+  },
+  "pixel_totals": {
+    "background": 5745672302,
+    "room": 3981955478,
+    "wall": 606580224,
+    "door": 62535461,
+    "window": 135999748
+  },
+  "pixel_frequencies": {
+    "background": 0.5455057800050062,
+    "room": 0.3780549280917896,
+    "wall": 0.05758995655104651,
+    "door": 0.0059372434830477815,
+    "window": 0.01291209186910992
+  },
+  "ignored_source_objects": {
+    "outdoor_space": 6589,
+    "railing": 13187
+  },
+  "selected_examples": {
+    "simple": "high_quality_architectural/5505",
+    "dense": "high_quality_architectural/9875",
+    "high_resolution": "high_quality_architectural/13044",
+    "low_resolution": "high_quality_architectural/20107",
+    "many_openings": "high_quality_architectural/9875",
+    "unusual_aspect": "high_quality_architectural/13385"
+  }
+}

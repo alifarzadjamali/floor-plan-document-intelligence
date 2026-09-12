@@ -1,0 +1,101 @@
+{
+  "split": "val",
+  "official_split_size": 400,
+  "audited_samples": 400,
+  "valid_samples": 400,
+  "failures": [],
+  "source_files": {
+    "images_present": 400,
+    "annotations_present": 400
+  },
+  "samples_without_target_pixels": 0,
+  "split_file_sha256": "0a3b54194a383930d61f48d2f157c8e866de2b7d9aa7a01ce21571eccf6eb7c3",
+  "image_width": {
+    "min": 476.0,
+    "p25": 1033.0,
+    "median": 1374.0,
+    "p75": 1818.75,
+    "max": 4432.0,
+    "mean": 1525.355
+  },
+  "image_height": {
+    "min": 584.0,
+    "p25": 1003.5,
+    "median": 1266.5,
+    "p75": 1598.25,
+    "max": 3579.0,
+    "mean": 1344.9875
+  },
+  "aspect_ratio": {
+    "min": 0.3659090909090909,
+    "p25": 0.8071391771906313,
+    "median": 1.1872682254789146,
+    "p75": 1.4786725135639798,
+    "max": 3.0822981366459627,
+    "mean": 1.1867506318611212
+  },
+  "room_count": {
+    "min": 2.0,
+    "p25": 6.0,
+    "median": 9.0,
+    "p75": 13.0,
+    "max": 50.0,
+    "mean": 10.4725
+  },
+  "wall_count": {
+    "min": 7.0,
+    "p25": 16.0,
+    "median": 21.0,
+    "p75": 30.0,
+    "max": 159.0,
+    "mean": 25.47
+  },
+  "door_count": {
+    "min": 1.0,
+    "p25": 6.0,
+    "median": 8.0,
+    "p75": 12.25,
+    "max": 47.0,
+    "mean": 9.6325
+  },
+  "window_count": {
+    "min": 0.0,
+    "p25": 4.0,
+    "median": 6.0,
+    "p75": 10.25,
+    "max": 41.0,
+    "mean": 8.4875
+  },
+  "object_totals": {
+    "room": 4189,
+    "wall": 10188,
+    "door": 3853,
+    "window": 3395
+  },
+  "pixel_totals": {
+    "background": 449044781,
+    "room": 361821218,
+    "wall": 55625624,
+    "door": 5624107,
+    "window": 12519800
+  },
+  "pixel_frequencies": {
+    "background": 0.5076042796969731,
+    "room": 0.4090059756021782,
+    "wall": 0.06287970821158403,
+    "door": 0.006357541393346478,
+    "window": 0.014152495095918203
+  },
+  "ignored_source_objects": {
+    "outdoor_space": 602,
+    "railing": 1173
+  },
+  "selected_examples": {
+    "simple": "high_quality_architectural/9038",
+    "dense": "high_quality/14094",
+    "high_resolution": "high_quality_architectural/2567",
+    "low_resolution": "colorful/14928",
+    "many_openings": "high_quality_architectural/7880",
+    "unusual_aspect": "high_quality_architectural/8702"
+  }
+}

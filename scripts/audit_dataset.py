@@ -49,7 +49,11 @@ def _choose_examples(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     if not valid:
         return {}
     return {
-        "simple": min(valid, key=lambda row: row["room_objects"]),
+        "simple": min(
+            (row for row in valid if row["room_objects"] > 0),
+            key=lambda row: row["room_objects"],
+            default=min(valid, key=lambda row: row["room_objects"]),
+        ),
         "dense": max(valid, key=lambda row: row["room_objects"]),
         "high_resolution": max(valid, key=lambda row: row["pixels"]),
         "low_resolution": min(valid, key=lambda row: row["pixels"]),
@@ -124,6 +128,18 @@ def audit_split(
         "audited_samples": len(samples),
         "valid_samples": len(valid),
         "failures": failures,
+        "source_files": {
+            "images_present": sum(bool(row.get("image_present")) for row in rows),
+            "annotations_present": sum(bool(row.get("svg_present")) for row in rows),
+        },
+        "samples_without_target_pixels": sum(
+            row.get("room_pixels", 0)
+            + row.get("wall_pixels", 0)
+            + row.get("door_pixels", 0)
+            + row.get("window_pixels", 0)
+            == 0
+            for row in valid
+        ),
         "split_file_sha256": _sha256(data_root / f"{split}.txt"),
         "image_width": _distribution([row["width"] for row in valid]),
         "image_height": _distribution([row["height"] for row in valid]),
@@ -175,10 +191,12 @@ def _write_overview(reports: list[dict[str, Any]], output: Path) -> None:
             f"| {report['valid_samples']} | {len(report['failures'])} | {totals['room']} "
             f"| {totals['wall']} | {totals['door']} | {totals['window']} |"
         )
+    lines.append("")
+    if any(report["split"] == "test" for report in reports):
+        lines.append("Test was audited only after the baseline configuration was frozen.")
+        lines.append("")
     lines.extend(
         [
-            "",
-            "Test was audited only after the baseline configuration was frozen. "
             "Detailed distributions, class frequencies, checksums, failures and selected "
             "example IDs are in the JSON reports.",
             "",

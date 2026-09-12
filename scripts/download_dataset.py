@@ -51,6 +51,19 @@ def safe_extract(archive: Path, destination: Path) -> None:
         bundle.extractall(destination)
 
 
+def normalize_archive_root(destination: Path) -> None:
+    """Flatten the single top-level directory present in the Zenodo archive."""
+    nested = destination / "cubicasa5k"
+    if (destination / "train.txt").is_file() or not (nested / "train.txt").is_file():
+        return
+    for source in nested.iterdir():
+        target = destination / source.name
+        if target.exists():
+            raise RuntimeError(f"Cannot flatten archive because target exists: {target}")
+        source.replace(target)
+    nested.rmdir()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download CubiCasa5K from its Zenodo record")
     parser.add_argument("--archive", type=Path, default=Path("data/cubicasa5k.zip"))
@@ -69,6 +82,7 @@ def main() -> int:
     if actual != expected:
         raise RuntimeError(f"Checksum mismatch: expected {expected}, got {actual}")
     safe_extract(args.archive, args.output)
+    normalize_archive_root(args.output)
     if not args.keep_archive:
         args.archive.unlink()
     print(f"CubiCasa5K ready at {args.output}")

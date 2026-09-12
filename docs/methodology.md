@@ -32,3 +32,8 @@ This is a useful lower bound, not a complete floor-plan parser: text and
 furniture create false walls, openings leak room regions, diagonals/curves are
 poorly represented, and door/window IoU is zero by construction.
 
+Three line-kernel fractions, three wall-dilation fractions and two room-barrier
+dilations were compared on the first 100 samples of the official validation
+split. The frozen configuration maximises the unweighted mean of room and wall
+IoU on that subset. The search report preserves every candidate; the test split
+remained unread during selection.
