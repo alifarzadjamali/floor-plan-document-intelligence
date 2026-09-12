@@ -1,0 +1,36 @@
+version: 1
+classes:
+  0: background
+  1: room
+  2: wall
+  3: door
+  4: window
+source_mapping:
+  room:
+    selector: "SVG g[class~='Space']"
+    exclusions:
+      - Outdoor
+    rationale: "All annotated interior Space polygons are task-level rooms; Outdoor is background."
+  wall:
+    ids:
+      - Wall
+    exclusions:
+      - Railing
+    rationale: "Only source Wall polygons map to structural wall; Railing remains background."
+  door:
+    ids:
+      - Door
+  window:
+    ids:
+      - Window
+precedence_low_to_high:
+  - background
+  - room
+  - wall
+  - door
+  - window
+notes:
+  - "The mapping follows the official House parser's Space, Wall, Door and Window selectors."
+  - "Opening pixels override wall pixels so thin door/window supervision is retained."
+  - "No furniture, stairs, railings or outdoor areas are silently folded into target classes."
+

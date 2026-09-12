@@ -1,0 +1,9 @@
+adaptive_block_size: 31
+adaptive_c: 12
+line_kernel_fraction: 0.012
+minimum_line_kernel: 5
+wall_dilation_fraction: 0.0025
+closing_kernel: 3
+minimum_room_area_fraction: 0.0005
+room_barrier_dilation_fraction: 0.0015
+

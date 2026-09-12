@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-tmp/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Public datasets and generated derivatives stay local.
+data/cubicasa5k/
+data/cubicasa5k.zip
+data/vendor/
+data/processed/
+data/cache/
+
+# Generated audit and baseline artefacts are reproducible; compact reports are tracked.
+results/dataset_audit/examples/
+results/baseline/examples/
+results/**/*.npy
+results/**/*.npz
+
+# Editor and operating-system files.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

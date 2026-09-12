@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "floorplan-document-intelligence"
+version = "0.1.0"
+description = "Floor-plan document parsing and classical computer-vision baseline"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "MIT" }
+dependencies = [
+  "defusedxml>=0.7.1,<1",
+  "matplotlib>=3.9,<4",
+  "numpy>=2.0,<3",
+  "opencv-python-headless>=4.10,<5",
+  "pillow>=10.4,<13",
+  "pyyaml>=6.0,<7",
+  "tqdm>=4.66,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<10",
+  "pytest-cov>=5,<8",
+  "ruff>=0.7,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/floorplan_di"]
+
+[tool.pytest.ini_options]
+addopts = "-q --basetemp=.pytest-tmp"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
