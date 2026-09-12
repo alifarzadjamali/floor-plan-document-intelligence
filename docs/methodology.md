@@ -37,3 +37,7 @@ dilations were compared on the first 100 samples of the official validation
 split. The frozen configuration maximises the unweighted mean of room and wall
 IoU on that subset. The search report preserves every candidate; the test split
 remained unread during selection.
+
+The selected configuration was committed before test evaluation. Test masks
+were then audited and baseline inference was run once over all 400 official test
+plans; no algorithm or threshold was changed afterward.

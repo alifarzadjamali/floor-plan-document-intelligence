@@ -74,26 +74,32 @@ opening-heavy and unusual-aspect plans.
 |---|---:|---:|---:|---:|---:|---:|
 | Train | 4,200 | 45,002 | 110,624 | 42,004 | 36,985 | 0 |
 | Validation | 400 | 4,189 | 10,188 | 3,853 | 3,395 | 0 |
+| Test | 400 | 4,351 | 10,711 | 4,088 | 3,629 | 0 |
 
 Class imbalance is substantial. Training pixel frequencies are 54.55%
 background, 37.81% room, 5.76% wall, 0.59% door and 1.29% window.
 
-The frozen baseline achieved the following results over all 400 validation
-plans. Door/window scores are zero by design.
+![Aligned CubiCasa source polygons, collapsed mask and overlay](results/dataset_audit/examples/train_dense.png)
+
+The baseline configuration was selected on the first 100 official validation
+plans, frozen in commit `054408d`, and then evaluated once on all 400 held-out
+test plans. Door/window scores are zero by design.
 
 | Class | IoU | Dice | Precision | Recall |
 |---|---:|---:|---:|---:|
-| Background | 0.719 | 0.836 | 0.847 | 0.826 |
-| Room | 0.632 | 0.774 | 0.825 | 0.730 |
-| Wall | 0.262 | 0.415 | 0.299 | 0.679 |
+| Background | 0.698 | 0.822 | 0.850 | 0.796 |
+| Room | 0.613 | 0.760 | 0.791 | 0.732 |
+| Wall | 0.251 | 0.401 | 0.286 | 0.670 |
 | Door | 0.000 | 0.000 | n/a | 0.000 |
 | Window | 0.000 | 0.000 | n/a | 0.000 |
 
-Five-class mIoU is 0.323; mean foreground IoU is 0.223. Median baseline CPU
-inference time is 0.026 seconds per plan (annotation parsing and image I/O
+Held-out five-class mIoU is 0.312; mean foreground IoU is 0.216. Median baseline
+CPU inference time is 0.028 seconds per plan (annotation parsing and image I/O
 excluded). Machine-readable outputs live under `results/dataset_audit/` and
 `results/baseline/`; locally generated contact sheets make alignment and
 baseline behaviour visually inspectable.
+
+![Classical baseline prediction on a held-out test plan](results/baseline/examples/test_000.png)
 
 ## Baseline limitations
 

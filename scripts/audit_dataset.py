@@ -220,6 +220,20 @@ def main() -> None:
     reports = [
         audit_split(args.data_root, split, args.output, args.max_samples) for split in args.splits
     ]
+    if args.max_samples is None:
+        existing_reports = {
+            report["split"]: report
+            for path in args.output.glob("*_summary.json")
+            if (report := json.loads(path.read_text(encoding="utf-8"))).get("split")
+            in {"train", "val", "test"}
+            and report.get("audited_samples") == report.get("official_split_size")
+        }
+        existing_reports.update({report["split"]: report for report in reports})
+        reports = [
+            existing_reports[split]
+            for split in ("train", "val", "test")
+            if split in existing_reports
+        ]
     _write_overview(reports, args.output)
 
 

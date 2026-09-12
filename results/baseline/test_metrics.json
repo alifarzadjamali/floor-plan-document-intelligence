@@ -1,0 +1,99 @@
+{
+  "method": "classical_cv_v1",
+  "split": "test",
+  "samples": 400,
+  "official_split_size": 400,
+  "config_sha256": "ee5a9ff94e73cf9360636091ebfcc80a9e37941c664286f526a953291485fa85",
+  "split_file_sha256": "3997ee6378007f10e945b2621921127477530abe8f8c053f43e327a365f5ce5a",
+  "runtime_seconds_per_plan": {
+    "mean": 0.03686493250024796,
+    "median": 0.027567249999265186,
+    "device": "CPU"
+  },
+  "metrics": {
+    "mean_iou_all_classes": 0.3124237634211681,
+    "mean_dice_all_classes": 0.3966941930905198,
+    "mean_iou_foreground": 0.21600238794644494,
+    "mean_dice_foreground": 0.29031286937189404,
+    "per_class": {
+      "background": {
+        "iou": 0.6981092653200608,
+        "dice": 0.8222194879650229,
+        "precision": 0.8503311021285929,
+        "recall": 0.7959071097361923,
+        "support_pixels": 481259910
+      },
+      "room": {
+        "iou": 0.6132239204880569,
+        "dice": 0.7602465010592393,
+        "precision": 0.7905308814093135,
+        "recall": 0.7321968347451153,
+        "support_pixels": 375232025
+      },
+      "wall": {
+        "iou": 0.25078563129772297,
+        "dice": 0.40100497642833693,
+        "precision": 0.28605501925562726,
+        "recall": 0.6704038142262675,
+        "support_pixels": 58045429
+      },
+      "door": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0,
+        "support_pixels": 6112401
+      },
+      "window": {
+        "iou": 0.0,
+        "dice": 0.0,
+        "precision": null,
+        "recall": 0.0,
+        "support_pixels": 13387549
+      }
+    },
+    "confusion_matrix": [
+      [
+        383038184,
+        59889181,
+        38332545,
+        0,
+        0
+      ],
+      [
+        52879194,
+        274743701,
+        47609130,
+        0,
+        0
+      ],
+      [
+        9585515,
+        9546037,
+        38913877,
+        0,
+        0
+      ],
+      [
+        1510002,
+        1563302,
+        3039097,
+        0,
+        0
+      ],
+      [
+        3444795,
+        1801066,
+        8141688,
+        0,
+        0
+      ]
+    ]
+  },
+  "limitations": [
+    "The baseline does not predict door or window classes.",
+    "Furniture and text can be mistaken for wall structure.",
+    "Open doorways can merge rooms with exterior whitespace.",
+    "Curved and diagonal walls are weakly represented by axis-aligned morphology."
+  ]
+}

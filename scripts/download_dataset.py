@@ -71,6 +71,11 @@ def main() -> int:
     parser.add_argument("--keep-archive", action="store_true")
     args = parser.parse_args()
 
+    required = ("train.txt", "val.txt", "test.txt")
+    if all((args.output / name).is_file() for name in required):
+        print(f"CubiCasa5K already ready at {args.output}")
+        return 0
+
     record = metadata()
     files = [item for item in record["files"] if item["key"] == "cubicasa5k.zip"]
     if len(files) != 1:

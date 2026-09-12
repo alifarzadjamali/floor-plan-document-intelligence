@@ -1,0 +1,101 @@
+{
+  "split": "test",
+  "official_split_size": 400,
+  "audited_samples": 400,
+  "valid_samples": 400,
+  "failures": [],
+  "source_files": {
+    "images_present": 400,
+    "annotations_present": 400
+  },
+  "samples_without_target_pixels": 0,
+  "split_file_sha256": "3997ee6378007f10e945b2621921127477530abe8f8c053f43e327a365f5ce5a",
+  "image_width": {
+    "min": 493.0,
+    "p25": 1034.5,
+    "median": 1395.0,
+    "p75": 1966.0,
+    "max": 4611.0,
+    "mean": 1591.555
+  },
+  "image_height": {
+    "min": 535.0,
+    "p25": 1016.0,
+    "median": 1305.0,
+    "p75": 1569.0,
+    "max": 4413.0,
+    "mean": 1365.8775
+  },
+  "aspect_ratio": {
+    "min": 0.33384262796027503,
+    "p25": 0.7973830879188305,
+    "median": 1.16153664889345,
+    "p75": 1.5185456187895212,
+    "max": 3.15121412803532,
+    "mean": 1.2130519884381767
+  },
+  "room_count": {
+    "min": 0.0,
+    "p25": 7.0,
+    "median": 9.0,
+    "p75": 14.0,
+    "max": 30.0,
+    "mean": 10.8775
+  },
+  "wall_count": {
+    "min": 5.0,
+    "p25": 17.0,
+    "median": 23.0,
+    "p75": 34.25,
+    "max": 151.0,
+    "mean": 26.7775
+  },
+  "door_count": {
+    "min": 0.0,
+    "p25": 6.0,
+    "median": 9.0,
+    "p75": 14.0,
+    "max": 33.0,
+    "mean": 10.22
+  },
+  "window_count": {
+    "min": 0.0,
+    "p25": 4.0,
+    "median": 6.0,
+    "p75": 12.0,
+    "max": 61.0,
+    "mean": 9.0725
+  },
+  "object_totals": {
+    "room": 4351,
+    "wall": 10711,
+    "door": 4088,
+    "window": 3629
+  },
+  "pixel_totals": {
+    "background": 481259910,
+    "room": 375232025,
+    "wall": 58045429,
+    "door": 6112401,
+    "window": 13387549
+  },
+  "pixel_frequencies": {
+    "background": 0.515246985089934,
+    "room": 0.40173130064052237,
+    "wall": 0.06214465753131571,
+    "door": 0.006544065112156751,
+    "window": 0.014332991626071162
+  },
+  "ignored_source_objects": {
+    "outdoor_space": 661,
+    "railing": 1303
+  },
+  "selected_examples": {
+    "simple": "high_quality_architectural/1914",
+    "dense": "high_quality_architectural/1982",
+    "high_resolution": "high_quality_architectural/3527",
+    "low_resolution": "high_quality_architectural/8269",
+    "many_openings": "high_quality_architectural/5135",
+    "unusual_aspect": "high_quality_architectural/7894"
+  }
+}
