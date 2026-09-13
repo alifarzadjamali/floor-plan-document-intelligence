@@ -42,7 +42,8 @@ def configure_tesseract(command: str | Path | None = None) -> str:
     selected = next((Path(item) for item in candidates if item and Path(item).is_file()), None)
     if selected is None:
         raise FileNotFoundError(
-            "Tesseract 5 executable was not found. Set TESSERACT_CMD or install it under .venv/Tesseract-OCR."
+            "Tesseract 5 executable was not found. Set TESSERACT_CMD or install it under "
+            ".venv/Tesseract-OCR."
         )
     pytesseract.pytesseract.tesseract_cmd = str(selected)
     return str(selected)

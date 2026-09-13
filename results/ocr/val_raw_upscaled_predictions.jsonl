@@ -1,0 +1,80 @@
+{"id": "val_0000", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.89, "orientation": 180}
+{"id": "val_0001", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0002", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.85, "orientation": 180}
+{"id": "val_0003", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "val_0004", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.94, "orientation": 180}
+{"id": "val_0005", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0006", "reference": "900", "prediction": "4", "ocr_confidence": 0.39, "orientation": 270}
+{"id": "val_0007", "reference": "3.20 m", "prediction": ":", "ocr_confidence": 0.58, "orientation": 180}
+{"id": "val_0008", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0009", "reference": "HALL", "prediction": "os", "ocr_confidence": 0.25, "orientation": 270}
+{"id": "val_0010", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0011", "reference": "4200", "prediction": "Se ea ee ae es eee", "ocr_confidence": 0.13, "orientation": 180}
+{"id": "val_0012", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0013", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0014", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.9, "orientation": 90}
+{"id": "val_0015", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.95, "orientation": 180}
+{"id": "val_0016", "reference": "2.45 m", "prediction": "5", "ocr_confidence": 0.5, "orientation": 0}
+{"id": "val_0017", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "val_0018", "reference": "A-102", "prediction": "A-102", "ocr_confidence": 0.92, "orientation": 0}
+{"id": "val_0019", "reference": "A-102", "prediction": "A-102", "ocr_confidence": 0.92, "orientation": 90}
+{"id": "val_0020", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0021", "reference": "UTILITY", "prediction": "UTILITY", "ocr_confidence": 0.95, "orientation": 180}
+{"id": "val_0022", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.955, "orientation": 270}
+{"id": "val_0023", "reference": "UTILITY", "prediction": "UTILITY", "ocr_confidence": 0.95, "orientation": 270}
+{"id": "val_0024", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.86, "orientation": 270}
+{"id": "val_0025", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0026", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0027", "reference": "4200", "prediction": "4200", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0028", "reference": "900", "prediction": "900", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0029", "reference": "UTILITY", "prediction": "UTILITY", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0030", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.9, "orientation": 180}
+{"id": "val_0031", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "val_0032", "reference": "3.20 m", "prediction": "oe", "ocr_confidence": 0.07, "orientation": 270}
+{"id": "val_0033", "reference": "3.20 m", "prediction": "3.20m", "ocr_confidence": 0.88, "orientation": 0}
+{"id": "val_0034", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0035", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0036", "reference": "FFL +0.150", "prediction": "FFL +0:150", "ocr_confidence": 0.87, "orientation": 0}
+{"id": "val_0037", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.74, "orientation": 270}
+{"id": "val_0038", "reference": "900", "prediction": "006", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0039", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0040", "reference": "900", "prediction": "900", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0041", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "val_0042", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.86, "orientation": 180}
+{"id": "val_0043", "reference": "WC", "prediction": ",", "ocr_confidence": 0.44, "orientation": 90}
+{"id": "val_0044", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0045", "reference": "4200", "prediction": "4200", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0046", "reference": "WC", "prediction": "WC", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0047", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.95, "orientation": 0}
+{"id": "val_0048", "reference": "4200", "prediction": "4200", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "val_0049", "reference": "WC", "prediction": "vce OCS ee", "ocr_confidence": 0.18000000000000002, "orientation": 0}
+{"id": "val_0050", "reference": "900", "prediction": ":", "ocr_confidence": 0.25, "orientation": 0}
+{"id": "val_0051", "reference": "A-102", "prediction": "|", "ocr_confidence": 0.65, "orientation": 180}
+{"id": "val_0052", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "val_0053", "reference": "WC", "prediction": "aos", "ocr_confidence": 0.27, "orientation": 90}
+{"id": "val_0054", "reference": "WC", "prediction": ":", "ocr_confidence": 0.13, "orientation": 270}
+{"id": "val_0055", "reference": "3.20 m", "prediction": "WOCE", "ocr_confidence": 0.84, "orientation": 180}
+{"id": "val_0056", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0057", "reference": "UTILITY", "prediction": ":", "ocr_confidence": 0.47, "orientation": 270}
+{"id": "val_0058", "reference": "4200", "prediction": "4200", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0059", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.88, "orientation": 270}
+{"id": "val_0060", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0061", "reference": "WC", "prediction": ".", "ocr_confidence": 0.58, "orientation": 180}
+{"id": "val_0062", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0063", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "val_0064", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "val_0065", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "val_0066", "reference": "UTILITY", "prediction": "ALVTHULA", "ocr_confidence": 0.0, "orientation": 0}
+{"id": "val_0067", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.91, "orientation": 0}
+{"id": "val_0068", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.9, "orientation": 0}
+{"id": "val_0069", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.81, "orientation": 180}
+{"id": "val_0070", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "val_0071", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0072", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.925, "orientation": 180}
+{"id": "val_0073", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.95, "orientation": 270}
+{"id": "val_0074", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.955, "orientation": 0}
+{"id": "val_0075", "reference": "WC", "prediction": "oe", "ocr_confidence": 0.2, "orientation": 90}
+{"id": "val_0076", "reference": "A-102", "prediction": "A-102", "ocr_confidence": 0.91, "orientation": 0}
+{"id": "val_0077", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "val_0078", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "val_0079", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 180}

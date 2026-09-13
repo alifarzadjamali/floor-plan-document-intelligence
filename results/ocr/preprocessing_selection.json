@@ -1,0 +1,32 @@
+{
+  "split": "val",
+  "best_method": "raw_upscaled",
+  "reports": [
+    {
+      "method": "raw_upscaled",
+      "metrics": {
+        "samples": 80,
+        "cer": 0.2144469525959368,
+        "wer": 0.31683168316831684,
+        "exact_match_accuracy": 0.75,
+        "numeric_token_exact_match_accuracy": 0.6875,
+        "room_label_exact_match_accuracy": 0.7954545454545454,
+        "numeric_samples": 32,
+        "room_label_samples": 44
+      }
+    },
+    {
+      "method": "adaptive_threshold",
+      "metrics": {
+        "samples": 80,
+        "cer": 0.43792325056433407,
+        "wer": 0.504950495049505,
+        "exact_match_accuracy": 0.4875,
+        "numeric_token_exact_match_accuracy": 0.4375,
+        "room_label_exact_match_accuracy": 0.5227272727272727,
+        "numeric_samples": 32,
+        "room_label_samples": 44
+      }
+    }
+  ]
+}
