@@ -1,0 +1,16 @@
+seed: 42
+benchmark:
+  train_samples: 240
+  validation_samples: 80
+  test_samples: 80
+  canvas_width: 760
+  canvas_height: 180
+  font_sizes: [22, 28, 34, 42]
+  orientations: [0, 90, 180, 270]
+tesseract:
+  language: eng
+  page_segmentation_mode: 7
+  orientation_candidates: [0, 90, 180, 270]
+preprocessing_candidates:
+  - raw_upscaled
+  - adaptive_threshold

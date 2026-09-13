@@ -19,6 +19,11 @@ results/dataset_audit/examples/
 results/baseline/examples/
 results/**/*.npy
 results/**/*.npz
+results/segmentation/checkpoints/
+results/segmentation/**/*.pt
+results/ocr/real_examples/
+data/synthetic_ocr/images/
+data/synthetic_ocr/manifests/
 
 # Editor and operating-system files.
 .idea/

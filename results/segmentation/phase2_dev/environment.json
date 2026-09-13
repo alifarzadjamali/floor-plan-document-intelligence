@@ -1,0 +1,15 @@
+{
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "torch_version": "2.11.0+cu128",
+  "cuda_version": "12.8",
+  "class_weights": [
+    0.027780329808592796,
+    0.05723056569695473,
+    0.360491544008255,
+    2.88393235206604,
+    1.6705652475357056
+  ],
+  "train_samples": 1200,
+  "validation_samples": 400,
+  "selection_metric": "mean_iou_foreground"
+}

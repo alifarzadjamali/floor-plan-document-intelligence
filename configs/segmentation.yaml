@@ -1,0 +1,22 @@
+seed: 42
+model_name: nvidia/segformer-b0-finetuned-ade-512-512
+image_size: 512
+train_subset: 1200
+batch_size: 12
+num_workers: 4
+epochs: 18
+learning_rate: 0.00006
+weight_decay: 0.01
+warmup_epochs: 1
+dice_loss_weight: 0.5
+class_weight_cap: 8.0
+early_stopping_patience: 5
+selection_metric: mean_iou_foreground
+augment:
+  brightness_contrast_probability: 0.5
+  gaussian_noise_probability: 0.15
+  blur_probability: 0.1
+  rotation_degrees: 5.0
+  jpeg_probability: 0.15
+  jpeg_quality_min: 75
+  jpeg_quality_max: 95
