@@ -1,0 +1,19 @@
+{
+  "split": "test",
+  "best_method": "raw_upscaled",
+  "reports": [
+    {
+      "method": "raw_upscaled",
+      "metrics": {
+        "samples": 80,
+        "cer": 0.16155419222903886,
+        "wer": 0.23809523809523808,
+        "exact_match_accuracy": 0.7875,
+        "numeric_token_exact_match_accuracy": 0.6470588235294118,
+        "room_label_exact_match_accuracy": 0.9069767441860465,
+        "numeric_samples": 34,
+        "room_label_samples": 43
+      }
+    }
+  ]
+}

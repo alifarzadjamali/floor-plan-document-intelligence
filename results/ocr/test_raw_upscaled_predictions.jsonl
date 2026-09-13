@@ -1,0 +1,80 @@
+{"id": "test_0000", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0001", "reference": "WC", "prediction": "ee ee ee eee", "ocr_confidence": 0.3275, "orientation": 90}
+{"id": "test_0002", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.9, "orientation": 90}
+{"id": "test_0003", "reference": "A-102", "prediction": ":", "ocr_confidence": 0.72, "orientation": 180}
+{"id": "test_0004", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0005", "reference": "WC", "prediction": "WC", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0006", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.88, "orientation": 270}
+{"id": "test_0007", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0008", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.83, "orientation": 90}
+{"id": "test_0009", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.87, "orientation": 270}
+{"id": "test_0010", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.91, "orientation": 0}
+{"id": "test_0011", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "test_0012", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.95, "orientation": 90}
+{"id": "test_0013", "reference": "WC", "prediction": "WC", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0014", "reference": "KITCHEN", "prediction": "\u2018", "ocr_confidence": 0.24, "orientation": 90}
+{"id": "test_0015", "reference": "4200", "prediction": ": 00Cr 2", "ocr_confidence": 0.22, "orientation": 270}
+{"id": "test_0016", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "test_0017", "reference": "900", "prediction": "006", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0018", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.95, "orientation": 270}
+{"id": "test_0019", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "test_0020", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0021", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0022", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.77, "orientation": 90}
+{"id": "test_0023", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.89, "orientation": 270}
+{"id": "test_0024", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.95, "orientation": 90}
+{"id": "test_0025", "reference": "STORE", "prediction": "SlOKe", "ocr_confidence": 0.33, "orientation": 270}
+{"id": "test_0026", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.95, "orientation": 0}
+{"id": "test_0027", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0028", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0029", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.915, "orientation": 90}
+{"id": "test_0030", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0031", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0032", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0033", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0034", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.85, "orientation": 0}
+{"id": "test_0035", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0036", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 180}
+{"id": "test_0037", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.955, "orientation": 180}
+{"id": "test_0038", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.95, "orientation": 90}
+{"id": "test_0039", "reference": "2.45 m", "prediction": "Ww Gye", "ocr_confidence": 0.475, "orientation": 90}
+{"id": "test_0040", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0041", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.92, "orientation": 180}
+{"id": "test_0042", "reference": "4200", "prediction": "rr", "ocr_confidence": 0.18, "orientation": 270}
+{"id": "test_0043", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0044", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.85, "orientation": 0}
+{"id": "test_0045", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0046", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0047", "reference": "1200", "prediction": "", "ocr_confidence": 0.0, "orientation": 0}
+{"id": "test_0048", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0049", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0050", "reference": "900", "prediction": "006", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0051", "reference": "UTILITY", "prediction": "AINE", "ocr_confidence": 0.07, "orientation": 90}
+{"id": "test_0052", "reference": "900", "prediction": "900", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0053", "reference": "3.20 m", "prediction": "", "ocr_confidence": 0.0, "orientation": 0}
+{"id": "test_0054", "reference": "UTILITY", "prediction": "UTILITY", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0055", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.95, "orientation": 270}
+{"id": "test_0056", "reference": "900", "prediction": "006", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0057", "reference": "A-102", "prediction": "A-102", "ocr_confidence": 0.92, "orientation": 270}
+{"id": "test_0058", "reference": "900", "prediction": "ee", "ocr_confidence": 0.24, "orientation": 270}
+{"id": "test_0059", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0060", "reference": "STORE", "prediction": "STORE", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0061", "reference": "3.20 m", "prediction": ":", "ocr_confidence": 0.55, "orientation": 180}
+{"id": "test_0062", "reference": "HALL", "prediction": "HALL", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0063", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0064", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.925, "orientation": 270}
+{"id": "test_0065", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.87, "orientation": 270}
+{"id": "test_0066", "reference": "KITCHEN", "prediction": "KITCHEN", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0067", "reference": "4200", "prediction": "", "ocr_confidence": 0.0, "orientation": 0}
+{"id": "test_0068", "reference": "GARAGE", "prediction": "GARAGE", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0069", "reference": "4200", "prediction": "4200", "ocr_confidence": 0.96, "orientation": 270}
+{"id": "test_0070", "reference": "BEDROOM", "prediction": "BEDROOM", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0071", "reference": "BATHROOM", "prediction": "BATHROOM", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0072", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.96, "orientation": 0}
+{"id": "test_0073", "reference": "2.45 m", "prediction": "2.45 m", "ocr_confidence": 0.88, "orientation": 180}
+{"id": "test_0074", "reference": "A-102", "prediction": "A-102", "ocr_confidence": 0.91, "orientation": 270}
+{"id": "test_0075", "reference": "1200", "prediction": "1200", "ocr_confidence": 0.96, "orientation": 90}
+{"id": "test_0076", "reference": "3.20 m", "prediction": "3.20 m |", "ocr_confidence": 0.8633333333333333, "orientation": 180}
+{"id": "test_0077", "reference": "FFL +0.150", "prediction": "FFL +0.150", "ocr_confidence": 0.9, "orientation": 270}
+{"id": "test_0078", "reference": "3.20 m", "prediction": "3.20 m", "ocr_confidence": 0.81, "orientation": 0}
+{"id": "test_0079", "reference": "LIVING ROOM", "prediction": "LIVING ROOM", "ocr_confidence": 0.96, "orientation": 0}

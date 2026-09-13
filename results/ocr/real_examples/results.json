@@ -1,0 +1,4771 @@
+[
+  {
+    "sample_id": "high_quality_architectural/333",
+    "method": "raw_upscaled",
+    "result": {
+      "text": "Oe \u2014 - MM __- OAR AN AVE aa (RNG MOS Bei Ad wae a A) ? EB Freie Vian aa erent a= eeevaera At wal Al =o ae = a nem AG i ve <9 eB ersrorgress ister: Ca et ie oe BE 4% ve <3 4/ 4\u00b0 \u2014\u2014 -\u2014 ys be 49 ba bs Ra \u201c3s rt] oH Be ae aa | \u2014\u2014 c= a | (dA}} | CEN \u2014 tdA Paras arererete tetas Ver elena litre (aul A || = a AV a \u2014\u2014 YVA S+Me+H | wNS'6GE \u2018 WM MA me ee HO \u2014_\u2014__- \u2014\u2014\u2014_ <1 / NN NN NS =) Beez | : | | | |",
+      "confidence": 0.32848214285714283,
+      "orientation": 270,
+      "tokens": [
+        {
+          "text": "Oe",
+          "bbox": [
+            1289,
+            48,
+            14,
+            8
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            1293,
+            60,
+            4,
+            380
+          ],
+          "confidence": 0.07
+        },
+        {
+          "text": "-",
+          "bbox": [
+            1289,
+            338,
+            14,
+            7
+          ],
+          "confidence": 0.14
+        },
+        {
+          "text": "MM",
+          "bbox": [
+            1289,
+            351,
+            14,
+            36
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "__-",
+          "bbox": [
+            1289,
+            418,
+            14,
+            25
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "OAR",
+          "bbox": [
+            1218,
+            208,
+            8,
+            154
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "AN",
+          "bbox": [
+            1212,
+            281,
+            16,
+            15
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "AVE",
+          "bbox": [
+            1212,
+            300,
+            16,
+            28
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "aa",
+          "bbox": [
+            1212,
+            336,
+            16,
+            29
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "(RNG",
+          "bbox": [
+            1163,
+            77,
+            14,
+            44
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "MOS",
+          "bbox": [
+            1163,
+            136,
+            14,
+            26
+          ],
+          "confidence": 0.23
+        },
+        {
+          "text": "Bei",
+          "bbox": [
+            1177,
+            79,
+            9,
+            82
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "Ad",
+          "bbox": [
+            1172,
+            113,
+            16,
+            14
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "wae",
+          "bbox": [
+            1177,
+            136,
+            9,
+            25
+          ],
+          "confidence": 0.29
+        },
+        {
+          "text": "a",
+          "bbox": [
+            1188,
+            80,
+            8,
+            81
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "A)",
+          "bbox": [
+            1134,
+            19,
+            13,
+            21
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "?",
+          "bbox": [
+            1138,
+            58,
+            15,
+            8
+          ],
+          "confidence": 0.58
+        },
+        {
+          "text": "EB",
+          "bbox": [
+            1149,
+            162,
+            57,
+            48
+          ],
+          "confidence": 0.43
+        },
+        {
+          "text": "Freie",
+          "bbox": [
+            1163,
+            302,
+            34,
+            134
+          ],
+          "confidence": 0.19
+        },
+        {
+          "text": "Vian",
+          "bbox": [
+            1112,
+            80,
+            7,
+            50
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "aa",
+          "bbox": [
+            1111,
+            134,
+            8,
+            27
+          ],
+          "confidence": 0.51
+        },
+        {
+          "text": "erent",
+          "bbox": [
+            1117,
+            80,
+            12,
+            47
+          ],
+          "confidence": 0.53
+        },
+        {
+          "text": "a=",
+          "bbox": [
+            1117,
+            138,
+            12,
+            23
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "eeevaera",
+          "bbox": [
+            1125,
+            78,
+            14,
+            46
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "At",
+          "bbox": [
+            1125,
+            134,
+            14,
+            30
+          ],
+          "confidence": 0.3
+        },
+        {
+          "text": "wal",
+          "bbox": [
+            1125,
+            214,
+            32,
+            60
+          ],
+          "confidence": 0.47
+        },
+        {
+          "text": "Al",
+          "bbox": [
+            1129,
+            439,
+            17,
+            16
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "=o",
+          "bbox": [
+            1093,
+            80,
+            6,
+            72
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ae",
+          "bbox": [
+            1088,
+            136,
+            14,
+            16
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "=",
+          "bbox": [
+            1101,
+            80,
+            9,
+            34
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "a",
+          "bbox": [
+            1101,
+            138,
+            8,
+            20
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "nem",
+          "bbox": [
+            1083,
+            80,
+            8,
+            66
+          ],
+          "confidence": 0.01
+        },
+        {
+          "text": "AG",
+          "bbox": [
+            1079,
+            118,
+            14,
+            11
+          ],
+          "confidence": 0.01
+        },
+        {
+          "text": "i",
+          "bbox": [
+            1079,
+            136,
+            14,
+            12
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "ve",
+          "bbox": [
+            1084,
+            456,
+            15,
+            19
+          ],
+          "confidence": 0.55
+        },
+        {
+          "text": "<9",
+          "bbox": [
+            1094,
+            458,
+            14,
+            18
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "eB",
+          "bbox": [
+            1064,
+            54,
+            16,
+            12
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ersrorgress",
+          "bbox": [
+            1068,
+            72,
+            10,
+            37
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ister:",
+          "bbox": [
+            1069,
+            110,
+            5,
+            30
+          ],
+          "confidence": 0.12
+        },
+        {
+          "text": "Ca",
+          "bbox": [
+            1057,
+            224,
+            44,
+            48
+          ],
+          "confidence": 0.41
+        },
+        {
+          "text": "et",
+          "bbox": [
+            1058,
+            273,
+            40,
+            46
+          ],
+          "confidence": 0.32
+        },
+        {
+          "text": "ie",
+          "bbox": [
+            1063,
+            391,
+            42,
+            44
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "oe",
+          "bbox": [
+            1047,
+            457,
+            12,
+            18
+          ],
+          "confidence": 0.18
+        },
+        {
+          "text": "BE",
+          "bbox": [
+            1065,
+            457,
+            16,
+            18
+          ],
+          "confidence": 0.64
+        },
+        {
+          "text": "4%",
+          "bbox": [
+            1057,
+            458,
+            12,
+            17
+          ],
+          "confidence": 0.62
+        },
+        {
+          "text": "ve",
+          "bbox": [
+            1025,
+            457,
+            14,
+            19
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "<3",
+          "bbox": [
+            1014,
+            458,
+            15,
+            18
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "4/",
+          "bbox": [
+            998,
+            458,
+            15,
+            18
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "4\u00b0",
+          "bbox": [
+            979,
+            458,
+            14,
+            18
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "\u2014\u2014",
+          "bbox": [
+            957,
+            106,
+            14,
+            28
+          ],
+          "confidence": 0.22
+        },
+        {
+          "text": "-\u2014",
+          "bbox": [
+            957,
+            150,
+            14,
+            32
+          ],
+          "confidence": 0.1
+        },
+        {
+          "text": "ys",
+          "bbox": [
+            947,
+            457,
+            16,
+            18
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "be",
+          "bbox": [
+            970,
+            457,
+            11,
+            18
+          ],
+          "confidence": 0.7
+        },
+        {
+          "text": "49",
+          "bbox": [
+            961,
+            459,
+            11,
+            17
+          ],
+          "confidence": 0.65
+        },
+        {
+          "text": "ba",
+          "bbox": [
+            939,
+            394,
+            55,
+            54
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "bs",
+          "bbox": [
+            931,
+            457,
+            15,
+            18
+          ],
+          "confidence": 0.48
+        },
+        {
+          "text": "Ra",
+          "bbox": [
+            913,
+            457,
+            12,
+            19
+          ],
+          "confidence": 0.26
+        },
+        {
+          "text": "\u201c3s",
+          "bbox": [
+            923,
+            460,
+            12,
+            16
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "rt]",
+          "bbox": [
+            912,
+            78,
+            46,
+            36
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "oH",
+          "bbox": [
+            889,
+            457,
+            24,
+            19
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "Be",
+          "bbox": [
+            881,
+            457,
+            12,
+            19
+          ],
+          "confidence": 0.67
+        },
+        {
+          "text": "ae",
+          "bbox": [
+            873,
+            459,
+            10,
+            17
+          ],
+          "confidence": 0.6
+        },
+        {
+          "text": "aa",
+          "bbox": [
+            843,
+            88,
+            12,
+            48
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "|",
+          "bbox": [
+            837,
+            134,
+            20,
+            4
+          ],
+          "confidence": 0.88
+        },
+        {
+          "text": "\u2014\u2014",
+          "bbox": [
+            805,
+            10,
+            4,
+            22
+          ],
+          "confidence": 0.43
+        },
+        {
+          "text": "c=",
+          "bbox": [
+            817,
+            97,
+            8,
+            22
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "a",
+          "bbox": [
+            814,
+            116,
+            15,
+            13
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "|",
+          "bbox": [
+            819,
+            135,
+            8,
+            1
+          ],
+          "confidence": 0.81
+        },
+        {
+          "text": "(dA}}",
+          "bbox": [
+            799,
+            104,
+            16,
+            31
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "|",
+          "bbox": [
+            793,
+            214,
+            70,
+            76
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "CEN",
+          "bbox": [
+            789,
+            481,
+            32,
+            60
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            774,
+            0,
+            12,
+            28
+          ],
+          "confidence": 0.57
+        },
+        {
+          "text": "tdA",
+          "bbox": [
+            760,
+            8,
+            15,
+            26
+          ],
+          "confidence": 0.87
+        },
+        {
+          "text": "Paras",
+          "bbox": [
+            784,
+            73,
+            6,
+            17
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "arererete",
+          "bbox": [
+            784,
+            91,
+            6,
+            114
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "tetas",
+          "bbox": [
+            780,
+            129,
+            14,
+            24
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "Ver",
+          "bbox": [
+            780,
+            156,
+            14,
+            11
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "elena",
+          "bbox": [
+            780,
+            168,
+            14,
+            18
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "litre",
+          "bbox": [
+            780,
+            188,
+            14,
+            18
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "(aul",
+          "bbox": [
+            773,
+            304,
+            102,
+            170
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "A",
+          "bbox": [
+            760,
+            515,
+            109,
+            18
+          ],
+          "confidence": 0.32
+        },
+        {
+          "text": "||",
+          "bbox": [
+            780,
+            610,
+            68,
+            3
+          ],
+          "confidence": 0.89
+        },
+        {
+          "text": "=",
+          "bbox": [
+            754,
+            564,
+            4,
+            20
+          ],
+          "confidence": 0.12
+        },
+        {
+          "text": "a",
+          "bbox": [
+            707,
+            394,
+            54,
+            72
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "AV",
+          "bbox": [
+            665,
+            208,
+            18,
+            48
+          ],
+          "confidence": 0.2
+        },
+        {
+          "text": "a",
+          "bbox": [
+            618,
+            112,
+            3,
+            22
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014\u2014",
+          "bbox": [
+            614,
+            162,
+            14,
+            34
+          ],
+          "confidence": 0.59
+        },
+        {
+          "text": "YVA",
+          "bbox": [
+            420,
+            526,
+            19,
+            42
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "S+Me+H",
+          "bbox": [
+            379,
+            312,
+            20,
+            76
+          ],
+          "confidence": 0.03
+        },
+        {
+          "text": "|",
+          "bbox": [
+            378,
+            402,
+            20,
+            7
+          ],
+          "confidence": 0.82
+        },
+        {
+          "text": "wNS'6GE",
+          "bbox": [
+            399,
+            331,
+            26,
+            79
+          ],
+          "confidence": 0.11
+        },
+        {
+          "text": "\u2018",
+          "bbox": [
+            388,
+            460,
+            12,
+            6
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "WM",
+          "bbox": [
+            383,
+            472,
+            6,
+            20
+          ],
+          "confidence": 0.11
+        },
+        {
+          "text": "MA",
+          "bbox": [
+            379,
+            498,
+            14,
+            28
+          ],
+          "confidence": 0.3
+        },
+        {
+          "text": "me",
+          "bbox": [
+            383,
+            548,
+            6,
+            13
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            379,
+            566,
+            14,
+            12
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "HO",
+          "bbox": [
+            333,
+            380,
+            20,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "text": "\u2014_\u2014__-",
+          "bbox": [
+            305,
+            144,
+            14,
+            56
+          ],
+          "confidence": 0.12
+        },
+        {
+          "text": "\u2014\u2014\u2014_",
+          "bbox": [
+            305,
+            212,
+            14,
+            47
+          ],
+          "confidence": 0.42
+        },
+        {
+          "text": "<1",
+          "bbox": [
+            286,
+            250,
+            26,
+            22
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "/",
+          "bbox": [
+            290,
+            278,
+            20,
+            8
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "NN",
+          "bbox": [
+            279,
+            12,
+            8,
+            128
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "NN",
+          "bbox": [
+            275,
+            82,
+            14,
+            22
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "NS",
+          "bbox": [
+            280,
+            144,
+            5,
+            10
+          ],
+          "confidence": 0.45
+        },
+        {
+          "text": "=)",
+          "bbox": [
+            274,
+            250,
+            15,
+            30
+          ],
+          "confidence": 0.63
+        },
+        {
+          "text": "Beez",
+          "bbox": [
+            274,
+            290,
+            15,
+            68
+          ],
+          "confidence": 0.18
+        },
+        {
+          "text": "|",
+          "bbox": [
+            135,
+            102,
+            54,
+            8
+          ],
+          "confidence": 0.72
+        },
+        {
+          "text": ":",
+          "bbox": [
+            142,
+            126,
+            95,
+            26
+          ],
+          "confidence": 0.75
+        },
+        {
+          "text": "|",
+          "bbox": [
+            123,
+            54,
+            48,
+            7
+          ],
+          "confidence": 0.84
+        },
+        {
+          "text": "|",
+          "bbox": [
+            69,
+            55,
+            46,
+            6
+          ],
+          "confidence": 0.78
+        },
+        {
+          "text": "|",
+          "bbox": [
+            75,
+            102,
+            62,
+            8
+          ],
+          "confidence": 0.71
+        },
+        {
+          "text": "|",
+          "bbox": [
+            94,
+            149,
+            51,
+            8
+          ],
+          "confidence": 0.71
+        }
+      ]
+    },
+    "entity_types": [
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT"
+    ]
+  },
+  {
+    "sample_id": "high_quality_architectural/1654",
+    "method": "raw_upscaled",
+    "result": {
+      "text": "AH ALK \u2014- as mo 10,5 m? 3.5 m?! \\ 1-1 | 1) \u201cTh KPH il 11 11 \u2014 ss 1 ea * ate MO ord Kh) | } | | | HK 6 TKS | | Es | ==) \u2014\u2014\u2014\u2014 | ai} KT 1} 55 m? 1} i KWPe HK 5 NAB ag",
+      "confidence": 0.4899999999999999,
+      "orientation": 270,
+      "tokens": [
+        {
+          "text": "AH",
+          "bbox": [
+            526,
+            430,
+            21,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "text": "ALK",
+          "bbox": [
+            528,
+            776,
+            21,
+            52
+          ],
+          "confidence": 0.96
+        },
+        {
+          "text": "\u2014-",
+          "bbox": [
+            503,
+            360,
+            7,
+            42
+          ],
+          "confidence": 0.08
+        },
+        {
+          "text": "as",
+          "bbox": [
+            505,
+            920,
+            39,
+            40
+          ],
+          "confidence": 0.21
+        },
+        {
+          "text": "mo",
+          "bbox": [
+            516,
+            1049,
+            19,
+            30
+          ],
+          "confidence": 0.24
+        },
+        {
+          "text": "10,5",
+          "bbox": [
+            483,
+            434,
+            32,
+            50
+          ],
+          "confidence": 0.91
+        },
+        {
+          "text": "m?",
+          "bbox": [
+            493,
+            498,
+            20,
+            28
+          ],
+          "confidence": 0.91
+        },
+        {
+          "text": "3.5",
+          "bbox": [
+            488,
+            778,
+            37,
+            36
+          ],
+          "confidence": 0.84
+        },
+        {
+          "text": "m?!",
+          "bbox": [
+            488,
+            828,
+            37,
+            38
+          ],
+          "confidence": 0.83
+        },
+        {
+          "text": "\\",
+          "bbox": [
+            413,
+            52,
+            34,
+            9
+          ],
+          "confidence": 0.12
+        },
+        {
+          "text": "1-1",
+          "bbox": [
+            403,
+            816,
+            22,
+            66
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "|",
+          "bbox": [
+            412,
+            893,
+            42,
+            4
+          ],
+          "confidence": 0.66
+        },
+        {
+          "text": "1)",
+          "bbox": [
+            402,
+            52,
+            7,
+            1
+          ],
+          "confidence": 0.21
+        },
+        {
+          "text": "\u201cTh",
+          "bbox": [
+            381,
+            895,
+            22,
+            30
+          ],
+          "confidence": 0.24
+        },
+        {
+          "text": "KPH",
+          "bbox": [
+            374,
+            925,
+            38,
+            78
+          ],
+          "confidence": 0.55
+        },
+        {
+          "text": "il",
+          "bbox": [
+            357,
+            337,
+            22,
+            8
+          ],
+          "confidence": 0.82
+        },
+        {
+          "text": "11",
+          "bbox": [
+            348,
+            536,
+            11,
+            17
+          ],
+          "confidence": 0.32
+        },
+        {
+          "text": "11",
+          "bbox": [
+            348,
+            682,
+            12,
+            20
+          ],
+          "confidence": 0.67
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            360,
+            749,
+            3,
+            96
+          ],
+          "confidence": 0.7
+        },
+        {
+          "text": "ss",
+          "bbox": [
+            355,
+            800,
+            14,
+            12
+          ],
+          "confidence": 0.11
+        },
+        {
+          "text": "1",
+          "bbox": [
+            360,
+            862,
+            14,
+            4
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "ea",
+          "bbox": [
+            356,
+            892,
+            21,
+            28
+          ],
+          "confidence": 0.29
+        },
+        {
+          "text": "*",
+          "bbox": [
+            318,
+            920,
+            32,
+            6
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ate",
+          "bbox": [
+            315,
+            942,
+            48,
+            33
+          ],
+          "confidence": 0.22
+        },
+        {
+          "text": "MO",
+          "bbox": [
+            317,
+            990,
+            40,
+            18
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "ord",
+          "bbox": [
+            339,
+            1010,
+            54,
+            76
+          ],
+          "confidence": 0.42
+        },
+        {
+          "text": "Kh)",
+          "bbox": [
+            329,
+            1020,
+            32,
+            52
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "|",
+          "bbox": [
+            315,
+            1082,
+            44,
+            7
+          ],
+          "confidence": 0.67
+        },
+        {
+          "text": "}",
+          "bbox": [
+            322,
+            534,
+            21,
+            7
+          ],
+          "confidence": 0.21
+        },
+        {
+          "text": "|",
+          "bbox": [
+            324,
+            548,
+            17,
+            6
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "|",
+          "bbox": [
+            316,
+            682,
+            29,
+            8
+          ],
+          "confidence": 0.56
+        },
+        {
+          "text": "|",
+          "bbox": [
+            324,
+            696,
+            19,
+            6
+          ],
+          "confidence": 0.77
+        },
+        {
+          "text": "HK",
+          "bbox": [
+            317,
+            736,
+            16,
+            44
+          ],
+          "confidence": 0.78
+        },
+        {
+          "text": "6",
+          "bbox": [
+            310,
+            768,
+            25,
+            13
+          ],
+          "confidence": 0.78
+        },
+        {
+          "text": "TKS",
+          "bbox": [
+            315,
+            814,
+            19,
+            38
+          ],
+          "confidence": 0.78
+        },
+        {
+          "text": "|",
+          "bbox": [
+            304,
+            863,
+            13,
+            8
+          ],
+          "confidence": 0.48
+        },
+        {
+          "text": "|",
+          "bbox": [
+            301,
+            308,
+            176,
+            17
+          ],
+          "confidence": 0.94
+        },
+        {
+          "text": "Es",
+          "bbox": [
+            295,
+            308,
+            4,
+            16
+          ],
+          "confidence": 0.08
+        },
+        {
+          "text": "|",
+          "bbox": [
+            293,
+            337,
+            12,
+            3
+          ],
+          "confidence": 0.95
+        },
+        {
+          "text": "==)",
+          "bbox": [
+            305,
+            360,
+            16,
+            42
+          ],
+          "confidence": 0.88
+        },
+        {
+          "text": "\u2014\u2014\u2014\u2014",
+          "bbox": [
+            295,
+            1014,
+            20,
+            78
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "|",
+          "bbox": [
+            280,
+            536,
+            12,
+            18
+          ],
+          "confidence": 0.47
+        },
+        {
+          "text": "ai}",
+          "bbox": [
+            231,
+            296,
+            15,
+            18
+          ],
+          "confidence": 0.19
+        },
+        {
+          "text": "KT",
+          "bbox": [
+            240,
+            597,
+            21,
+            33
+          ],
+          "confidence": 0.96
+        },
+        {
+          "text": "1}",
+          "bbox": [
+            208,
+            312,
+            25,
+            28
+          ],
+          "confidence": 0.51
+        },
+        {
+          "text": "55",
+          "bbox": [
+            202,
+            596,
+            25,
+            36
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "m?",
+          "bbox": [
+            205,
+            646,
+            22,
+            28
+          ],
+          "confidence": 0.8
+        },
+        {
+          "text": "1}",
+          "bbox": [
+            201,
+            296,
+            16,
+            13
+          ],
+          "confidence": 0.46
+        },
+        {
+          "text": "i",
+          "bbox": [
+            202,
+            706,
+            6,
+            2
+          ],
+          "confidence": 0.56
+        },
+        {
+          "text": "KWPe",
+          "bbox": [
+            158,
+            362,
+            15,
+            44
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "HK",
+          "bbox": [
+            155,
+            760,
+            16,
+            25
+          ],
+          "confidence": 0.83
+        },
+        {
+          "text": "5",
+          "bbox": [
+            135,
+            795,
+            42,
+            16
+          ],
+          "confidence": 0.29
+        },
+        {
+          "text": "NAB",
+          "bbox": [
+            146,
+            822,
+            37,
+            52
+          ],
+          "confidence": 0.32
+        },
+        {
+          "text": "ag",
+          "bbox": [
+            95,
+            530,
+            96,
+            180
+          ],
+          "confidence": 0.31
+        }
+      ]
+    },
+    "entity_types": [
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT"
+    ]
+  },
+  {
+    "sample_id": "high_quality_architectural/5559",
+    "method": "raw_upscaled",
+    "result": {
+      "text": "ILbom LALreieee KO ARII 7h Pe en a ee | By alah lene oer 6 |_| oe | a Vas ae 3) ite ve ASF: i: Sia sonal SPILLLLLILLESIILE LESS TT MM fi kz Crt J j 44 PY | ASKARTELURUONE Tas VARASTO Aa | SZ an 41,5 m? is 5 mn@ I Kh -<--- \\KELLARI ill ul ee | be 4 il Mi i MG LIS ILLS IA SS ALISA SSSA LSI LP ALIS ul ii I ey We At cee) sg ig | | I | iY 47) = Ta 2 jp, $16 ee ( 4% Z PR 9 i -mel % ae ll 3,0 Mm\" as! % 7 | 2 == hi = % Ke b \u201c Os \u2014 Fd ro 6i==\u2014 a Ty _}i [ Le, L\u2014 aa \\KSO-125 bE = TOU oshie ROKSFFN | _7 OO -10 I/s 6 l/s Ee: VB vee Sis La \u2014he Fi af ie () =| JEN TOIL i ee ol \u2014_ ' 4 Le | tries == il i L/ <\u00e9s Fai a Z 2 a ae S71 |S 1 | i se TUPA 1.6 m RAJA | TAA \u2014 ze ee \u2014 a es a = ASKARTELUHUONE ina = = \u2014\u2014\u2014\u2014 | (0 ow TAA he all ee KsSO-y0E ye NE op > od ey | hs si (1 i + Es z it 1 KSO\u2014 fom BCA ) vl =15 I/s _\u2014 \u2014- \u2014 _.WESIKATTOON ASTI _ \u2014 Se eee rien Hp a OG nog oe eee ie a Oe ae ee oe em, ee ee eS ee ATO Oey LKERROS",
+      "confidence": 0.3487121212121212,
+      "orientation": 180,
+      "tokens": [
+        {
+          "text": "ILbom",
+          "bbox": [
+            1068,
+            1370,
+            100,
+            36
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "LALreieee",
+          "bbox": [
+            748,
+            1370,
+            214,
+            62
+          ],
+          "confidence": 0.02
+        },
+        {
+          "text": "KO",
+          "bbox": [
+            872,
+            1338,
+            22,
+            14
+          ],
+          "confidence": 0.92
+        },
+        {
+          "text": "ARII",
+          "bbox": [
+            817,
+            1319,
+            32,
+            14
+          ],
+          "confidence": 0.84
+        },
+        {
+          "text": "7h",
+          "bbox": [
+            679,
+            1305,
+            37,
+            22
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "Pe",
+          "bbox": [
+            1036,
+            1267,
+            226,
+            12
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "en",
+          "bbox": [
+            1118,
+            1263,
+            12,
+            18
+          ],
+          "confidence": 0.15
+        },
+        {
+          "text": "a",
+          "bbox": [
+            1101,
+            1263,
+            8,
+            18
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            1058,
+            1263,
+            32,
+            18
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "|",
+          "bbox": [
+            999,
+            1282,
+            32,
+            29
+          ],
+          "confidence": 0.79
+        },
+        {
+          "text": "By",
+          "bbox": [
+            990,
+            1268,
+            1,
+            1
+          ],
+          "confidence": 0.3
+        },
+        {
+          "text": "alah",
+          "bbox": [
+            863,
+            1266,
+            122,
+            11
+          ],
+          "confidence": 0.16
+        },
+        {
+          "text": "lene",
+          "bbox": [
+            894,
+            1263,
+            16,
+            16
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "oer",
+          "bbox": [
+            875,
+            1263,
+            13,
+            16
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "6",
+          "bbox": [
+            923,
+            1265,
+            1,
+            2
+          ],
+          "confidence": 0.29
+        },
+        {
+          "text": "|_|",
+          "bbox": [
+            811,
+            1284,
+            43,
+            28
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "oe",
+          "bbox": [
+            743,
+            1266,
+            18,
+            10
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "|",
+          "bbox": [
+            717,
+            1285,
+            4,
+            24
+          ],
+          "confidence": 0.58
+        },
+        {
+          "text": "a",
+          "bbox": [
+            679,
+            1284,
+            38,
+            24
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "Vas",
+          "bbox": [
+            690,
+            1270,
+            22,
+            8
+          ],
+          "confidence": 0.32
+        },
+        {
+          "text": "ae",
+          "bbox": [
+            646,
+            1271,
+            27,
+            8
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "3)",
+          "bbox": [
+            644,
+            1265,
+            10,
+            16
+          ],
+          "confidence": 0.15
+        },
+        {
+          "text": "ite",
+          "bbox": [
+            646,
+            1280,
+            12,
+            4
+          ],
+          "confidence": 0.56
+        },
+        {
+          "text": "ve",
+          "bbox": [
+            1258,
+            1255,
+            14,
+            18
+          ],
+          "confidence": 0.26
+        },
+        {
+          "text": "ASF:",
+          "bbox": [
+            1226,
+            1255,
+            35,
+            9
+          ],
+          "confidence": 0.04
+        },
+        {
+          "text": "i:",
+          "bbox": [
+            1208,
+            1239,
+            16,
+            25
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "Sia",
+          "bbox": [
+            1154,
+            1255,
+            50,
+            9
+          ],
+          "confidence": 0.16
+        },
+        {
+          "text": "sonal",
+          "bbox": [
+            1038,
+            1256,
+            98,
+            10
+          ],
+          "confidence": 0.02
+        },
+        {
+          "text": "SPILLLLLILLESIILE",
+          "bbox": [
+            850,
+            1258,
+            140,
+            9
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "LESS",
+          "bbox": [
+            847,
+            1253,
+            23,
+            16
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "TT",
+          "bbox": [
+            646,
+            1260,
+            69,
+            9
+          ],
+          "confidence": 0.15
+        },
+        {
+          "text": "MM",
+          "bbox": [
+            648,
+            1255,
+            14,
+            19
+          ],
+          "confidence": 0.15
+        },
+        {
+          "text": "fi",
+          "bbox": [
+            626,
+            1258,
+            4,
+            14
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "kz",
+          "bbox": [
+            1287,
+            1212,
+            18,
+            18
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "Crt",
+          "bbox": [
+            1285,
+            1223,
+            18,
+            14
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "J",
+          "bbox": [
+            648,
+            1217,
+            22,
+            32
+          ],
+          "confidence": 0.46
+        },
+        {
+          "text": "j",
+          "bbox": [
+            631,
+            1229,
+            3,
+            13
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "44",
+          "bbox": [
+            1287,
+            1183,
+            16,
+            14
+          ],
+          "confidence": 0.3
+        },
+        {
+          "text": "PY",
+          "bbox": [
+            1226,
+            1203,
+            59,
+            33
+          ],
+          "confidence": 0.42
+        },
+        {
+          "text": "|",
+          "bbox": [
+            1140,
+            1189,
+            2,
+            56
+          ],
+          "confidence": 0.73
+        },
+        {
+          "text": "ASKARTELURUONE",
+          "bbox": [
+            914,
+            1183,
+            218,
+            34
+          ],
+          "confidence": 0.18
+        },
+        {
+          "text": "Tas",
+          "bbox": [
+            1226,
+            1173,
+            68,
+            30
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "VARASTO",
+          "bbox": [
+            652,
+            1160,
+            156,
+            48
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "Aa",
+          "bbox": [
+            1285,
+            1133,
+            20,
+            13
+          ],
+          "confidence": 0.43
+        },
+        {
+          "text": "|",
+          "bbox": [
+            1255,
+            1153,
+            50,
+            24
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "SZ",
+          "bbox": [
+            1285,
+            1139,
+            18,
+            18
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "an",
+          "bbox": [
+            1226,
+            1129,
+            59,
+            23
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "41,5",
+          "bbox": [
+            1055,
+            1148,
+            109,
+            34
+          ],
+          "confidence": 0.1
+        },
+        {
+          "text": "m?",
+          "bbox": [
+            1053,
+            1146,
+            29,
+            48
+          ],
+          "confidence": 0.63
+        },
+        {
+          "text": "is",
+          "bbox": [
+            748,
+            1133,
+            54,
+            30
+          ],
+          "confidence": 0.64
+        },
+        {
+          "text": "5",
+          "bbox": [
+            750,
+            1129,
+            6,
+            36
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "mn@",
+          "bbox": [
+            706,
+            1135,
+            32,
+            20
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "I",
+          "bbox": [
+            630,
+            1129,
+            4,
+            14
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "Kh",
+          "bbox": [
+            1285,
+            1124,
+            18,
+            14
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "-<---",
+          "bbox": [
+            1154,
+            1103,
+            45,
+            2
+          ],
+          "confidence": 0.22
+        },
+        {
+          "text": "\\KELLARI",
+          "bbox": [
+            1022,
+            1100,
+            138,
+            47
+          ],
+          "confidence": 0.19
+        },
+        {
+          "text": "ill",
+          "bbox": [
+            789,
+            1105,
+            14,
+            18
+          ],
+          "confidence": 0.76
+        },
+        {
+          "text": "ul",
+          "bbox": [
+            789,
+            1126,
+            13,
+            12
+          ],
+          "confidence": 0.8
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            1285,
+            1100,
+            20,
+            31
+          ],
+          "confidence": 0.41
+        },
+        {
+          "text": "|",
+          "bbox": [
+            1255,
+            1103,
+            9,
+            24
+          ],
+          "confidence": 0.43
+        },
+        {
+          "text": "be",
+          "bbox": [
+            1286,
+            1093,
+            18,
+            13
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "4",
+          "bbox": [
+            817,
+            1085,
+            7,
+            16
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "il",
+          "bbox": [
+            789,
+            1087,
+            13,
+            12
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "Mi",
+          "bbox": [
+            625,
+            1079,
+            9,
+            24
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "i",
+          "bbox": [
+            625,
+            1099,
+            9,
+            34
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "MG",
+          "bbox": [
+            1284,
+            1063,
+            20,
+            24
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "LIS",
+          "bbox": [
+            1032,
+            1052,
+            98,
+            11
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ILLS",
+          "bbox": [
+            1076,
+            1047,
+            24,
+            18
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "IA",
+          "bbox": [
+            1056,
+            1047,
+            14,
+            18
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "SS",
+          "bbox": [
+            1042,
+            1047,
+            11,
+            18
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ALISA",
+          "bbox": [
+            1011,
+            1047,
+            28,
+            18
+          ],
+          "confidence": 0.05
+        },
+        {
+          "text": "SSSA",
+          "bbox": [
+            983,
+            1053,
+            24,
+            8
+          ],
+          "confidence": 0.05
+        },
+        {
+          "text": "LSI",
+          "bbox": [
+            962,
+            1047,
+            18,
+            18
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "LP",
+          "bbox": [
+            949,
+            1047,
+            11,
+            18
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ALIS",
+          "bbox": [
+            919,
+            1051,
+            30,
+            12
+          ],
+          "confidence": 0.2
+        },
+        {
+          "text": "ul",
+          "bbox": [
+            789,
+            1045,
+            13,
+            12
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "ii",
+          "bbox": [
+            788,
+            1067,
+            14,
+            12
+          ],
+          "confidence": 0.44
+        },
+        {
+          "text": "I",
+          "bbox": [
+            630,
+            1069,
+            4,
+            13
+          ],
+          "confidence": 0.62
+        },
+        {
+          "text": "ey",
+          "bbox": [
+            1284,
+            1043,
+            20,
+            26
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "We",
+          "bbox": [
+            1286,
+            1024,
+            18,
+            22
+          ],
+          "confidence": 0.46
+        },
+        {
+          "text": "At",
+          "bbox": [
+            1124,
+            1033,
+            30,
+            28
+          ],
+          "confidence": 0.3
+        },
+        {
+          "text": "cee)",
+          "bbox": [
+            1082,
+            1018,
+            52,
+            18
+          ],
+          "confidence": 0.26
+        },
+        {
+          "text": "sg",
+          "bbox": [
+            869,
+            1039,
+            55,
+            24
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ig",
+          "bbox": [
+            828,
+            1045,
+            30,
+            18
+          ],
+          "confidence": 0.22
+        },
+        {
+          "text": "|",
+          "bbox": [
+            912,
+            1036,
+            2,
+            7
+          ],
+          "confidence": 0.53
+        },
+        {
+          "text": "|",
+          "bbox": [
+            882,
+            1035,
+            29,
+            8
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "I",
+          "bbox": [
+            817,
+            1017,
+            94,
+            16
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "|",
+          "bbox": [
+            630,
+            1032,
+            4,
+            35
+          ],
+          "confidence": 0.82
+        },
+        {
+          "text": "iY",
+          "bbox": [
+            1284,
+            1012,
+            20,
+            18
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "47)",
+          "bbox": [
+            1285,
+            1003,
+            18,
+            15
+          ],
+          "confidence": 0.73
+        },
+        {
+          "text": "=",
+          "bbox": [
+            890,
+            1015,
+            24,
+            8
+          ],
+          "confidence": 0.19
+        },
+        {
+          "text": "Ta",
+          "bbox": [
+            833,
+            1009,
+            43,
+            16
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "2",
+          "bbox": [
+            835,
+            995,
+            74,
+            8
+          ],
+          "confidence": 0.01
+        },
+        {
+          "text": "jp,",
+          "bbox": [
+            882,
+            994,
+            29,
+            22
+          ],
+          "confidence": 0.12
+        },
+        {
+          "text": "$16",
+          "bbox": [
+            818,
+            996,
+            40,
+            18
+          ],
+          "confidence": 0.47
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            1285,
+            972,
+            20,
+            16
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "(",
+          "bbox": [
+            1296,
+            985,
+            8,
+            22
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "4%",
+          "bbox": [
+            1284,
+            963,
+            18,
+            14
+          ],
+          "confidence": 0.48
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            1285,
+            985,
+            9,
+            18
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "PR",
+          "bbox": [
+            1042,
+            982,
+            34,
+            21
+          ],
+          "confidence": 0.94
+        },
+        {
+          "text": "9",
+          "bbox": [
+            835,
+            963,
+            87,
+            10
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "i",
+          "bbox": [
+            905,
+            970,
+            8,
+            16
+          ],
+          "confidence": 0.03
+        },
+        {
+          "text": "-mel",
+          "bbox": [
+            882,
+            975,
+            29,
+            9
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "%",
+          "bbox": [
+            816,
+            969,
+            8,
+            18
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ae",
+          "bbox": [
+            1285,
+            951,
+            20,
+            18
+          ],
+          "confidence": 0.2
+        },
+        {
+          "text": "ll",
+          "bbox": [
+            1146,
+            957,
+            8,
+            20
+          ],
+          "confidence": 0.72
+        },
+        {
+          "text": "3,0",
+          "bbox": [
+            1041,
+            939,
+            35,
+            34
+          ],
+          "confidence": 0.59
+        },
+        {
+          "text": "Mm\"",
+          "bbox": [
+            998,
+            939,
+            32,
+            34
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "as!",
+          "bbox": [
+            836,
+            945,
+            48,
+            9
+          ],
+          "confidence": 0.21
+        },
+        {
+          "text": "%",
+          "bbox": [
+            816,
+            957,
+            8,
+            16
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "7",
+          "bbox": [
+            1285,
+            915,
+            18,
+            22
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "|",
+          "bbox": [
+            879,
+            934,
+            5,
+            9
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "2",
+          "bbox": [
+            816,
+            930,
+            60,
+            16
+          ],
+          "confidence": 0.32
+        },
+        {
+          "text": "==",
+          "bbox": [
+            835,
+            926,
+            46,
+            7
+          ],
+          "confidence": 0.51
+        },
+        {
+          "text": "hi",
+          "bbox": [
+            1308,
+            905,
+            1,
+            3
+          ],
+          "confidence": 0.03
+        },
+        {
+          "text": "=",
+          "bbox": [
+            831,
+            884,
+            50,
+            30
+          ],
+          "confidence": 0.92
+        },
+        {
+          "text": "%",
+          "bbox": [
+            816,
+            903,
+            8,
+            16
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "Ke",
+          "bbox": [
+            1285,
+            861,
+            24,
+            36
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "b",
+          "bbox": [
+            1296,
+            861,
+            12,
+            46
+          ],
+          "confidence": 0.46
+        },
+        {
+          "text": "\u201c",
+          "bbox": [
+            1134,
+            866,
+            35,
+            111
+          ],
+          "confidence": 0.22
+        },
+        {
+          "text": "Os",
+          "bbox": [
+            1146,
+            862,
+            10,
+            19
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            1131,
+            867,
+            6,
+            9
+          ],
+          "confidence": 0.58
+        },
+        {
+          "text": "Fd",
+          "bbox": [
+            1112,
+            867,
+            14,
+            9
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "ro",
+          "bbox": [
+            1054,
+            863,
+            54,
+            24
+          ],
+          "confidence": 0.19
+        },
+        {
+          "text": "6i==\u2014",
+          "bbox": [
+            985,
+            869,
+            60,
+            8
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "a",
+          "bbox": [
+            914,
+            870,
+            64,
+            14
+          ],
+          "confidence": 0.09
+        },
+        {
+          "text": "Ty",
+          "bbox": [
+            875,
+            875,
+            9,
+            8
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "_}i",
+          "bbox": [
+            817,
+            869,
+            47,
+            9
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "[",
+          "bbox": [
+            722,
+            877,
+            66,
+            152
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "Le,",
+          "bbox": [
+            706,
+            879,
+            12,
+            12
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "L\u2014",
+          "bbox": [
+            1200,
+            843,
+            139,
+            49
+          ],
+          "confidence": 0.16
+        },
+        {
+          "text": "aa",
+          "bbox": [
+            1102,
+            851,
+            72,
+            10
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "\\KSO-125",
+          "bbox": [
+            932,
+            826,
+            96,
+            17
+          ],
+          "confidence": 0.82
+        },
+        {
+          "text": "bE",
+          "bbox": [
+            872,
+            845,
+            58,
+            6
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "=",
+          "bbox": [
+            842,
+            829,
+            24,
+            8
+          ],
+          "confidence": 0.13
+        },
+        {
+          "text": "TOU",
+          "bbox": [
+            808,
+            828,
+            18,
+            9
+          ],
+          "confidence": 0.71
+        },
+        {
+          "text": "oshie",
+          "bbox": [
+            1207,
+            821,
+            131,
+            27
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ROKSFFN",
+          "bbox": [
+            1222,
+            805,
+            84,
+            12
+          ],
+          "confidence": 0.89
+        },
+        {
+          "text": "|",
+          "bbox": [
+            1207,
+            798,
+            9,
+            21
+          ],
+          "confidence": 0.76
+        },
+        {
+          "text": "_7",
+          "bbox": [
+            1170,
+            805,
+            26,
+            9
+          ],
+          "confidence": 0.43
+        },
+        {
+          "text": "OO",
+          "bbox": [
+            1112,
+            823,
+            18,
+            10
+          ],
+          "confidence": 0.63
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            983,
+            800,
+            35,
+            22
+          ],
+          "confidence": 0.53
+        },
+        {
+          "text": "I/s",
+          "bbox": [
+            942,
+            800,
+            28,
+            22
+          ],
+          "confidence": 0.77
+        },
+        {
+          "text": "6",
+          "bbox": [
+            867,
+            812,
+            8,
+            8
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "l/s",
+          "bbox": [
+            824,
+            805,
+            30,
+            16
+          ],
+          "confidence": 0.14
+        },
+        {
+          "text": "Ee:",
+          "bbox": [
+            1536,
+            741,
+            48,
+            18
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "VB",
+          "bbox": [
+            449,
+            740,
+            68,
+            55
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "vee",
+          "bbox": [
+            308,
+            740,
+            108,
+            55
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "Sis",
+          "bbox": [
+            909,
+            729,
+            78,
+            28
+          ],
+          "confidence": 0.21
+        },
+        {
+          "text": "La",
+          "bbox": [
+            617,
+            721,
+            137,
+            30
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "\u2014he",
+          "bbox": [
+            908,
+            687,
+            78,
+            40
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "Fi",
+          "bbox": [
+            300,
+            698,
+            10,
+            14
+          ],
+          "confidence": 0.53
+        },
+        {
+          "text": "af",
+          "bbox": [
+            266,
+            703,
+            8,
+            7
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "ie",
+          "bbox": [
+            258,
+            697,
+            12,
+            8
+          ],
+          "confidence": 0.23
+        },
+        {
+          "text": "()",
+          "bbox": [
+            221,
+            702,
+            6,
+            9
+          ],
+          "confidence": 0.65
+        },
+        {
+          "text": "=|",
+          "bbox": [
+            1316,
+            661,
+            30,
+            24
+          ],
+          "confidence": 0.33
+        },
+        {
+          "text": "JEN",
+          "bbox": [
+            194,
+            678,
+            24,
+            9
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "TOIL",
+          "bbox": [
+            148,
+            679,
+            24,
+            12
+          ],
+          "confidence": 0.02
+        },
+        {
+          "text": "i",
+          "bbox": [
+            1137,
+            637,
+            5,
+            6
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            1315,
+            625,
+            234,
+            18
+          ],
+          "confidence": 0.12
+        },
+        {
+          "text": "ol",
+          "bbox": [
+            1290,
+            626,
+            18,
+            14
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014_",
+          "bbox": [
+            1206,
+            628,
+            74,
+            6
+          ],
+          "confidence": 0.03
+        },
+        {
+          "text": "'",
+          "bbox": [
+            1191,
+            628,
+            3,
+            6
+          ],
+          "confidence": 0.78
+        },
+        {
+          "text": "4",
+          "bbox": [
+            1182,
+            628,
+            6,
+            12
+          ],
+          "confidence": 0.55
+        },
+        {
+          "text": "Le",
+          "bbox": [
+            1167,
+            625,
+            14,
+            20
+          ],
+          "confidence": 0.2
+        },
+        {
+          "text": "|",
+          "bbox": [
+            1159,
+            635,
+            2,
+            8
+          ],
+          "confidence": 0.15
+        },
+        {
+          "text": "tries",
+          "bbox": [
+            1117,
+            628,
+            47,
+            6
+          ],
+          "confidence": 0.13
+        },
+        {
+          "text": "==",
+          "bbox": [
+            636,
+            625,
+            94,
+            26
+          ],
+          "confidence": 0.47
+        },
+        {
+          "text": "il",
+          "bbox": [
+            1254,
+            587,
+            12,
+            16
+          ],
+          "confidence": 0.13
+        },
+        {
+          "text": "i",
+          "bbox": [
+            1134,
+            587,
+            12,
+            18
+          ],
+          "confidence": 0.24
+        },
+        {
+          "text": "L/",
+          "bbox": [
+            1397,
+            563,
+            87,
+            59
+          ],
+          "confidence": 0.85
+        },
+        {
+          "text": "<\u00e9s",
+          "bbox": [
+            419,
+            571,
+            105,
+            38
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "Fai",
+          "bbox": [
+            742,
+            542,
+            40,
+            18
+          ],
+          "confidence": 0.52
+        },
+        {
+          "text": "a",
+          "bbox": [
+            658,
+            543,
+            78,
+            40
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            1440,
+            521,
+            44,
+            48
+          ],
+          "confidence": 0.2
+        },
+        {
+          "text": "2",
+          "bbox": [
+            1563,
+            482,
+            17,
+            24
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "a",
+          "bbox": [
+            1493,
+            483,
+            59,
+            24
+          ],
+          "confidence": 0.1
+        },
+        {
+          "text": "ae",
+          "bbox": [
+            1397,
+            485,
+            84,
+            24
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "S71",
+          "bbox": [
+            614,
+            464,
+            85,
+            44
+          ],
+          "confidence": 0.48
+        },
+        {
+          "text": "|S",
+          "bbox": [
+            564,
+            464,
+            40,
+            44
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "1",
+          "bbox": [
+            1493,
+            455,
+            86,
+            24
+          ],
+          "confidence": 0.01
+        },
+        {
+          "text": "|",
+          "bbox": [
+            1460,
+            446,
+            26,
+            38
+          ],
+          "confidence": 0.42
+        },
+        {
+          "text": "i",
+          "bbox": [
+            759,
+            443,
+            23,
+            18
+          ],
+          "confidence": 0.23
+        },
+        {
+          "text": "se",
+          "bbox": [
+            700,
+            433,
+            32,
+            30
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "TUPA",
+          "bbox": [
+            328,
+            444,
+            75,
+            25
+          ],
+          "confidence": 0.89
+        },
+        {
+          "text": "1.6",
+          "bbox": [
+            1281,
+            425,
+            42,
+            30
+          ],
+          "confidence": 0.92
+        },
+        {
+          "text": "m",
+          "bbox": [
+            1233,
+            425,
+            24,
+            21
+          ],
+          "confidence": 0.92
+        },
+        {
+          "text": "RAJA",
+          "bbox": [
+            1137,
+            425,
+            72,
+            30
+          ],
+          "confidence": 0.75
+        },
+        {
+          "text": "|",
+          "bbox": [
+            741,
+            422,
+            68,
+            18
+          ],
+          "confidence": 0.58
+        },
+        {
+          "text": "TAA",
+          "bbox": [
+            234,
+            439,
+            44,
+            24
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            1514,
+            410,
+            47,
+            4
+          ],
+          "confidence": 0.05
+        },
+        {
+          "text": "ze",
+          "bbox": [
+            1397,
+            402,
+            84,
+            23
+          ],
+          "confidence": 0.39
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            1289,
+            411,
+            75,
+            4
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            1113,
+            411,
+            16,
+            5
+          ],
+          "confidence": 0.76
+        },
+        {
+          "text": "a",
+          "bbox": [
+            1054,
+            411,
+            30,
+            5
+          ],
+          "confidence": 0.14
+        },
+        {
+          "text": "es",
+          "bbox": [
+            934,
+            411,
+            106,
+            5
+          ],
+          "confidence": 0.09
+        },
+        {
+          "text": "a",
+          "bbox": [
+            1397,
+            375,
+            84,
+            24
+          ],
+          "confidence": 0.13
+        },
+        {
+          "text": "=",
+          "bbox": [
+            1397,
+            345,
+            84,
+            24
+          ],
+          "confidence": 0.09
+        },
+        {
+          "text": "ASKARTELUHUONE",
+          "bbox": [
+            970,
+            337,
+            266,
+            30
+          ],
+          "confidence": 0.76
+        },
+        {
+          "text": "ina",
+          "bbox": [
+            675,
+            352,
+            134,
+            73
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "=",
+          "bbox": [
+            709,
+            341,
+            28,
+            8
+          ],
+          "confidence": 0.23
+        },
+        {
+          "text": "=",
+          "bbox": [
+            676,
+            341,
+            20,
+            4
+          ],
+          "confidence": 0.75
+        },
+        {
+          "text": "\u2014\u2014\u2014\u2014",
+          "bbox": [
+            670,
+            343,
+            61,
+            8
+          ],
+          "confidence": 0.06
+        },
+        {
+          "text": "|",
+          "bbox": [
+            669,
+            341,
+            3,
+            14
+          ],
+          "confidence": 0.94
+        },
+        {
+          "text": "(0",
+          "bbox": [
+            465,
+            337,
+            41,
+            29
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "ow",
+          "bbox": [
+            318,
+            356,
+            60,
+            37
+          ],
+          "confidence": 0.68
+        },
+        {
+          "text": "TAA",
+          "bbox": [
+            1670,
+            303,
+            54,
+            30
+          ],
+          "confidence": 0.96
+        },
+        {
+          "text": "he",
+          "bbox": [
+            1453,
+            313,
+            30,
+            28
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "all",
+          "bbox": [
+            1397,
+            313,
+            28,
+            28
+          ],
+          "confidence": 0.47
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            1441,
+            319,
+            34,
+            25
+          ],
+          "confidence": 0.26
+        },
+        {
+          "text": "KsSO-y0E",
+          "bbox": [
+            497,
+            317,
+            85,
+            22
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "ye",
+          "bbox": [
+            375,
+            327,
+            58,
+            42
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "NE",
+          "bbox": [
+            1591,
+            299,
+            39,
+            28
+          ],
+          "confidence": 0.96
+        },
+        {
+          "text": "op",
+          "bbox": [
+            475,
+            284,
+            49,
+            24
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": ">",
+          "bbox": [
+            434,
+            302,
+            33,
+            25
+          ],
+          "confidence": 0.28
+        },
+        {
+          "text": "od",
+          "bbox": [
+            334,
+            279,
+            46,
+            36
+          ],
+          "confidence": 0.43
+        },
+        {
+          "text": "ey",
+          "bbox": [
+            886,
+            264,
+            18,
+            41
+          ],
+          "confidence": 0.16
+        },
+        {
+          "text": "|",
+          "bbox": [
+            848,
+            275,
+            18,
+            28
+          ],
+          "confidence": 0.61
+        },
+        {
+          "text": "hs",
+          "bbox": [
+            378,
+            271,
+            16,
+            24
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "si",
+          "bbox": [
+            1670,
+            202,
+            48,
+            8
+          ],
+          "confidence": 0.09
+        },
+        {
+          "text": "(1",
+          "bbox": [
+            1258,
+            219,
+            40,
+            30
+          ],
+          "confidence": 0.49
+        },
+        {
+          "text": "i",
+          "bbox": [
+            1227,
+            193,
+            3,
+            8
+          ],
+          "confidence": 0.88
+        },
+        {
+          "text": "+",
+          "bbox": [
+            698,
+            240,
+            16,
+            36
+          ],
+          "confidence": 0.19
+        },
+        {
+          "text": "Es",
+          "bbox": [
+            482,
+            206,
+            181,
+            78
+          ],
+          "confidence": 0.34
+        },
+        {
+          "text": "z",
+          "bbox": [
+            1180,
+            182,
+            2,
+            1
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "it",
+          "bbox": [
+            1164,
+            183,
+            12,
+            10
+          ],
+          "confidence": 0.62
+        },
+        {
+          "text": "1",
+          "bbox": [
+            942,
+            187,
+            16,
+            15
+          ],
+          "confidence": 0.76
+        },
+        {
+          "text": "KSO\u2014",
+          "bbox": [
+            615,
+            165,
+            52,
+            16
+          ],
+          "confidence": 0.73
+        },
+        {
+          "text": "fom",
+          "bbox": [
+            221,
+            189,
+            260,
+            78
+          ],
+          "confidence": 0.14
+        },
+        {
+          "text": "BCA",
+          "bbox": [
+            1670,
+            157,
+            54,
+            40
+          ],
+          "confidence": 0.4
+        },
+        {
+          "text": ")",
+          "bbox": [
+            1615,
+            151,
+            15,
+            42
+          ],
+          "confidence": 0.84
+        },
+        {
+          "text": "vl",
+          "bbox": [
+            1182,
+            145,
+            33,
+            48
+          ],
+          "confidence": 0.53
+        },
+        {
+          "text": "=15",
+          "bbox": [
+            631,
+            145,
+            35,
+            16
+          ],
+          "confidence": 0.25
+        },
+        {
+          "text": "I/s",
+          "bbox": [
+            589,
+            139,
+            27,
+            24
+          ],
+          "confidence": 0.27
+        },
+        {
+          "text": "_\u2014",
+          "bbox": [
+            0,
+            113,
+            34,
+            15
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014-",
+          "bbox": [
+            1670,
+            96,
+            48,
+            4
+          ],
+          "confidence": 0.0
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            1669,
+            92,
+            11,
+            14
+          ],
+          "confidence": 0.17
+        },
+        {
+          "text": "_.WESIKATTOON",
+          "bbox": [
+            1209,
+            94,
+            230,
+            39
+          ],
+          "confidence": 0.67
+        },
+        {
+          "text": "ASTI",
+          "bbox": [
+            1126,
+            93,
+            74,
+            40
+          ],
+          "confidence": 0.3
+        },
+        {
+          "text": "_",
+          "bbox": [
+            1096,
+            94,
+            24,
+            6
+          ],
+          "confidence": 0.8
+        },
+        {
+          "text": "\u2014",
+          "bbox": [
+            1005,
+            97,
+            19,
+            3
+          ],
+          "confidence": 0.68
+        },
+        {
+          "text": "Se",
+          "bbox": [
+            822,
+            101,
+            14,
+            16
+          ],
+          "confidence": 0.11
+        },
+        {
+          "text": "eee",
+          "bbox": [
+            794,
+            101,
+            18,
+            16
+          ],
+          "confidence": 0.38
+        },
+        {
+          "text": "rien",
+          "bbox": [
+            770,
+            101,
+            22,
+            16
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "Hp",
+          "bbox": [
+            746,
+            101,
+            18,
+            16
+          ],
+          "confidence": 0.18
+        },
+        {
+          "text": "a",
+          "bbox": [
+            721,
+            105,
+            11,
+            2
+          ],
+          "confidence": 0.29
+        },
+        {
+          "text": "OG",
+          "bbox": [
+            681,
+            101,
+            28,
+            16
+          ],
+          "confidence": 0.37
+        },
+        {
+          "text": "nog",
+          "bbox": [
+            502,
+            104,
+            101,
+            5
+          ],
+          "confidence": 0.22
+        },
+        {
+          "text": "oe",
+          "bbox": [
+            450,
+            107,
+            34,
+            2
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "eee",
+          "bbox": [
+            420,
+            101,
+            18,
+            16
+          ],
+          "confidence": 0.47
+        },
+        {
+          "text": "ie",
+          "bbox": [
+            396,
+            101,
+            16,
+            16
+          ],
+          "confidence": 0.26
+        },
+        {
+          "text": "a",
+          "bbox": [
+            370,
+            109,
+            12,
+            1
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "Oe",
+          "bbox": [
+            320,
+            109,
+            38,
+            2
+          ],
+          "confidence": 0.35
+        },
+        {
+          "text": "ae",
+          "bbox": [
+            297,
+            101,
+            15,
+            16
+          ],
+          "confidence": 0.5
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            266,
+            101,
+            16,
+            16
+          ],
+          "confidence": 0.36
+        },
+        {
+          "text": "oe",
+          "bbox": [
+            243,
+            101,
+            13,
+            16
+          ],
+          "confidence": 0.49
+        },
+        {
+          "text": "em,",
+          "bbox": [
+            215,
+            101,
+            18,
+            16
+          ],
+          "confidence": 0.51
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            196,
+            101,
+            14,
+            16
+          ],
+          "confidence": 0.29
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            171,
+            101,
+            13,
+            16
+          ],
+          "confidence": 0.26
+        },
+        {
+          "text": "eS",
+          "bbox": [
+            120,
+            112,
+            38,
+            1
+          ],
+          "confidence": 0.23
+        },
+        {
+          "text": "ee",
+          "bbox": [
+            46,
+            113,
+            48,
+            2
+          ],
+          "confidence": 0.45
+        },
+        {
+          "text": "ATO",
+          "bbox": [
+            1630,
+            10,
+            60,
+            62
+          ],
+          "confidence": 0.45
+        },
+        {
+          "text": "Oey",
+          "bbox": [
+            1548,
+            10,
+            62,
+            62
+          ],
+          "confidence": 0.31
+        },
+        {
+          "text": "LKERROS",
+          "bbox": [
+            646,
+            31,
+            156,
+            27
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "entity_types": [
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "DIMENSION_LIKE",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT",
+      "OTHER_TEXT"
+    ]
+  }
+]
