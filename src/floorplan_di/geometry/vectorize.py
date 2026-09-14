@@ -1,0 +1,101 @@
+from __future__ import annotations
+
+import math
+
+import cv2
+import numpy as np
+
+from floorplan_di.constants import PlanClass
+
+
+def _points(contour: np.ndarray) -> list[list[int]]:
+    return [[int(x), int(y)] for x, y in contour.reshape(-1, 2)]
+
+
+def _component_confidence(
+    probability: np.ndarray | None, component: np.ndarray, class_id: int
+) -> float | None:
+    if probability is None:
+        return None
+    values = probability[class_id][component.astype(bool)]
+    return round(float(values.mean()), 4) if values.size else None
+
+
+def _orientation(component: np.ndarray) -> float | None:
+    ys, xs = np.where(component)
+    if len(xs) < 2:
+        return None
+    covariance = np.cov(np.column_stack((xs, ys)), rowvar=False)
+    values, vectors = np.linalg.eigh(covariance)
+    vector = vectors[:, int(np.argmax(values))]
+    return round(float(math.degrees(math.atan2(vector[1], vector[0])) % 180), 1)
+
+
+def _objects(
+    mask: np.ndarray,
+    probability: np.ndarray | None,
+    class_id: int,
+    prefix: str,
+    min_area: int,
+    simplify_fraction: float,
+) -> list[dict[str, object]]:
+    binary = (mask == class_id).astype(np.uint8)
+    count, labels, stats, centroids = cv2.connectedComponentsWithStats(binary, connectivity=8)
+    objects: list[dict[str, object]] = []
+    for label in range(1, count):
+        area = int(stats[label, cv2.CC_STAT_AREA])
+        if area < min_area:
+            continue
+        component = labels == label
+        contours, _ = cv2.findContours(
+            component.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
+        if not contours:
+            continue
+        contour = max(contours, key=cv2.contourArea)
+        epsilon = simplify_fraction * cv2.arcLength(contour, True)
+        polygon = cv2.approxPolyDP(contour, epsilon, True)
+        x, y, width, height, _ = stats[label]
+        centre_x, centre_y = centroids[label]
+        objects.append(
+            {
+                "id": f"{prefix}{len(objects) + 1:02d}",
+                "polygon": _points(polygon),
+                "bbox": [int(x), int(y), int(width), int(height)],
+                "centroid": [round(float(centre_x), 1), round(float(centre_y), 1)],
+                "area_pixels": area,
+                "confidence": _component_confidence(probability, component, class_id),
+            }
+        )
+        if class_id in (PlanClass.DOOR, PlanClass.WINDOW):
+            objects[-1]["orientation_degrees"] = _orientation(component)
+    return objects
+
+
+def vectorize_mask(
+    mask: np.ndarray,
+    probability: np.ndarray | None = None,
+    room_min_area: int = 250,
+    wall_min_area: int = 80,
+    opening_min_area: int = 20,
+    simplify_fraction: float = 0.008,
+) -> dict[str, list[dict[str, object]]]:
+    """Extract deliberately approximate polygons from a class-id mask.
+
+    Coordinates remain in the input image's pixel coordinate system.  Walls are
+    polygons, not purported CAD centrelines; small components are discarded.
+    """
+    if mask.ndim != 2:
+        raise ValueError("mask must be a 2-D class-id array")
+    if probability is not None and probability.shape[1:] != mask.shape:
+        raise ValueError("probability must have shape (classes, height, width)")
+    return {
+        "rooms": _objects(mask, probability, PlanClass.ROOM, "R", room_min_area, simplify_fraction),
+        "walls": _objects(mask, probability, PlanClass.WALL, "W", wall_min_area, simplify_fraction),
+        "doors": _objects(
+            mask, probability, PlanClass.DOOR, "D", opening_min_area, simplify_fraction
+        ),
+        "windows": _objects(
+            mask, probability, PlanClass.WINDOW, "N", opening_min_area, simplify_fraction
+        ),
+    }
