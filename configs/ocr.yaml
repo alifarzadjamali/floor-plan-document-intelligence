@@ -14,3 +14,10 @@ tesseract:
 preprocessing_candidates:
   - raw_upscaled
   - adaptive_threshold
+geometry:
+  room_min_area: 250
+  wall_min_area: 80
+  opening_min_area: 20
+  simplify_fraction: 0.008
+text_room_nearest_threshold: 30.0
+door_room_threshold: 45.0
