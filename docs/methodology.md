@@ -85,3 +85,21 @@ token exact match and room-label exact match. Real CubiCasa plans are shown only
 as qualitative word-box and coarse entity-label examples; because their SVGs
 describe geometry rather than text transcription, they are never folded into
 the synthetic OCR score.
+
+## Structured geometry and spatial links
+
+Phase 4 runs the frozen segmentation model at 512-pixel letterbox resolution,
+then removes the padding and resamples class probabilities back to the original
+raster size. Each predicted class mask is split into connected components. Small
+components are discarded; external contours are simplified with Douglas-Peucker
+at 0.8% of perimeter. Rooms, walls, doors and windows are emitted as approximate
+pixel polygons, with bounding box, centroid, area and mean component class
+probability. Opening orientation is the principal-component axis when it is
+defined. This is vectorisation for inspection and linking, not CAD/BIM recovery.
+
+Text-box centres inside a room polygon are linked to that room. A token outside
+all rooms is linked only when its nearest room boundary is within 30 pixels;
+otherwise it is retained as unassigned. A door forms a graph edge only when its
+centroid is within 45 pixels of two distinct room polygons. Low-confidence
+openings, unassigned text and unresolved doors are written as review warnings,
+rather than silently promoted to certain entities.

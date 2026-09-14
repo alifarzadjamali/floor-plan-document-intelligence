@@ -29,6 +29,9 @@ SegFormer-B0 -> five-class masks, overlays and held-out metrics
               |
               v
 Tesseract 5 -> text tokens, boxes and coarse entity labels
+              |
+              v
+Approximate polygons + conservative spatial links + review-aware JSON
 ```
 
 ## Dataset and licensing
@@ -150,6 +153,34 @@ The prototype reports Tesseract word boxes and coarse labels (`ROOM_LABEL`,
 `DIMENSION_LIKE`, `DRAWING_CODE`, or `OTHER`).
 
 ![Qualitative OCR word boxes on a real validation plan](results/ocr/real_examples/01.png)
+
+### Phase 4: structured geometry
+
+`scripts/predict.py` turns a PNG/JPG floor plan into a pixel-coordinate JSON
+document and overlay. It extracts simplified room, wall, door and window
+polygons, preserves opening confidence, classifies OCR tokens, links text to a
+room only when its centre is contained or conservatively nearby, and creates a
+room graph only for doors close to two room boundaries. Unresolved doors,
+unassigned text and low-confidence openings are explicit review warnings.
+
+The command below was run once on held-out test plan
+`high_quality_architectural/1191`: it produced 10 room regions, 18 doors, 19
+windows, 198 OCR word entities, six conservative room-graph edges and 93 review
+warnings. These are raw pipeline outputs—not ground-truth geometry metrics—and
+the high warning count is expected given the weak door precision (0.202) and
+full-page OCR clutter.
+
+```powershell
+.\.venv\Scripts\python.exe scripts\predict.py `
+  --input data\cubicasa5k\high_quality_architectural\1191\F1_scaled.png `
+  --output results\phase4\test_1191
+```
+
+![Structured output: segmentation polygons, OCR and entity identifiers](results/phase4/test_1191/overlay.png)
+
+The resulting [`structured_output.json`](results/phase4/test_1191/structured_output.json)
+uses original-image pixel coordinates and deliberately represents walls as
+approximate polygons, not CAD/BIM objects or physical measurements.
 
 ## Baseline limitations
 
