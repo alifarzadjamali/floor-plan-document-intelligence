@@ -7,8 +7,8 @@ import cv2
 import numpy as np
 import torch
 import yaml
-from PIL import Image
 
+from floorplan_di.data.pdf import load_plan_page
 from floorplan_di.data.segmentation import letterbox_image_and_mask, normalise_image
 from floorplan_di.geometry import link_doors_to_rooms, link_text_to_rooms, vectorize_mask
 from floorplan_di.inference.schema import structured_document
@@ -64,12 +64,10 @@ class FloorPlanPipeline:
         )
         return restored.argmax(axis=0).astype(np.uint8), restored
 
-    def run(self, input_path: Path) -> tuple[dict[str, object], np.ndarray]:
-        if input_path.suffix.lower() not in {".png", ".jpg", ".jpeg"}:
-            raise ValueError(
-                "Phase 4 currently accepts PNG/JPG input; PDF ingestion is scheduled for Phase 5."
-            )
-        image = np.asarray(Image.open(input_path).convert("RGB"))
+    def run(
+        self, input_path: Path, page_number: int = 1, pdf_dpi: int = 200
+    ) -> tuple[dict[str, object], np.ndarray, np.ndarray]:
+        image = load_plan_page(input_path, page_number=page_number, dpi=pdf_dpi)
         mask, probability = self.segment(image)
         geometry = vectorize_mask(mask, probability, **self.ocr_config.get("geometry", {}))
         ocr = recognise_page(
@@ -92,6 +90,17 @@ class FloorPlanPipeline:
         door_links, graph = link_doors_to_rooms(
             geometry["doors"], geometry["rooms"], self.ocr_config.get("door_room_threshold", 45.0)
         )
-        return structured_document(
-            input_path, image.shape[:2], geometry, entities, text_links, door_links, graph
-        ), mask
+        return (
+            structured_document(
+                input_path,
+                image.shape[:2],
+                geometry,
+                entities,
+                text_links,
+                door_links,
+                graph,
+                page_number=page_number,
+            ),
+            mask,
+            image,
+        )

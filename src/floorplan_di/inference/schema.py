@@ -12,6 +12,7 @@ def structured_document(
     text_links: list[dict[str, object]],
     door_links: list[dict[str, object]],
     room_graph: list[dict[str, object]],
+    page_number: int = 1,
 ) -> dict[str, object]:
     """Create portable JSON without implying metric or CAD accuracy."""
     warnings = []
@@ -39,7 +40,7 @@ def structured_document(
             "image_width": image_shape[1],
             "image_height": image_shape[0],
         },
-        "input": {"path": str(input_path), "page_number": 1},
+        "input": {"path": str(input_path), "page_number": page_number},
         **geometry,
         "text_entities": text_entities,
         "text_to_room_links": text_links,

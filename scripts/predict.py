@@ -26,16 +26,19 @@ def main() -> None:
     )
     parser.add_argument("--ocr-config", type=Path, default=Path("configs/ocr.yaml"))
     parser.add_argument("--device", default=None)
+    parser.add_argument("--page", type=int, default=1, help="1-indexed PDF page (default: 1)")
+    parser.add_argument(
+        "--pdf-dpi", type=int, default=200, help="PDF rasterisation DPI (default: 200)"
+    )
     args = parser.parse_args()
     pipeline = FloorPlanPipeline(
         args.checkpoint, args.segmentation_config, args.ocr_config, args.device
     )
-    document, mask = pipeline.run(args.input)
+    document, mask, image = pipeline.run(args.input, page_number=args.page, pdf_dpi=args.pdf_dpi)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "structured_output.json").write_text(
         json.dumps(document, indent=2) + "\n", encoding="utf-8"
     )
-    image = __import__("numpy").asarray(Image.open(args.input).convert("RGB"))
     Image.fromarray(structured_overlay(image, mask, document)).save(args.output / "overlay.png")
     print(
         json.dumps(
