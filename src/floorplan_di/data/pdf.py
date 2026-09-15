@@ -26,18 +26,18 @@ def load_plan_page(path: Path, page_number: int = 1, dpi: int = 200) -> np.ndarr
     if suffix != ".pdf":
         raise ValueError("Input must be a PNG, JPG, JPEG, or PDF file")
     try:
-        import fitz
+        import pymupdf
     except ImportError as exc:  # pragma: no cover - exercised in installation environments
         raise RuntimeError(
             "PDF support requires PyMuPDF; reinstall the project dependencies"
         ) from exc
 
-    document = fitz.open(path)
+    document = pymupdf.open(path)
     try:
         if page_number > document.page_count:
             raise ValueError(f"PDF has {document.page_count} pages; requested page {page_number}")
         page = document.load_page(page_number - 1)
-        pixmap = page.get_pixmap(matrix=fitz.Matrix(dpi / 72, dpi / 72), alpha=False)
+        pixmap = page.get_pixmap(matrix=pymupdf.Matrix(dpi / 72, dpi / 72), alpha=False)
         pixels = np.frombuffer(pixmap.samples, dtype=np.uint8)
         return pixels.reshape(pixmap.height, pixmap.width, 3).copy()
     finally:

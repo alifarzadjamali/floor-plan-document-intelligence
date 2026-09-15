@@ -103,3 +103,40 @@ otherwise it is retained as unassigned. A door forms a graph edge only when its
 centroid is within 45 pixels of two distinct room polygons. Low-confidence
 openings, unassigned text and unresolved doors are written as review warnings,
 rather than silently promoted to certain entities.
+
+## Phase 5 evaluation and robustness
+
+The frozen epoch-18 checkpoint was retained unchanged. Structured evaluation
+uses the first 24 paths in the official held-out `test.txt`, with no Phase 5
+threshold tuning. It compares predicted room/door/window component counts to
+the corresponding target SVG polygon counts and records the rate at which
+detected components have valid output polygons. This is deliberately not
+instance-detection AP: the vectorised components and dense source polygons do
+not have a defensible one-to-one matching protocol in this small project.
+Connectivity and OCR links are not scored because CubiCasa annotations provide
+neither reliable doorway connectivity nor text transcription.
+
+Runtime is wall-clock time per page on the local RTX 5070 Ti and includes image
+load, segmentation, whole-page Tesseract OCR, vectorisation, linking and JSON
+construction. It is therefore not comparable to the Phase 2 cached GPU
+forward-pass timing.
+
+Robustness applies fixed mild transformations: +20 brightness, 1.18 contrast,
+3x3 Gaussian blur, Gaussian noise (sigma 5), JPEG quality 80, 3-degree
+rotation, and half-resolution down/up-sampling. Segmentation uses 12 held-out
+plans and transforms the target mask only for the geometric rotation. OCR uses
+24 held-out synthetic crops. The fixed small scopes make the check practical
+and reproducible; they are not population-level robustness estimates.
+
+Error-analysis examples are automatic extrema from the same 24 plan records.
+Each contact sheet contains original input, SVG-derived target mask, predicted
+mask and final OCR/geometry overlay. Opening discrepancies are count proxies;
+they do not claim object matching quality.
+
+## PDF and demo scope
+
+PDF input is rasterised one selected 1-indexed page at a user-selected DPI using
+PyMuPDF, then follows the same RGB pipeline as image input. Output coordinates
+are pixels in that rendered page, never physical units. The optional Streamlit
+app is a local inspection interface. It makes warnings and raw structured JSON
+visible rather than hiding uncertainty.

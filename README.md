@@ -1,7 +1,7 @@
 # Floor Plan Document Intelligence
 
 This independent portfolio project turns raster architectural floor plans into
-machine-readable building information. Phases 0--3 establish a verified
+machine-readable building information. Phases 0--5 establish a verified
 CubiCasa5K ingestion path, a reproducible dataset audit, a classical baseline,
 a learned five-class segmentation model, and a local OCR prototype.
 
@@ -32,6 +32,9 @@ Tesseract 5 -> text tokens, boxes and coarse entity labels
               |
               v
 Approximate polygons + conservative spatial links + review-aware JSON
+              |
+              v
+Held-out structure checks + robustness evidence + local review demo
 ```
 
 ## Dataset and licensing
@@ -55,7 +58,7 @@ virtual environment.
 
 ```powershell
 uv venv --python 3.12 .venv
-uv pip install --python .venv\Scripts\python.exe -e ".[dev]"
+uv pip install --python .venv\Scripts\python.exe -e ".[dev,demo]"
 .\.venv\Scripts\python.exe scripts\download_dataset.py
 .\.venv\Scripts\python.exe scripts\install_tesseract.py
 
@@ -68,6 +71,20 @@ uv pip install --python .venv\Scripts\python.exe -e ".[dev]"
 .\.venv\Scripts\python.exe scripts\audit_dataset.py --splits test --allow-test
 .\.venv\Scripts\python.exe scripts\evaluate_baseline.py --split test --allow-test
 .\.venv\Scripts\python.exe -m pytest
+
+# Frozen end-to-end Phase 5 evidence (the first 24 official test entries).
+.\.venv\Scripts\python.exe scripts\evaluate_pipeline.py `
+  --checkpoint results\segmentation\phase2_dev\checkpoints\best.pt `
+  --allow-test --max-samples 24
+.\.venv\Scripts\python.exe scripts\evaluate_robustness.py `
+  --checkpoint results\segmentation\phase2_dev\checkpoints\best.pt
+.\.venv\Scripts\python.exe scripts\analyse_errors.py `
+  --checkpoint results\segmentation\phase2_dev\checkpoints\best.pt
+
+# PNG/JPG or selected PDF-page inference, then the optional local viewer.
+.\.venv\Scripts\python.exe scripts\predict.py --input path\to\plan.pdf --page 1 `
+  --output results\prediction
+.\.venv\Scripts\python.exe -m streamlit run app\app.py
 ```
 
 The downloader obtains the archive through the Zenodo API, checks the
@@ -156,7 +173,7 @@ The prototype reports Tesseract word boxes and coarse labels (`ROOM_LABEL`,
 
 ### Phase 4: structured geometry
 
-`scripts/predict.py` turns a PNG/JPG floor plan into a pixel-coordinate JSON
+`scripts/predict.py` turns a PNG/JPG floor plan or selected PDF page into a pixel-coordinate JSON
 document and overlay. It extracts simplified room, wall, door and window
 polygons, preserves opening confidence, classifies OCR tokens, links text to a
 room only when its centre is contained or conservatively nearby, and creates a
@@ -181,6 +198,54 @@ full-page OCR clutter.
 The resulting [`structured_output.json`](results/phase4/test_1191/structured_output.json)
 uses original-image pixel coordinates and deliberately represents walls as
 approximate polygons, not CAD/BIM objects or physical measurements.
+
+### Phase 5: end-to-end evidence and local demo
+
+The frozen pipeline was run on the first 24 entries of the official held-out
+test split, a deterministic evaluation subset selected before any Phase 5
+inspection. It is a structure/count check, not instance matching: CubiCasa SVG
+polygons provide room, door, and window counts, but do not provide trustworthy
+OCR or connectivity labels. The resulting mean absolute count errors were 3.25
+rooms, 4.17 doors, and 4.42 windows per plan. Of 997 detected room/opening
+components attempted by the vectoriser, 996 formed valid polygons (99.90%).
+End-to-end mean runtime was 4.45 seconds per plan on the RTX 5070 Ti, including
+image load, segmentation, whole-page OCR, geometry, links, and JSON assembly.
+
+![Fixed-rule held-out result: source, target segmentation, prediction, and structured overlay](results/phase5/error_analysis/strong_segmentation.png)
+
+Robustness uses fixed mild brightness, contrast, blur, Gaussian-noise, JPEG,
+3-degree rotation, and down/up-sampling transformations on 12 held-out plans
+and 24 held-out synthetic OCR crops. Segmentation foreground mIoU stayed within
+0.405--0.414 across these transformations. OCR was more sensitive: the small
+sample's exact-match score ranged from 54.2% for rotation to 75.0% for contrast,
+and noise had the worst CER (108.7%). These results are diagnostic only; the
+synthetic subset is not a replacement for real-plan transcription ground truth.
+The complete machine-readable reports are under `results/phase5/robustness/`
+and `results/phase5/structured_evaluation/`.
+
+Error-analysis examples are selected by fixed extrema across the same first 24
+held-out entries, rather than chosen manually. They include strong/weak
+segmentation, missed/false openings, high/unassigned text links, and
+resolved/unresolved doorway links. The particularly weak opening precision and
+full-page OCR clutter remain visible in the saved examples.
+
+The optional Streamlit viewer accepts PNG, JPG, or a selected PDF page and
+shows the original, segmentation, OCR/geometry overlay, warnings, connectivity
+edges, expandable JSON, and a JSON download button. It is a local inspection
+tool, not a deployment claim.
+
+## Limitations
+
+- CubiCasa5K plans are not representative of UK planning documents; no UK-wide
+  generalisation or production-readiness claim is made.
+- The OCR score is from synthetic technical text. CubiCasa SVGs have geometry,
+  not transcription ground truth, so real-plan OCR is qualitative only.
+- Pixel-coordinate polygons are approximate inspection geometry, not CAD/BIM,
+  physical scale, or recovered dimensions. Curves and thin openings simplify
+  poorly.
+- High door recall comes with low precision, creating false openings, review
+  warnings, and unreliable connectivity on difficult plans.
+- The pipeline does not estimate property risk, value, or nationwide coverage.
 
 ## Baseline limitations
 

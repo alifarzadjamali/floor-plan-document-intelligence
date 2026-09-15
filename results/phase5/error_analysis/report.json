@@ -1,0 +1,332 @@
+{
+  "plans": 24,
+  "selection_rule": "fixed extrema over the first official held-out split entries",
+  "examples": {
+    "strong_segmentation": {
+      "sample_id": "high_quality_architectural/9093",
+      "foreground_iou": 0.661,
+      "missed_openings": 0,
+      "false_openings": 1,
+      "text_links": 27,
+      "unassigned_text": 4,
+      "resolved_doors": 2,
+      "unresolved_doors": 2
+    },
+    "weak_segmentation": {
+      "sample_id": "high_quality_architectural/1982",
+      "foreground_iou": 0.246,
+      "missed_openings": 0,
+      "false_openings": 3,
+      "text_links": 83,
+      "unassigned_text": 50,
+      "resolved_doors": 2,
+      "unresolved_doors": 22
+    },
+    "missed_thin_wall_or_opening": {
+      "sample_id": "high_quality_architectural/1191",
+      "foreground_iou": 0.4418,
+      "missed_openings": 4,
+      "false_openings": 0,
+      "text_links": 137,
+      "unassigned_text": 61,
+      "resolved_doors": 6,
+      "unresolved_doors": 12
+    },
+    "false_door_or_window": {
+      "sample_id": "high_quality_architectural/4845",
+      "foreground_iou": 0.5503,
+      "missed_openings": 0,
+      "false_openings": 26,
+      "text_links": 23,
+      "unassigned_text": 0,
+      "resolved_doors": 4,
+      "unresolved_doors": 25
+    },
+    "successful_text_to_room": {
+      "sample_id": "high_quality_architectural/123",
+      "foreground_iou": 0.4288,
+      "missed_openings": 0,
+      "false_openings": 4,
+      "text_links": 251,
+      "unassigned_text": 231,
+      "resolved_doors": 2,
+      "unresolved_doors": 21
+    },
+    "ambiguous_text_to_room": {
+      "sample_id": "high_quality_architectural/123",
+      "foreground_iou": 0.4288,
+      "missed_openings": 0,
+      "false_openings": 4,
+      "text_links": 251,
+      "unassigned_text": 231,
+      "resolved_doors": 2,
+      "unresolved_doors": 21
+    },
+    "successful_doorway_relationship": {
+      "sample_id": "high_quality_architectural/6066",
+      "foreground_iou": 0.4079,
+      "missed_openings": 0,
+      "false_openings": 7,
+      "text_links": 128,
+      "unassigned_text": 28,
+      "resolved_doors": 11,
+      "unresolved_doors": 12
+    },
+    "unresolved_doorway_relationship": {
+      "sample_id": "high_quality_architectural/4845",
+      "foreground_iou": 0.5503,
+      "missed_openings": 0,
+      "false_openings": 26,
+      "text_links": 23,
+      "unassigned_text": 0,
+      "resolved_doors": 4,
+      "unresolved_doors": 25
+    }
+  },
+  "all_records": [
+    {
+      "sample_id": "high_quality_architectural/1191",
+      "foreground_iou": 0.4418,
+      "missed_openings": 4,
+      "false_openings": 0,
+      "text_links": 137,
+      "unassigned_text": 61,
+      "resolved_doors": 6,
+      "unresolved_doors": 12
+    },
+    {
+      "sample_id": "high_quality_architectural/2536",
+      "foreground_iou": 0.5025,
+      "missed_openings": 0,
+      "false_openings": 8,
+      "text_links": 49,
+      "unassigned_text": 24,
+      "resolved_doors": 3,
+      "unresolved_doors": 9
+    },
+    {
+      "sample_id": "high_quality_architectural/2530",
+      "foreground_iou": 0.4962,
+      "missed_openings": 0,
+      "false_openings": 13,
+      "text_links": 129,
+      "unassigned_text": 50,
+      "resolved_doors": 4,
+      "unresolved_doors": 12
+    },
+    {
+      "sample_id": "high_quality_architectural/2504",
+      "foreground_iou": 0.6313,
+      "missed_openings": 0,
+      "false_openings": 5,
+      "text_links": 50,
+      "unassigned_text": 2,
+      "resolved_doors": 4,
+      "unresolved_doors": 5
+    },
+    {
+      "sample_id": "high_quality_architectural/2207",
+      "foreground_iou": 0.4608,
+      "missed_openings": 0,
+      "false_openings": 2,
+      "text_links": 40,
+      "unassigned_text": 25,
+      "resolved_doors": 3,
+      "unresolved_doors": 11
+    },
+    {
+      "sample_id": "high_quality_architectural/22",
+      "foreground_iou": 0.5061,
+      "missed_openings": 4,
+      "false_openings": 0,
+      "text_links": 58,
+      "unassigned_text": 19,
+      "resolved_doors": 7,
+      "unresolved_doors": 8
+    },
+    {
+      "sample_id": "high_quality_architectural/2090",
+      "foreground_iou": 0.6386,
+      "missed_openings": 0,
+      "false_openings": 9,
+      "text_links": 92,
+      "unassigned_text": 1,
+      "resolved_doors": 3,
+      "unresolved_doors": 8
+    },
+    {
+      "sample_id": "high_quality_architectural/2085",
+      "foreground_iou": 0.445,
+      "missed_openings": 0,
+      "false_openings": 1,
+      "text_links": 88,
+      "unassigned_text": 36,
+      "resolved_doors": 7,
+      "unresolved_doors": 14
+    },
+    {
+      "sample_id": "high_quality_architectural/2014",
+      "foreground_iou": 0.5024,
+      "missed_openings": 0,
+      "false_openings": 10,
+      "text_links": 158,
+      "unassigned_text": 76,
+      "resolved_doors": 7,
+      "unresolved_doors": 9
+    },
+    {
+      "sample_id": "high_quality_architectural/2011",
+      "foreground_iou": 0.5667,
+      "missed_openings": 2,
+      "false_openings": 0,
+      "text_links": 123,
+      "unassigned_text": 34,
+      "resolved_doors": 6,
+      "unresolved_doors": 11
+    },
+    {
+      "sample_id": "high_quality_architectural/1982",
+      "foreground_iou": 0.246,
+      "missed_openings": 0,
+      "false_openings": 3,
+      "text_links": 83,
+      "unassigned_text": 50,
+      "resolved_doors": 2,
+      "unresolved_doors": 22
+    },
+    {
+      "sample_id": "high_quality_architectural/1944",
+      "foreground_iou": 0.4881,
+      "missed_openings": 2,
+      "false_openings": 0,
+      "text_links": 33,
+      "unassigned_text": 23,
+      "resolved_doors": 4,
+      "unresolved_doors": 3
+    },
+    {
+      "sample_id": "high_quality_architectural/2539",
+      "foreground_iou": 0.613,
+      "missed_openings": 2,
+      "false_openings": 0,
+      "text_links": 47,
+      "unassigned_text": 17,
+      "resolved_doors": 3,
+      "unresolved_doors": 4
+    },
+    {
+      "sample_id": "high_quality_architectural/123",
+      "foreground_iou": 0.4288,
+      "missed_openings": 0,
+      "false_openings": 4,
+      "text_links": 251,
+      "unassigned_text": 231,
+      "resolved_doors": 2,
+      "unresolved_doors": 21
+    },
+    {
+      "sample_id": "high_quality_architectural/6457",
+      "foreground_iou": 0.5422,
+      "missed_openings": 0,
+      "false_openings": 12,
+      "text_links": 101,
+      "unassigned_text": 52,
+      "resolved_doors": 8,
+      "unresolved_doors": 7
+    },
+    {
+      "sample_id": "high_quality_architectural/4812",
+      "foreground_iou": 0.3938,
+      "missed_openings": 0,
+      "false_openings": 7,
+      "text_links": 51,
+      "unassigned_text": 27,
+      "resolved_doors": 4,
+      "unresolved_doors": 9
+    },
+    {
+      "sample_id": "high_quality_architectural/1754",
+      "foreground_iou": 0.5834,
+      "missed_openings": 0,
+      "false_openings": 4,
+      "text_links": 21,
+      "unassigned_text": 14,
+      "resolved_doors": 3,
+      "unresolved_doors": 2
+    },
+    {
+      "sample_id": "high_quality_architectural/6066",
+      "foreground_iou": 0.4079,
+      "missed_openings": 0,
+      "false_openings": 7,
+      "text_links": 128,
+      "unassigned_text": 28,
+      "resolved_doors": 11,
+      "unresolved_doors": 12
+    },
+    {
+      "sample_id": "high_quality_architectural/4845",
+      "foreground_iou": 0.5503,
+      "missed_openings": 0,
+      "false_openings": 26,
+      "text_links": 23,
+      "unassigned_text": 0,
+      "resolved_doors": 4,
+      "unresolved_doors": 25
+    },
+    {
+      "sample_id": "high_quality_architectural/875",
+      "foreground_iou": 0.5534,
+      "missed_openings": 0,
+      "false_openings": 12,
+      "text_links": 47,
+      "unassigned_text": 12,
+      "resolved_doors": 7,
+      "unresolved_doors": 5
+    },
+    {
+      "sample_id": "high_quality_architectural/7974",
+      "foreground_iou": 0.3563,
+      "missed_openings": 0,
+      "false_openings": 12,
+      "text_links": 121,
+      "unassigned_text": 73,
+      "resolved_doors": 5,
+      "unresolved_doors": 11
+    },
+    {
+      "sample_id": "high_quality_architectural/9488",
+      "foreground_iou": 0.4192,
+      "missed_openings": 2,
+      "false_openings": 0,
+      "text_links": 83,
+      "unassigned_text": 48,
+      "resolved_doors": 9,
+      "unresolved_doors": 12
+    },
+    {
+      "sample_id": "high_quality_architectural/9093",
+      "foreground_iou": 0.661,
+      "missed_openings": 0,
+      "false_openings": 1,
+      "text_links": 27,
+      "unassigned_text": 4,
+      "resolved_doors": 2,
+      "unresolved_doors": 2
+    },
+    {
+      "sample_id": "high_quality_architectural/8269",
+      "foreground_iou": 0.4028,
+      "missed_openings": 0,
+      "false_openings": 18,
+      "text_links": 41,
+      "unassigned_text": 40,
+      "resolved_doors": 0,
+      "unresolved_doors": 12
+    }
+  ],
+  "limitations": [
+    "Opening count differences are proxies, not object matching metrics.",
+    "OCR and link examples are qualitative because CubiCasa has no text transcription ground truth."
+  ]
+}

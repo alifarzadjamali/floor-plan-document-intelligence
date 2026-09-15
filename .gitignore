@@ -24,6 +24,7 @@ results/segmentation/**/*.pt
 results/ocr/real_examples/
 data/synthetic_ocr/images/
 data/synthetic_ocr/manifests/
+results/phase5/structured_evaluation_smoke/
 
 # Editor and operating-system files.
 .idea/

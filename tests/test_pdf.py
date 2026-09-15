@@ -22,3 +22,10 @@ def test_load_plan_page_rejects_non_first_raster_page(tmp_path: Path) -> None:
         assert "only page 1" in str(exc)
     else:
         raise AssertionError("Expected a page-number error")
+
+
+def test_load_plan_page_rasterizes_pdf(tmp_path: Path) -> None:
+    pdf_path = tmp_path / "plan.pdf"
+    Image.new("RGB", (20, 10), "white").save(pdf_path)
+    image = load_plan_page(pdf_path, dpi=72)
+    assert image.shape == (10, 20, 3)
