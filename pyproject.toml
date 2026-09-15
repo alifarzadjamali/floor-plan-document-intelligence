@@ -30,6 +30,9 @@ dev = [
   "pytest-cov>=5,<8",
   "ruff>=0.7,<1",
 ]
+demo = [
+  "streamlit>=1.39,<2",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/floorplan_di"]
