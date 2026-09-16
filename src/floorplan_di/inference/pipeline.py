@@ -18,6 +18,8 @@ from floorplan_di.ocr.tesseract_engine import configure_tesseract, recognise_pag
 
 
 class FloorPlanPipeline:
+    """Run local segmentation, OCR, and geometry extraction for one plan."""
+
     def __init__(
         self,
         checkpoint: Path,
@@ -39,6 +41,7 @@ class FloorPlanPipeline:
         configure_tesseract()
 
     def segment(self, image: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        """Return the restored class-id mask and class probabilities for an image."""
         blank = np.zeros(image.shape[:2], dtype=np.uint8)
         boxed, _ = letterbox_image_and_mask(image, blank, self.image_size)
         tensor = normalise_image(boxed).unsqueeze(0).to(self.device)
@@ -56,6 +59,7 @@ class FloorPlanPipeline:
         target_width, target_height = round(width * scale), round(height * scale)
         top, left = (self.image_size - target_height) // 2, (self.image_size - target_width) // 2
         cropped = probability[:, top : top + target_height, left : left + target_width]
+        # Restore the cropped letterbox output to the input image dimensions.
         restored = np.stack(
             [
                 cv2.resize(channel, (width, height), interpolation=cv2.INTER_LINEAR)
@@ -67,6 +71,7 @@ class FloorPlanPipeline:
     def run(
         self, input_path: Path, page_number: int = 1, pdf_dpi: int = 200
     ) -> tuple[dict[str, object], np.ndarray, np.ndarray]:
+        """Build the structured document and return it with the mask and source image."""
         image = load_plan_page(input_path, page_number=page_number, dpi=pdf_dpi)
         mask, probability = self.segment(image)
         geometry = vectorize_mask(mask, probability, **self.ocr_config.get("geometry", {}))
