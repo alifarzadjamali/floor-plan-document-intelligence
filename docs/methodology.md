@@ -28,7 +28,7 @@ and closes/dilates those structures into a wall hypothesis. Room hypotheses are
 white connected regions enclosed by the inferred barrier and not connected to
 the page boundary. It deliberately emits no door or window predictions.
 
-This is a useful lower bound, not a complete floor-plan parser: text and
+This provides a lower bound for the learned model. Text and
 furniture create false walls, openings leak room regions, diagonals/curves are
 poorly represented, and door/window IoU is zero by construction.
 
@@ -95,7 +95,7 @@ components are discarded; external contours are simplified with Douglas-Peucker
 at 0.8% of perimeter. Rooms, walls, doors and windows are emitted as approximate
 pixel polygons, with bounding box, centroid, area and mean component class
 probability. Opening orientation is the principal-component axis when it is
-defined. This is vectorisation for inspection and linking, not CAD/BIM recovery.
+defined. The vectorisation supports inspection and linking; it does not recover CAD/BIM objects.
 
 Text-box centres inside a room polygon are linked to that room. A token outside
 all rooms is linked only when its nearest room boundary is within 30 pixels;
