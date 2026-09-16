@@ -46,7 +46,7 @@ archive and derivatives are not committed here. The repository's code is MIT
 licensed. Dataset provenance: [Zenodo record 2613548](https://zenodo.org/records/2613548),
 DOI `10.5281/zenodo.2613548`.
 
-The task mapping is intentionally narrow and fully documented in
+The task mapping is narrow and documented in
 `data/category_mapping.yaml`. It follows the selectors used by CubiCasa5K's
 official `House` parser, excludes outdoor spaces and railings, and uses explicit
 `window > door > wall > room > background` overlap precedence.
@@ -89,7 +89,7 @@ uv pip install --python .venv\Scripts\python.exe -e ".[dev,demo]"
 
 The downloader obtains the archive through the Zenodo API, checks the
 repository-provided checksum, validates archive paths, and extracts locally.
-Official `train.txt`, `val.txt`, and `test.txt` membership is never reshuffled.
+The official `train.txt`, `val.txt`, and `test.txt` split membership is preserved.
 The Tesseract installer is placed under `.venv\Tesseract-OCR`; no system-wide
 OCR installation is required.
 
