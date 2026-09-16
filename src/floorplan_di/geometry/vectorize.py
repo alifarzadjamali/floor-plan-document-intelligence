@@ -15,6 +15,7 @@ def _points(contour: np.ndarray) -> list[list[int]]:
 def _component_confidence(
     probability: np.ndarray | None, component: np.ndarray, class_id: int
 ) -> float | None:
+    """Return the mean class probability inside one connected component."""
     if probability is None:
         return None
     values = probability[class_id][component.astype(bool)]
@@ -22,6 +23,7 @@ def _component_confidence(
 
 
 def _orientation(component: np.ndarray) -> float | None:
+    """Estimate a component's main axis in degrees when it has enough pixels."""
     ys, xs = np.where(component)
     if len(xs) < 2:
         return None
@@ -80,10 +82,10 @@ def vectorize_mask(
     opening_min_area: int = 20,
     simplify_fraction: float = 0.008,
 ) -> dict[str, list[dict[str, object]]]:
-    """Extract deliberately approximate polygons from a class-id mask.
+    """Extract approximate polygons from a class-id mask.
 
-    Coordinates remain in the input image's pixel coordinate system.  Walls are
-    polygons, not purported CAD centrelines; small components are discarded.
+    Coordinates stay in the input image's pixel coordinate system. Walls are
+    returned as polygons, and small components are discarded.
     """
     if mask.ndim != 2:
         raise ValueError("mask must be a 2-D class-id array")
