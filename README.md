@@ -1,7 +1,7 @@
 # Floor Plan Document Intelligence
 
 This independent portfolio project turns raster architectural floor plans into
-machine-readable building information. Phases 0--5 establish a verified
+machine-readable building information. Phases 0--6 establish a verified
 CubiCasa5K ingestion path, a reproducible dataset audit, a classical baseline,
 a learned five-class segmentation model, and a local OCR prototype.
 
@@ -92,6 +92,9 @@ repository-provided checksum, validates archive paths, and extracts locally.
 The official `train.txt`, `val.txt`, and `test.txt` split membership is preserved.
 The Tesseract installer is placed under `.venv\Tesseract-OCR`; no system-wide
 OCR installation is required.
+The frozen inference checkpoint is committed under
+`results/segmentation/phase2_dev/checkpoints/best.pt`, with a SHA-256 manifest,
+so a fresh clone can run inference without retraining first.
 
 ## Results
 
@@ -233,6 +236,30 @@ The optional Streamlit viewer accepts PNG, JPG, or a selected PDF page and
 shows the original, segmentation, OCR/geometry overlay, warnings, connectivity
 edges, expandable JSON, and a JSON download button. It is a local inspection
 tool, not a deployment claim.
+
+### Phase 6: calibrated review, optional OCR comparison, and geometry refinement
+
+Phase 6 adds dependency-free confidence calibration utilities, conservative
+`high` / `medium` / `low_review` bands in structured geometry, polygon validity
+metadata, and PCA-based approximate wall centerlines. The published checkpoint
+is now tracked in Git and verified by:
+
+```powershell
+python scripts/verify_checkpoint.py
+```
+
+An optional PaddleOCR 3 adapter is available for environments with a compatible
+PaddlePaddle runtime:
+
+```powershell
+uv pip install --python .venv\Scripts\python.exe -e ".[paddle]"
+python scripts/compare_ocr.py --input path\to\plan.png
+```
+
+The adapter is intentionally optional; the current environment records it as
+`optional_not_installed` in [`results/phase6/report.json`](results/phase6/report.json)
+instead of claiming an unrun benchmark. Phase 6 release checks and the
+checkpoint checksum are implemented in [`scripts/evaluate_phase6.py`](scripts/evaluate_phase6.py).
 
 ## Limitations
 
