@@ -1,0 +1,30 @@
+{
+  "phase": 6,
+  "checkpoint": {
+    "path": "results\\segmentation\\phase2_dev\\checkpoints\\best.pt",
+    "sha256": "12fa671d58489c8f955e77b7631b47fb2359dd4b48cdf3c6a118ea209c4f2bf7",
+    "published": true
+  },
+  "confidence_calibration": {
+    "status": "implemented",
+    "probe_ece": 0.225,
+    "bands": [
+      "low_review",
+      "low_review",
+      "medium",
+      "high"
+    ],
+    "note": "Probe values verify the implementation; no fabricated model calibration score is reported."
+  },
+  "paddleocr": {
+    "status": "optional_not_installed",
+    "comparison_command": "python scripts/compare_ocr.py --input <plan.png>"
+  },
+  "geometry": {
+    "status": "implemented",
+    "features": [
+      "polygon validity metadata",
+      "wall PCA centerline approximation"
+    ]
+  }
+}
