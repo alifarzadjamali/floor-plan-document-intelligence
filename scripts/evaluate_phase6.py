@@ -29,7 +29,10 @@ def main() -> None:
             "status": "implemented",
             "probe_ece": expected_calibration_error(scores, correct),
             "bands": [confidence_band(score) for score in scores],
-            "note": "Probe values verify the implementation; no fabricated model calibration score is reported.",
+            "note": (
+                "Probe values verify the implementation; no fabricated model calibration score "
+                "is reported."
+            ),
         },
         "paddleocr": {
             "status": "available" if paddle_available() else "optional_not_installed",

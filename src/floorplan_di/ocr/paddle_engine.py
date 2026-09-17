@@ -54,7 +54,7 @@ def _normalise_payload(payload: Any) -> list[dict[str, object]]:
         boxes = payload.get("rec_polys", payload.get("rec_boxes", []))
         return [
             {"text": str(text), "confidence": float(score), "polygon": np.asarray(box).tolist()}
-            for text, score, box in zip(texts, scores, boxes)
+            for text, score, box in zip(texts, scores, boxes, strict=False)
         ]
     rows = []
     for item in payload if isinstance(payload, list) else []:

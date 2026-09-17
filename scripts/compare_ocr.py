@@ -10,7 +10,8 @@ import numpy as np
 from PIL import Image
 
 from floorplan_di.ocr.paddle_engine import paddle_available, recognise_page
-from floorplan_di.ocr.tesseract_engine import configure_tesseract, recognise_page as tesseract_page
+from floorplan_di.ocr.tesseract_engine import configure_tesseract
+from floorplan_di.ocr.tesseract_engine import recognise_page as tesseract_page
 
 
 def main() -> None:

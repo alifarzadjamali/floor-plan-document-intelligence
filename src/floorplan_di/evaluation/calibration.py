@@ -39,7 +39,9 @@ def reliability_bins(
                 "mean_confidence": round(sum(score_values[i] for i in members) / len(members), 4)
                 if members
                 else None,
-                "empirical_accuracy": round(sum(correct_values[i] for i in members) / len(members), 4)
+                "empirical_accuracy": round(
+                    sum(correct_values[i] for i in members) / len(members), 4
+                )
                 if members
                 else None,
             }
