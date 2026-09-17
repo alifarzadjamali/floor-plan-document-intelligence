@@ -34,6 +34,21 @@ def _orientation(component: np.ndarray) -> float | None:
     return round(float(math.degrees(math.atan2(vector[1], vector[0])) % 180), 1)
 
 
+def _centerline(component: np.ndarray) -> list[list[int]] | None:
+    """Return a PCA major-axis segment for a wall component."""
+    ys, xs = np.where(component)
+    if len(xs) < 2:
+        return None
+    points = np.column_stack((xs, ys)).astype(float)
+    centre = points.mean(axis=0)
+    _, _, vectors = np.linalg.svd(points - centre, full_matrices=False)
+    axis = vectors[0]
+    projections = (points - centre) @ axis
+    start = centre + axis * projections.min()
+    end = centre + axis * projections.max()
+    return [[int(round(start[0])), int(round(start[1]))], [int(round(end[0])), int(round(end[1]))]]
+
+
 def _objects(
     mask: np.ndarray,
     probability: np.ndarray | None,
@@ -61,6 +76,7 @@ def _objects(
         x, y, width, height, _ = stats[label]
         centre_x, centre_y = centroids[label]
         confidence = _component_confidence(probability, component, class_id)
+        contour_area = float(cv2.contourArea(contour))
         objects.append(
             {
                 "id": f"{prefix}{len(objects) + 1:02d}",
@@ -68,10 +84,14 @@ def _objects(
                 "bbox": [int(x), int(y), int(width), int(height)],
                 "centroid": [round(float(centre_x), 1), round(float(centre_y), 1)],
                 "area_pixels": area,
+                "polygon_area_pixels": round(contour_area, 1),
+                "geometry_valid": bool(len(polygon) >= 3 and contour_area > 0.0),
                 "confidence": confidence,
                 "confidence_band": confidence_band(confidence) if confidence is not None else None,
             }
         )
+        if class_id == PlanClass.WALL:
+            objects[-1]["centerline"] = _centerline(component)
         if class_id in (PlanClass.DOOR, PlanClass.WINDOW):
             objects[-1]["orientation_degrees"] = _orientation(component)
     return objects

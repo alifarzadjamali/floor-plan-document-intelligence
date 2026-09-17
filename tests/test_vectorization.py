@@ -16,6 +16,8 @@ def test_vectorize_mask_emits_pixel_polygons_and_opening_orientation() -> None:
     assert result["doors"][0]["orientation_degrees"] is not None
     assert len(result["rooms"][0]["polygon"]) >= 4
     assert result["rooms"][0]["confidence_band"] is None
+    assert result["rooms"][0]["geometry_valid"] is True
+    assert result["walls"][0]["centerline"] is not None
 
 
 def test_vectorize_mask_labels_probability_confidence() -> None:
