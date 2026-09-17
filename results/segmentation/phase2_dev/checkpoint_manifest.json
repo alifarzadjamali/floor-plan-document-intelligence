@@ -1,0 +1,8 @@
+{
+  "checkpoint": "checkpoints/best.pt",
+  "sha256": "12fa671d58489c8f955e77b7631b47fb2359dd4b48cdf3c6a118ea209c4f2bf7",
+  "model": "SegFormer-B0",
+  "classes": ["background", "room", "wall", "door", "window"],
+  "source": "Frozen Phase 2 checkpoint, selected on the official validation split",
+  "verification": "Get-FileHash results/segmentation/phase2_dev/checkpoints/best.pt -Algorithm SHA256"
+}
