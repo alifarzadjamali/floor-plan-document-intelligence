@@ -18,8 +18,14 @@ def structured_document(
     warnings = []
     for category in ("doors", "windows"):
         for item in geometry[category]:
-            if item["confidence"] is not None and item["confidence"] < 0.5:
-                warnings.append({"entity_id": item["id"], "reason": "low_segmentation_confidence"})
+            if item["confidence"] is not None and item.get("confidence_band") == "low_review":
+                warnings.append(
+                    {
+                        "entity_id": item["id"],
+                        "reason": "low_segmentation_confidence",
+                        "confidence_band": item["confidence_band"],
+                    }
+                )
     warnings.extend(
         {"entity_id": link["door_id"], "reason": "unresolved_door_to_room"}
         for link in door_links

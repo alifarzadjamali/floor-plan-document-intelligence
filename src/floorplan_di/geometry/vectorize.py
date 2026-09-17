@@ -6,6 +6,7 @@ import cv2
 import numpy as np
 
 from floorplan_di.constants import PlanClass
+from floorplan_di.evaluation.calibration import confidence_band
 
 
 def _points(contour: np.ndarray) -> list[list[int]]:
@@ -59,6 +60,7 @@ def _objects(
         polygon = cv2.approxPolyDP(contour, epsilon, True)
         x, y, width, height, _ = stats[label]
         centre_x, centre_y = centroids[label]
+        confidence = _component_confidence(probability, component, class_id)
         objects.append(
             {
                 "id": f"{prefix}{len(objects) + 1:02d}",
@@ -66,7 +68,8 @@ def _objects(
                 "bbox": [int(x), int(y), int(width), int(height)],
                 "centroid": [round(float(centre_x), 1), round(float(centre_y), 1)],
                 "area_pixels": area,
-                "confidence": _component_confidence(probability, component, class_id),
+                "confidence": confidence,
+                "confidence_band": confidence_band(confidence) if confidence is not None else None,
             }
         )
         if class_id in (PlanClass.DOOR, PlanClass.WINDOW):
