@@ -274,14 +274,5 @@ checkpoint checksum are implemented in [`scripts/evaluate_phase6.py`](scripts/ev
   warnings, and unreliable connectivity on difficult plans.
 - The pipeline does not estimate property risk, value, or nationwide coverage.
 
-## Baseline limitations
-
-The baseline detects dark axis-aligned structures with adaptive thresholding and
-morphology, then treats enclosed white components as room candidates. It does
-not predict doors or windows. Text and furniture can become false walls, open
-doorways can leak room regions into exterior whitespace, and curves or diagonal
-walls are poorly represented. Its role is to provide an honest lower bound for
-the learned model in the next phase, not to claim CAD-quality extraction.
-
 See [the methodology](docs/methodology.md), [data instructions](data/README.md),
 and [the public job reference](docs/job_reference/source.md) for detail.
