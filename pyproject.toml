@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "floorplan-document-intelligence"
 version = "0.1.0"
-description = "Computer vision and OCR pipeline for converting floor plans into structured building information"
+description = "Computer-vision, segmentation, OCR, and spatial-reasoning pipeline for converting floor plans into structured geometry"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
 license = { text = "MIT" }
