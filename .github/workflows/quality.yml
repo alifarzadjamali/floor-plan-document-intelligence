@@ -1,0 +1,31 @@
+name: quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lint-and-smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lightweight checks
+        run: python -m pip install ruff pytest
+
+      - name: Run Ruff
+        run: ruff check src tests scripts app
+
+      - name: Run dependency-free calibration tests
+        env:
+          PYTHONPATH: src
+        run: python -m pytest tests/test_calibration.py -q
