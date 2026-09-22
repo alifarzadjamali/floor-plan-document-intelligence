@@ -6,6 +6,11 @@ Coordinates are expressed in pixels relative to the original input image. The
 coordinate origin is the top-left corner. The output does not represent CAD,
 BIM, physical dimensions, or real-world scale.
 
+Consumers should treat `schema_version` as the compatibility boundary and keep
+unknown fields forward-compatible. Review warnings are part of the normal
+output contract, so callers should surface them rather than silently dropping
+the associated predictions.
+
 ## Top-level fields
 
 - `schema_version`: structured-output format version.
