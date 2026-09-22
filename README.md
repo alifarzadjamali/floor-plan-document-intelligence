@@ -96,6 +96,15 @@ The frozen inference checkpoint is committed under
 `results/segmentation/phase2_dev/checkpoints/best.pt`, with a SHA-256 manifest,
 so a fresh clone can run inference without retraining first.
 
+## Documentation map
+
+- [`docs/methodology.md`](docs/methodology.md) describes the phase-by-phase
+  evaluation design and its limits.
+- [`docs/output_schema.md`](docs/output_schema.md) documents the structured JSON
+  contract used by inference outputs.
+- [`docs/maintenance_checklist.md`](docs/maintenance_checklist.md) records the
+  safeguards for post-release documentation and tooling updates.
+
 ## Results
 
 The complete train/validation audit parsed all 4,600 files without corruption or
