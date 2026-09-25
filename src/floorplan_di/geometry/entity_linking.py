@@ -17,13 +17,22 @@ def link_text_to_rooms(
     for token in tokens:
         x, y, width, height = token["bbox"]  # type: ignore[misc]
         centre = (float(x + width / 2), float(y + height / 2))
-        candidates = [(room, _distance_to_polygon(centre, room["polygon"])) for room in rooms]  # type: ignore[arg-type]
-        inside = [(room, distance) for room, distance in candidates if distance >= 0]
-        if inside:
-            room, distance = max(inside, key=lambda item: item[1])
+        containing: tuple[dict[str, object], float] | None = None
+        nearest: tuple[dict[str, object], float] | None = None
+        for room in rooms:
+            signed_distance = _distance_to_polygon(centre, room["polygon"])  # type: ignore[arg-type]
+            if signed_distance >= 0 and (
+                containing is None or signed_distance > containing[1]
+            ):
+                containing = (room, signed_distance)
+            if nearest is None or signed_distance > nearest[1]:
+                nearest = (room, signed_distance)
+
+        if containing is not None:
+            room, distance = containing
             method = "contains"
-        elif candidates:
-            room, signed_distance = max(candidates, key=lambda item: item[1])
+        elif nearest is not None:
+            room, signed_distance = nearest
             distance = abs(signed_distance)
             method = "nearest"
             if distance > nearest_threshold:
