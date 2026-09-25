@@ -29,10 +29,11 @@ def source_annotation_image(
     image_rgb: np.ndarray, source_polygons: dict[str, list[np.ndarray]]
 ) -> np.ndarray:
     canvas = image_rgb.copy()
+    line_width = max(2, min(canvas.shape[:2]) // 400)
     for class_id, category in enumerate(("room", "wall", "door", "window"), start=1):
         colour = CLASS_COLOURS_RGB[class_id]
         for polygon in source_polygons[category]:
-            cv2.polylines(canvas, [polygon], True, colour, max(2, min(canvas.shape[:2]) // 400))
+            cv2.polylines(canvas, [polygon], True, colour, line_width)
     return canvas
 
 
