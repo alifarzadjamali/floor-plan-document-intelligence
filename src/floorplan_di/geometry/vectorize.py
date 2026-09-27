@@ -77,23 +77,22 @@ def _objects(
         centre_x, centre_y = centroids[label]
         confidence = _component_confidence(probability, component, class_id)
         contour_area = float(cv2.contourArea(contour))
-        objects.append(
-            {
-                "id": f"{prefix}{len(objects) + 1:02d}",
-                "polygon": _points(polygon),
-                "bbox": [int(x), int(y), int(width), int(height)],
-                "centroid": [round(float(centre_x), 1), round(float(centre_y), 1)],
-                "area_pixels": area,
-                "polygon_area_pixels": round(contour_area, 1),
-                "geometry_valid": bool(len(polygon) >= 3 and contour_area > 0.0),
-                "confidence": confidence,
-                "confidence_band": confidence_band(confidence) if confidence is not None else None,
-            }
-        )
+        entity: dict[str, object] = {
+            "id": f"{prefix}{len(objects) + 1:02d}",
+            "polygon": _points(polygon),
+            "bbox": [int(x), int(y), int(width), int(height)],
+            "centroid": [round(float(centre_x), 1), round(float(centre_y), 1)],
+            "area_pixels": area,
+            "polygon_area_pixels": round(contour_area, 1),
+            "geometry_valid": bool(len(polygon) >= 3 and contour_area > 0.0),
+            "confidence": confidence,
+            "confidence_band": confidence_band(confidence) if confidence is not None else None,
+        }
         if class_id == PlanClass.WALL:
-            objects[-1]["centerline"] = _centerline(component)
+            entity["centerline"] = _centerline(component)
         if class_id in (PlanClass.DOOR, PlanClass.WINDOW):
-            objects[-1]["orientation_degrees"] = _orientation(component)
+            entity["orientation_degrees"] = _orientation(component)
+        objects.append(entity)
     return objects
 
 
