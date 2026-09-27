@@ -27,7 +27,7 @@ def reliability_bins(
         lower = index / bins
         upper = (index + 1) / bins
         members = [
-            position
+            (score, correct_values[position])
             for position, score in enumerate(score_values)
             if (lower <= score < upper) or (index == bins - 1 and score == upper)
         ]
@@ -36,11 +36,11 @@ def reliability_bins(
                 "lower": round(lower, 3),
                 "upper": round(upper, 3),
                 "count": len(members),
-                "mean_confidence": round(sum(score_values[i] for i in members) / len(members), 4)
+                "mean_confidence": round(sum(score for score, _ in members) / len(members), 4)
                 if members
                 else None,
                 "empirical_accuracy": round(
-                    sum(correct_values[i] for i in members) / len(members), 4
+                    sum(correct for _, correct in members) / len(members), 4
                 )
                 if members
                 else None,
