@@ -33,8 +33,14 @@ def benchmark_metrics(pairs: Iterable[tuple[str, str]]) -> dict[str, float | int
     word_errors = sum(levenshtein_distance(ref, pred) for ref, pred in tokenised)
     words = sum(len(ref) for ref, _ in tokenised)
     exact = sum(reference == prediction for reference, prediction in materialised)
-    numeric = [pair for pair in materialised if classify_entity(pair[0]) == "DIMENSION_LIKE"]
-    rooms = [pair for pair in materialised if classify_entity(pair[0]) == "ROOM_LABEL"]
+    numeric: list[tuple[str, str]] = []
+    rooms: list[tuple[str, str]] = []
+    for pair in materialised:
+        category = classify_entity(pair[0])
+        if category == "DIMENSION_LIKE":
+            numeric.append(pair)
+        elif category == "ROOM_LABEL":
+            rooms.append(pair)
     return {
         "samples": len(materialised),
         "cer": character_errors / max(characters, 1),
