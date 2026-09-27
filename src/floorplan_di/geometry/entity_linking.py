@@ -4,8 +4,7 @@ import cv2
 import numpy as np
 
 
-def _distance_to_polygon(point: tuple[float, float], polygon: list[list[int]]) -> float:
-    contour = np.asarray(polygon, dtype=np.float32).reshape((-1, 1, 2))
+def _distance_to_polygon(point: tuple[float, float], contour: np.ndarray) -> float:
     return float(cv2.pointPolygonTest(contour, point, True))
 
 
@@ -14,13 +13,17 @@ def link_text_to_rooms(
 ) -> list[dict[str, object]]:
     """Assign text-box centres only when inside, or conservatively near, a room."""
     links: list[dict[str, object]] = []
+    room_contours = [
+        (room, np.asarray(room["polygon"], dtype=np.float32).reshape((-1, 1, 2)))
+        for room in rooms
+    ]
     for token in tokens:
         x, y, width, height = token["bbox"]  # type: ignore[misc]
         centre = (float(x + width / 2), float(y + height / 2))
         containing: tuple[dict[str, object], float] | None = None
         nearest: tuple[dict[str, object], float] | None = None
-        for room in rooms:
-            signed_distance = _distance_to_polygon(centre, room["polygon"])  # type: ignore[arg-type]
+        for room, contour in room_contours:
+            signed_distance = _distance_to_polygon(centre, contour)
             if signed_distance >= 0 and (
                 containing is None or signed_distance > containing[1]
             ):
