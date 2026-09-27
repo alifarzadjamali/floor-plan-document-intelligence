@@ -22,7 +22,8 @@ def load_plan_page(path: Path, page_number: int = 1, dpi: int = 200) -> np.ndarr
             raise ValueError("Raster images contain only page 1")
         from PIL import Image
 
-        return np.asarray(Image.open(path).convert("RGB"))
+        with Image.open(path) as image:
+            return np.asarray(image.convert("RGB"))
     if suffix != ".pdf":
         raise ValueError("Input must be a PNG, JPG, JPEG, or PDF file")
     try:
