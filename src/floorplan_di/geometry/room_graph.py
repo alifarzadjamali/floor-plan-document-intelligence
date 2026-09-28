@@ -4,8 +4,7 @@ import cv2
 import numpy as np
 
 
-def _distance(point: tuple[float, float], polygon: list[list[int]]) -> float:
-    contour = np.asarray(polygon, dtype=np.float32).reshape((-1, 1, 2))
+def _distance(point: tuple[float, float], contour: np.ndarray) -> float:
     return abs(float(cv2.pointPolygonTest(contour, point, True)))
 
 
@@ -15,11 +14,16 @@ def link_doors_to_rooms(
     """Infer a room edge only when a door is near two distinct room boundaries."""
     door_links: list[dict[str, object]] = []
     graph: list[dict[str, object]] = []
+    room_contours = [
+        (room, np.asarray(room["polygon"], dtype=np.float32).reshape((-1, 1, 2)))
+        for room in rooms
+    ]
     for door in doors:
         x, y = door["centroid"]  # type: ignore[misc]
         closest = sorted(
-            ((_distance((x, y), room["polygon"]), room) for room in rooms), key=lambda item: item[0]
-        )  # type: ignore[arg-type]
+            ((_distance((x, y), contour), room) for room, contour in room_contours),
+            key=lambda item: item[0],
+        )
         linked = [room for distance, room in closest[:2] if distance <= threshold]
         door_links.append(
             {
