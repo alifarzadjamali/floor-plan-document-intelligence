@@ -19,7 +19,7 @@ def _component_confidence(
     """Return the mean class probability inside one connected component."""
     if probability is None:
         return None
-    values = probability[class_id][component.astype(bool)]
+    values = probability[class_id][component]
     return round(float(values.mean()), 4) if values.size else None
 
 
