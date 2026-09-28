@@ -27,9 +27,12 @@ def benchmark_metrics(pairs: Iterable[tuple[str, str]]) -> dict[str, float | int
     ]
     character_errors = sum(levenshtein_distance(ref, pred) for ref, pred in materialised)
     characters = sum(len(ref) for ref, _ in materialised)
-    tokenised = [(ref.split(), pred.split()) for ref, pred in materialised]
-    word_errors = sum(levenshtein_distance(ref, pred) for ref, pred in tokenised)
-    words = sum(len(ref) for ref, _ in tokenised)
+    word_errors = 0
+    words = 0
+    for reference, prediction in materialised:
+        reference_words = reference.split()
+        word_errors += levenshtein_distance(reference_words, prediction.split())
+        words += len(reference_words)
     exact = sum(reference == prediction for reference, prediction in materialised)
     numeric: list[tuple[str, str]] = []
     rooms: list[tuple[str, str]] = []
