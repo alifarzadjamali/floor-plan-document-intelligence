@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
+from collections.abc import Iterable, Sequence
 
 from floorplan_di.ocr.entities import classify_entity, normalise_text
 
 
-def levenshtein_distance(reference: list[str], hypothesis: list[str]) -> int:
+def levenshtein_distance(reference: Sequence[str], hypothesis: Sequence[str]) -> int:
     previous = list(range(len(hypothesis) + 1))
     for row, source in enumerate(reference, start=1):
         current = [row]
@@ -25,9 +25,7 @@ def benchmark_metrics(pairs: Iterable[tuple[str, str]]) -> dict[str, float | int
     materialised = [
         (normalise_text(reference), normalise_text(prediction)) for reference, prediction in pairs
     ]
-    character_errors = sum(
-        levenshtein_distance(list(ref), list(pred)) for ref, pred in materialised
-    )
+    character_errors = sum(levenshtein_distance(ref, pred) for ref, pred in materialised)
     characters = sum(len(ref) for ref, _ in materialised)
     tokenised = [(ref.split(), pred.split()) for ref, pred in materialised]
     word_errors = sum(levenshtein_distance(ref, pred) for ref, pred in tokenised)
