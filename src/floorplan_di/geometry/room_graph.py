@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from heapq import nsmallest
+
 import cv2
 import numpy as np
 
@@ -20,11 +22,12 @@ def link_doors_to_rooms(
     ]
     for door in doors:
         x, y = door["centroid"]  # type: ignore[misc]
-        closest = sorted(
+        closest = nsmallest(
+            2,
             ((_distance((x, y), contour), room) for room, contour in room_contours),
             key=lambda item: item[0],
         )
-        linked = [room for distance, room in closest[:2] if distance <= threshold]
+        linked = [room for distance, room in closest if distance <= threshold]
         door_links.append(
             {
                 "door_id": door["id"],
