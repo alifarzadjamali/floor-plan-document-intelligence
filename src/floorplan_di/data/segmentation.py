@@ -33,6 +33,18 @@ def letterbox_image_and_mask(
     image: np.ndarray, mask: np.ndarray, size: int
 ) -> tuple[np.ndarray, np.ndarray]:
     """Resize without geometric distortion and pad with white/background."""
+    if size < 1:
+        raise ValueError("size must be positive")
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError("image must have shape (height, width, 3)")
+    if mask.ndim != 2:
+        raise ValueError("mask must have shape (height, width)")
+    if image.shape[:2] != mask.shape:
+        raise ValueError(
+            f"image and mask dimensions must match: {image.shape[:2]} != {mask.shape}"
+        )
+    if image.shape[0] == 0 or image.shape[1] == 0:
+        raise ValueError("image and mask dimensions must be non-empty")
     height, width = image.shape[:2]
     scale = min(size / width, size / height)
     target_width = max(1, round(width * scale))
