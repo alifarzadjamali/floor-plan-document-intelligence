@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import numpy as np
+import pytest
 from PIL import Image
 
 from floorplan_di.data.pdf import load_plan_page
@@ -29,3 +30,23 @@ def test_load_plan_page_rasterizes_pdf(tmp_path: Path) -> None:
     Image.new("RGB", (20, 10), "white").save(pdf_path)
     image = load_plan_page(pdf_path, dpi=72)
     assert image.shape == (10, 20, 3)
+
+
+def test_load_plan_page_applies_exif_orientation(tmp_path: Path) -> None:
+    image_path = tmp_path / "rotated.jpg"
+    image = Image.new("RGB", (12, 8), "white")
+    exif = image.getexif()
+    exif[274] = 6
+    image.save(image_path, exif=exif)
+
+    loaded = load_plan_page(image_path)
+
+    assert loaded.shape == (12, 8, 3)
+
+
+def test_load_plan_page_rejects_non_positive_pdf_dpi(tmp_path: Path) -> None:
+    pdf_path = tmp_path / "plan.pdf"
+    Image.new("RGB", (4, 4), "white").save(pdf_path)
+
+    with pytest.raises(ValueError, match="dpi must be positive"):
+        load_plan_page(pdf_path, dpi=0)

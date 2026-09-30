@@ -20,12 +20,14 @@ def load_plan_page(path: Path, page_number: int = 1, dpi: int = 200) -> np.ndarr
     if suffix in {".png", ".jpg", ".jpeg"}:
         if page_number != 1:
             raise ValueError("Raster images contain only page 1")
-        from PIL import Image
+        from PIL import Image, ImageOps
 
         with Image.open(path) as image:
-            return np.asarray(image.convert("RGB"))
+            return np.asarray(ImageOps.exif_transpose(image).convert("RGB"))
     if suffix != ".pdf":
         raise ValueError("Input must be a PNG, JPG, JPEG, or PDF file")
+    if dpi < 1:
+        raise ValueError("dpi must be positive")
     try:
         import pymupdf
     except ImportError as exc:  # pragma: no cover - exercised in installation environments

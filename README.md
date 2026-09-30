@@ -191,6 +191,8 @@ polygons, preserves opening confidence, classifies OCR tokens, links text to a
 room only when its centre is contained or conservatively nearby, and creates a
 room graph only for doors close to two room boundaries. Unresolved doors,
 unassigned text and low-confidence openings are explicit review warnings.
+Raster inputs honour EXIF orientation metadata, while PDF inputs require a
+positive rasterisation DPI and an explicit 1-indexed page number.
 
 The command below was run once on held-out test plan
 `high_quality_architectural/1191`: it produced 10 room regions, 18 doors, 19
