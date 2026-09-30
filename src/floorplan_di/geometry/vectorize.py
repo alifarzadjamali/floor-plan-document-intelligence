@@ -5,7 +5,7 @@ import math
 import cv2
 import numpy as np
 
-from floorplan_di.constants import PlanClass
+from floorplan_di.constants import CLASS_NAMES, PlanClass
 from floorplan_di.evaluation.calibration import confidence_band
 
 
@@ -111,8 +111,23 @@ def vectorize_mask(
     """
     if mask.ndim != 2:
         raise ValueError("mask must be a 2-D class-id array")
-    if probability is not None and probability.shape[1:] != mask.shape:
-        raise ValueError("probability must have shape (classes, height, width)")
+    if mask.size == 0:
+        raise ValueError("mask must not be empty")
+    if not np.issubdtype(mask.dtype, np.integer):
+        raise ValueError("mask must contain integer class ids")
+    if np.any((mask < 0) | (mask >= len(CLASS_NAMES))):
+        raise ValueError(f"mask class ids must be between 0 and {len(CLASS_NAMES) - 1}")
+    expected_probability_shape = (len(CLASS_NAMES), *mask.shape)
+    if probability is not None:
+        if probability.shape != expected_probability_shape:
+            raise ValueError(f"probability must have shape {expected_probability_shape}")
+        if not np.all(np.isfinite(probability)):
+            raise ValueError("probability must contain only finite values")
+    minimum_areas = (room_min_area, wall_min_area, opening_min_area)
+    if any(area < 1 for area in minimum_areas):
+        raise ValueError("minimum component areas must be positive")
+    if not 0.0 <= simplify_fraction <= 1.0:
+        raise ValueError("simplify_fraction must be between 0 and 1")
     return {
         "rooms": _objects(mask, probability, PlanClass.ROOM, "R", room_min_area, simplify_fraction),
         "walls": _objects(mask, probability, PlanClass.WALL, "W", wall_min_area, simplify_fraction),
