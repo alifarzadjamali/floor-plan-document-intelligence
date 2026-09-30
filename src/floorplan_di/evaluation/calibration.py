@@ -7,6 +7,7 @@ empirical correctness is visible to a user.
 
 from __future__ import annotations
 
+import math
 from collections.abc import Iterable
 
 
@@ -16,33 +17,40 @@ def reliability_bins(
     bins: int = 10,
 ) -> list[dict[str, float | int | None]]:
     """Return equal-width reliability bins for confidence/correctness pairs."""
-    score_values = [min(1.0, max(0.0, float(value))) for value in scores]
+    score_values = [float(value) for value in scores]
     correct_values = [bool(value) for value in correct]
     if len(score_values) != len(correct_values):
         raise ValueError("scores and correct must have the same length")
     if bins < 1:
         raise ValueError("bins must be positive")
+    if not all(math.isfinite(score) for score in score_values):
+        raise ValueError("scores must contain only finite values")
+
+    counts = [0] * bins
+    confidence_sums = [0.0] * bins
+    correct_sums = [0] * bins
+    for score, is_correct in zip(score_values, correct_values, strict=True):
+        clamped = min(1.0, max(0.0, score))
+        index = min(int(clamped * bins), bins - 1)
+        counts[index] += 1
+        confidence_sums[index] += clamped
+        correct_sums[index] += is_correct
+
     result: list[dict[str, float | int | None]] = []
     for index in range(bins):
         lower = index / bins
         upper = (index + 1) / bins
-        members = [
-            (score, correct_values[position])
-            for position, score in enumerate(score_values)
-            if (lower <= score < upper) or (index == bins - 1 and score == upper)
-        ]
+        count = counts[index]
         result.append(
             {
                 "lower": round(lower, 3),
                 "upper": round(upper, 3),
-                "count": len(members),
-                "mean_confidence": round(sum(score for score, _ in members) / len(members), 4)
-                if members
+                "count": count,
+                "mean_confidence": round(confidence_sums[index] / count, 4)
+                if count
                 else None,
-                "empirical_accuracy": round(
-                    sum(correct for _, correct in members) / len(members), 4
-                )
-                if members
+                "empirical_accuracy": round(correct_sums[index] / count, 4)
+                if count
                 else None,
             }
         )

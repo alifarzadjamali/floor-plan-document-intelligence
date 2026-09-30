@@ -1,3 +1,5 @@
+import pytest
+
 from floorplan_di.evaluation.calibration import (
     confidence_band,
     expected_calibration_error,
@@ -16,3 +18,15 @@ def test_confidence_bands_are_review_oriented() -> None:
     assert confidence_band(0.9) == "high"
     assert confidence_band(0.7) == "medium"
     assert confidence_band(0.3) == "low_review"
+
+
+def test_reliability_bins_clamp_scores_to_valid_range() -> None:
+    rows = reliability_bins([-0.2, 1.5], [True, False], bins=2)
+
+    assert rows[0]["mean_confidence"] == 0.0
+    assert rows[1]["mean_confidence"] == 1.0
+
+
+def test_reliability_bins_reject_non_finite_scores() -> None:
+    with pytest.raises(ValueError, match="finite"):
+        reliability_bins([float("nan")], [True])
