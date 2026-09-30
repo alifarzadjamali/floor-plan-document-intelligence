@@ -19,4 +19,14 @@ def test_ocr_metrics_are_exact_for_exact_text() -> None:
 
 def test_levenshtein_distance() -> None:
     assert levenshtein_distance(list("KITCHEN"), list("KICTHEN")) == 2
+    assert levenshtein_distance("A", "A" * 10_000) == 9_999
     assert normalise_text("  living\n room ") == "LIVING ROOM"
+
+
+def test_ocr_metrics_accept_a_single_pass_iterator() -> None:
+    pairs = ((reference, prediction) for reference, prediction in [("BEDROOM", "BEDROOM")])
+
+    metrics = benchmark_metrics(pairs)
+
+    assert metrics["samples"] == 1
+    assert metrics["room_label_exact_match_accuracy"] == 1.0

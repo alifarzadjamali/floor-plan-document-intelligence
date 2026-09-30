@@ -6,6 +6,9 @@ from floorplan_di.ocr.entities import classify_entity, normalise_text
 
 
 def levenshtein_distance(reference: Sequence[str], hypothesis: Sequence[str]) -> int:
+    """Return edit distance using memory proportional to the shorter input."""
+    if len(hypothesis) > len(reference):
+        reference, hypothesis = hypothesis, reference
     previous = list(range(len(hypothesis) + 1))
     for row, source in enumerate(reference, start=1):
         current = [row]
@@ -22,35 +25,41 @@ def levenshtein_distance(reference: Sequence[str], hypothesis: Sequence[str]) ->
 
 
 def benchmark_metrics(pairs: Iterable[tuple[str, str]]) -> dict[str, float | int]:
-    materialised = [
-        (normalise_text(reference), normalise_text(prediction)) for reference, prediction in pairs
-    ]
-    character_errors = sum(levenshtein_distance(ref, pred) for ref, pred in materialised)
-    characters = sum(len(ref) for ref, _ in materialised)
+    samples = 0
+    character_errors = 0
+    characters = 0
     word_errors = 0
     words = 0
-    for reference, prediction in materialised:
+    exact = 0
+    numeric_samples = 0
+    numeric_exact = 0
+    room_samples = 0
+    room_exact = 0
+    for raw_reference, raw_prediction in pairs:
+        reference = normalise_text(raw_reference)
+        prediction = normalise_text(raw_prediction)
+        samples += 1
+        character_errors += levenshtein_distance(reference, prediction)
+        characters += len(reference)
         reference_words = reference.split()
         word_errors += levenshtein_distance(reference_words, prediction.split())
         words += len(reference_words)
-    exact = sum(reference == prediction for reference, prediction in materialised)
-    numeric: list[tuple[str, str]] = []
-    rooms: list[tuple[str, str]] = []
-    for pair in materialised:
-        category = classify_entity(pair[0])
+        is_exact = reference == prediction
+        exact += is_exact
+        category = classify_entity(reference)
         if category == "DIMENSION_LIKE":
-            numeric.append(pair)
+            numeric_samples += 1
+            numeric_exact += is_exact
         elif category == "ROOM_LABEL":
-            rooms.append(pair)
+            room_samples += 1
+            room_exact += is_exact
     return {
-        "samples": len(materialised),
+        "samples": samples,
         "cer": character_errors / max(characters, 1),
         "wer": word_errors / max(words, 1),
-        "exact_match_accuracy": exact / max(len(materialised), 1),
-        "numeric_token_exact_match_accuracy": sum(ref == pred for ref, pred in numeric)
-        / max(len(numeric), 1),
-        "room_label_exact_match_accuracy": sum(ref == pred for ref, pred in rooms)
-        / max(len(rooms), 1),
-        "numeric_samples": len(numeric),
-        "room_label_samples": len(rooms),
+        "exact_match_accuracy": exact / max(samples, 1),
+        "numeric_token_exact_match_accuracy": numeric_exact / max(numeric_samples, 1),
+        "room_label_exact_match_accuracy": room_exact / max(room_samples, 1),
+        "numeric_samples": numeric_samples,
+        "room_label_samples": room_samples,
     }
