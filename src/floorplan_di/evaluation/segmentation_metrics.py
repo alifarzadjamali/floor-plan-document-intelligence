@@ -7,6 +7,10 @@ from floorplan_di.constants import CLASS_NAMES
 
 class ConfusionMatrix:
     def __init__(self, num_classes: int = len(CLASS_NAMES)) -> None:
+        if num_classes < 1:
+            raise ValueError("num_classes must be positive")
+        if num_classes > len(CLASS_NAMES):
+            raise ValueError(f"num_classes cannot exceed {len(CLASS_NAMES)} known classes")
         self.num_classes = num_classes
         self.matrix = np.zeros((num_classes, num_classes), dtype=np.int64)
 
@@ -16,7 +20,12 @@ class ConfusionMatrix:
                 f"Shape mismatch: target={target.shape}, prediction={prediction.shape}"
             )
         valid = (target >= 0) & (target < self.num_classes)
-        encoded = self.num_classes * target[valid].astype(np.int64) + prediction[valid]
+        valid_prediction = prediction[valid]
+        if np.any((valid_prediction < 0) | (valid_prediction >= self.num_classes)):
+            raise ValueError(f"prediction values must be between 0 and {self.num_classes - 1}")
+        encoded = self.num_classes * target[valid].astype(np.int64) + valid_prediction.astype(
+            np.int64
+        )
         self.matrix += np.bincount(encoded, minlength=self.num_classes**2).reshape(
             self.num_classes, self.num_classes
         )

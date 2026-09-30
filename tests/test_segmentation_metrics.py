@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 
 from floorplan_di.evaluation.segmentation_metrics import ConfusionMatrix
 
@@ -24,3 +25,17 @@ def test_metrics_accumulate_confusion() -> None:
     assert result["per_class"]["room"]["precision"] == 0.5
     assert result["per_class"]["room"]["recall"] == 0.5
     assert result["per_class"]["wall"]["recall"] == 0.5
+
+
+def test_metrics_reject_out_of_range_predictions() -> None:
+    metrics = ConfusionMatrix()
+
+    with pytest.raises(ValueError, match="prediction values"):
+        metrics.update(np.asarray([0, 1]), np.asarray([0, 5]))
+
+
+def test_metrics_ignore_predictions_at_ignored_target_pixels() -> None:
+    metrics = ConfusionMatrix()
+    metrics.update(np.asarray([0, 255]), np.asarray([0, 255]))
+
+    assert metrics.matrix.sum() == 1
