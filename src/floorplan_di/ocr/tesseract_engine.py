@@ -116,10 +116,16 @@ def recognise_crop(
     page_segmentation_mode: int = 7,
     orientations: tuple[int, ...] = (0, 90, 270),
 ) -> OCRResult:
-    candidates = [
+    unique_orientations = tuple(dict.fromkeys(orientations))
+    if not unique_orientations:
+        raise ValueError("At least one OCR orientation is required")
+    unsupported = sorted(set(unique_orientations) - {0, 90, 180, 270})
+    if unsupported:
+        raise ValueError(f"Unsupported OCR orientations: {unsupported}")
+    candidates = (
         _recognise_oriented(image_rgb, method, page_segmentation_mode, orientation)
-        for orientation in orientations
-    ]
+        for orientation in unique_orientations
+    )
     return max(candidates, key=lambda result: (result.confidence, len(result.text)))
 
 
