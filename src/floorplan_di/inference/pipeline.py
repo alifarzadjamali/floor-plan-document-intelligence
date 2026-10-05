@@ -12,6 +12,7 @@ from floorplan_di.data.pdf import load_plan_page
 from floorplan_di.data.segmentation import letterbox_image_and_mask, normalise_image
 from floorplan_di.geometry import link_doors_to_rooms, link_text_to_rooms, vectorize_mask
 from floorplan_di.inference.schema import structured_document
+from floorplan_di.models.checkpoints import load_checkpoint_data
 from floorplan_di.models.segformer import build_segformer
 from floorplan_di.ocr.entities import classify_entity
 from floorplan_di.ocr.tesseract_engine import configure_tesseract, recognise_page
@@ -38,7 +39,7 @@ class FloorPlanPipeline:
         self.ocr_config = yaml.safe_load(ocr_config.read_text(encoding="utf-8"))
         self.device = torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
         self.model = build_segformer(self.segmentation_config["model_name"])
-        state = torch.load(checkpoint, map_location="cpu", weights_only=False)
+        state = load_checkpoint_data(checkpoint)
         self.model.load_state_dict(state["model_state_dict"])
         self.model.to(self.device).eval()
         self.image_size = int(self.segmentation_config["image_size"])

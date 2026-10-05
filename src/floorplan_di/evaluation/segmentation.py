@@ -13,6 +13,7 @@ from tqdm import tqdm
 
 from floorplan_di.data.segmentation import CachedSegmentationDataset
 from floorplan_di.evaluation.segmentation_metrics import ConfusionMatrix
+from floorplan_di.models.checkpoints import load_checkpoint_data
 from floorplan_di.models.segformer import build_segformer
 from floorplan_di.visualization import colourize_mask, overlay_mask, save_contact_sheet
 
@@ -20,7 +21,7 @@ from floorplan_di.visualization import colourize_mask, overlay_mask, save_contac
 def load_checkpoint(
     checkpoint_path: Path, device: torch.device
 ) -> tuple[torch.nn.Module, dict[str, Any]]:
-    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
+    checkpoint = load_checkpoint_data(checkpoint_path, map_location=device)
     model = build_segformer(checkpoint["config"]["model_name"])
     model.load_state_dict(checkpoint["model_state_dict"])
     return model.to(device).eval(), checkpoint
