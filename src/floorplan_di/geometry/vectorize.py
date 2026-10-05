@@ -34,7 +34,9 @@ def _orientation(component: np.ndarray) -> float | None:
     return round(float(math.degrees(math.atan2(vector[1], vector[0])) % 180), 1)
 
 
-def _centerline(component: np.ndarray) -> list[list[int]] | None:
+def _centerline(
+    component: np.ndarray, offset: tuple[int, int] = (0, 0)
+) -> list[list[int]] | None:
     """Return a PCA major-axis segment for a wall component."""
     ys, xs = np.where(component)
     if len(xs) < 2:
@@ -44,8 +46,8 @@ def _centerline(component: np.ndarray) -> list[list[int]] | None:
     _, _, vectors = np.linalg.svd(points - centre, full_matrices=False)
     axis = vectors[0]
     projections = (points - centre) @ axis
-    start = centre + axis * projections.min()
-    end = centre + axis * projections.max()
+    start = centre + axis * projections.min() + offset
+    end = centre + axis * projections.max() + offset
     return [[int(round(start[0])), int(round(start[1]))], [int(round(end[0])), int(round(end[1]))]]
 
 
@@ -64,18 +66,22 @@ def _objects(
         area = int(stats[label, cv2.CC_STAT_AREA])
         if area < min_area:
             continue
-        component = labels == label
+        x, y, width, height, _ = stats[label]
+        component = labels[y : y + height, x : x + width] == label
         contours, _ = cv2.findContours(
             component.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
         if not contours:
             continue
         contour = max(contours, key=cv2.contourArea)
+        contour += np.asarray([[[x, y]]], dtype=contour.dtype)
         epsilon = simplify_fraction * cv2.arcLength(contour, True)
         polygon = cv2.approxPolyDP(contour, epsilon, True)
-        x, y, width, height, _ = stats[label]
         centre_x, centre_y = centroids[label]
-        confidence = _component_confidence(probability, component, class_id)
+        probability_crop = (
+            probability[:, y : y + height, x : x + width] if probability is not None else None
+        )
+        confidence = _component_confidence(probability_crop, component, class_id)
         contour_area = float(cv2.contourArea(contour))
         entity: dict[str, object] = {
             "id": f"{prefix}{len(objects) + 1:02d}",
@@ -89,7 +95,7 @@ def _objects(
             "confidence_band": confidence_band(confidence) if confidence is not None else None,
         }
         if class_id == PlanClass.WALL:
-            entity["centerline"] = _centerline(component)
+            entity["centerline"] = _centerline(component, (x, y))
         if class_id in (PlanClass.DOOR, PlanClass.WINDOW):
             entity["orientation_degrees"] = _orientation(component)
         objects.append(entity)
