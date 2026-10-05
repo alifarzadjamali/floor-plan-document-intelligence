@@ -42,8 +42,18 @@ def _resize_logits(logits: torch.Tensor, labels: torch.Tensor) -> torch.Tensor:
 
 def calculate_class_weights(manifest_path: Path, cap: float) -> torch.Tensor:
     counts = np.zeros(5, dtype=np.float64)
-    for line in manifest_path.read_text(encoding="utf-8").splitlines():
-        counts += np.asarray(json.loads(line)["pixel_counts"], dtype=np.float64)
+    records = 0
+    with manifest_path.open(encoding="utf-8") as stream:
+        for line_number, line in enumerate(stream, start=1):
+            if not line.strip():
+                continue
+            pixel_counts = np.asarray(json.loads(line)["pixel_counts"], dtype=np.float64)
+            if pixel_counts.shape != counts.shape or np.any(pixel_counts < 0):
+                raise ValueError(f"Invalid pixel_counts on manifest line {line_number}")
+            counts += pixel_counts
+            records += 1
+    if records == 0 or counts.sum() == 0:
+        raise ValueError(f"No labelled pixels in {manifest_path}")
     frequencies = counts / counts.sum()
     weights = np.median(frequencies) / np.maximum(frequencies, 1e-12)
     weights = np.minimum(weights, cap)
