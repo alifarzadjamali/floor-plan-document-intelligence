@@ -17,6 +17,13 @@ from floorplan_di.ocr.entities import classify_entity
 from floorplan_di.ocr.tesseract_engine import configure_tesseract, recognise_page
 
 
+def _resize_probabilities(probability: np.ndarray, width: int, height: int) -> np.ndarray:
+    """Resize every class channel in one OpenCV operation."""
+    channels_last = np.moveaxis(probability, 0, -1)
+    resized = cv2.resize(channels_last, (width, height), interpolation=cv2.INTER_LINEAR)
+    return np.moveaxis(resized, -1, 0)
+
+
 class FloorPlanPipeline:
     """Run local segmentation, OCR, and geometry extraction for one plan."""
 
@@ -60,12 +67,7 @@ class FloorPlanPipeline:
         top, left = (self.image_size - target_height) // 2, (self.image_size - target_width) // 2
         cropped = probability[:, top : top + target_height, left : left + target_width]
         # Restore the cropped letterbox output to the input image dimensions.
-        restored = np.stack(
-            [
-                cv2.resize(channel, (width, height), interpolation=cv2.INTER_LINEAR)
-                for channel in cropped
-            ]
-        )
+        restored = _resize_probabilities(cropped, width, height)
         return restored.argmax(axis=0).astype(np.uint8), restored
 
     def run(
