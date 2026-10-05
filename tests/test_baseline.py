@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 from floorplan_di.baseline import BaselineConfig, predict
+from floorplan_di.baseline.classical_cv import _connected_interior
 from floorplan_di.constants import PlanClass
 
 
@@ -28,3 +29,16 @@ def test_baseline_finds_enclosed_room_and_wall() -> None:
 def test_baseline_rejects_non_rgb_input() -> None:
     with np.testing.assert_raises(ValueError):
         predict(np.zeros((10, 10), dtype=np.uint8), BaselineConfig())
+
+
+def test_connected_interior_filters_border_and_small_components() -> None:
+    free_space = np.zeros((12, 16), dtype=np.uint8)
+    free_space[0:4, 1:5] = 255
+    free_space[3:9, 7:13] = 255
+    free_space[10:12, 14:16] = 255
+
+    room = _connected_interior(free_space, minimum_area=20)
+
+    assert np.all(room[3:9, 7:13] == 255)
+    assert np.all(room[0:4, 1:5] == 0)
+    assert np.all(room[10:12, 14:16] == 0)

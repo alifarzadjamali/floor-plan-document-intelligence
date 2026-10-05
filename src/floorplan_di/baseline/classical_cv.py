@@ -36,11 +36,10 @@ def _connected_interior(free_space: np.ndarray, minimum_area: int) -> np.ndarray
     if count <= 1:
         return np.zeros_like(free_space)
     border_labels = np.unique(np.concatenate((labels[0], labels[-1], labels[:, 0], labels[:, -1])))
-    room = np.zeros_like(free_space)
-    for label in range(1, count):
-        if label not in border_labels and stats[label, cv2.CC_STAT_AREA] >= minimum_area:
-            room[labels == label] = 255
-    return room
+    keep = stats[:, cv2.CC_STAT_AREA] >= minimum_area
+    keep[0] = False
+    keep[border_labels] = False
+    return np.where(keep[labels], 255, 0).astype(np.uint8)
 
 
 def predict(image_rgb: np.ndarray, config: BaselineConfig) -> np.ndarray:
