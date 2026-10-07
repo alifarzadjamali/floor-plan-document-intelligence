@@ -79,7 +79,10 @@ def expected_calibration_error(
 
 def confidence_band(score: float) -> str:
     """Map a calibrated score to a conservative review label."""
-    value = min(1.0, max(0.0, float(score)))
+    value = float(score)
+    if not math.isfinite(value):
+        raise ValueError("score must be finite")
+    value = min(1.0, max(0.0, value))
     if value >= 0.85:
         return "high"
     if value >= 0.60:

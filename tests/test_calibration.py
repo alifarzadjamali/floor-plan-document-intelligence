@@ -20,6 +20,12 @@ def test_confidence_bands_are_review_oriented() -> None:
     assert confidence_band(0.3) == "low_review"
 
 
+@pytest.mark.parametrize("score", [float("nan"), float("inf"), float("-inf")])
+def test_confidence_band_rejects_non_finite_scores(score: float) -> None:
+    with pytest.raises(ValueError, match="finite"):
+        confidence_band(score)
+
+
 def test_reliability_bins_clamp_scores_to_valid_range() -> None:
     rows = reliability_bins([-0.2, 1.5], [True, False], bins=2)
 
