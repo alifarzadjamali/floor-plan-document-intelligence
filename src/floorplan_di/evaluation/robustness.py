@@ -17,10 +17,23 @@ PERTURBATIONS = (
 )
 
 
+def _validate_input(image: np.ndarray, is_mask: bool) -> None:
+    if not isinstance(image, np.ndarray):
+        raise TypeError("image must be a NumPy array")
+    if image.size == 0:
+        raise ValueError("image must not be empty")
+    if is_mask:
+        if image.ndim != 2 or not np.issubdtype(image.dtype, np.integer):
+            raise ValueError("mask inputs must be 2-D integer arrays")
+    elif image.ndim != 3 or image.shape[2] != 3 or image.dtype != np.uint8:
+        raise ValueError("image inputs must be uint8 RGB arrays")
+
+
 def perturb(image: np.ndarray, name: str, seed: int = 42, is_mask: bool = False) -> np.ndarray:
     """Apply one mild transform; masks only receive the geometric rotation."""
     if name not in PERTURBATIONS:
         raise ValueError(f"Unknown perturbation: {name}")
+    _validate_input(image, is_mask)
     if name == "clean" or (is_mask and name != "rotation"):
         return image.copy()
     if name == "brightness":
