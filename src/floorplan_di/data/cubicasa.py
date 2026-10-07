@@ -36,10 +36,20 @@ def load_official_split(root: Path, split: str) -> list[CubiCasaSample]:
         raise FileNotFoundError(f"Official split file not found: {split_path}")
 
     samples: list[CubiCasaSample] = []
-    for raw_line in split_path.read_text(encoding="utf-8-sig").splitlines():
-        relative = raw_line.strip().replace("\\", "/").strip("/")
-        if relative:
-            samples.append(CubiCasaSample(relative, root / Path(relative)))
+    resolved_root = root.resolve()
+    for line_number, raw_line in enumerate(
+        split_path.read_text(encoding="utf-8-sig").splitlines(), start=1
+    ):
+        relative = raw_line.strip().replace("\\", "/")
+        if not relative:
+            continue
+        relative_path = Path(relative)
+        directory = (root / relative_path).resolve()
+        if relative_path.is_absolute() or not directory.is_relative_to(resolved_root):
+            raise ValueError(
+                f"Official split contains an unsafe path on line {line_number}: {relative!r}"
+            )
+        samples.append(CubiCasaSample(relative, directory))
     if not samples:
         raise ValueError(f"Official split is empty: {split_path}")
     return samples
