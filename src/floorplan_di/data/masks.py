@@ -33,10 +33,16 @@ def _direct_polygon(group: ElementTree.Element) -> ElementTree.Element | None:
 
 
 def parse_points(text: str) -> np.ndarray:
-    points = [(float(x), float(y)) for x, y in _POINT_RE.findall(text)]
-    if len(points) < 3:
+    values = np.asarray([(float(x), float(y)) for x, y in _POINT_RE.findall(text)])
+    if len(values) < 3:
         raise ValueError(f"Polygon has fewer than three valid points: {text[:80]!r}")
-    return np.rint(np.asarray(points)).astype(np.int32)
+    if not np.all(np.isfinite(values)):
+        raise ValueError("Polygon coordinates must be finite")
+    rounded = np.rint(values)
+    coordinate_limit = np.iinfo(np.int32)
+    if np.any((rounded < coordinate_limit.min) | (rounded > coordinate_limit.max)):
+        raise ValueError("Polygon coordinates exceed the supported integer range")
+    return rounded.astype(np.int32)
 
 
 def _category(group: ElementTree.Element) -> tuple[str | None, str | None]:
@@ -66,6 +72,8 @@ def rasterize_annotation(svg_path: Path, height: int, width: int) -> AnnotationR
     dimensions of F1_scaled.png. Drawing low-priority classes first makes overlap
     behaviour explicit and independent of source XML order.
     """
+    if height < 1 or width < 1:
+        raise ValueError("height and width must be positive")
     root = ElementTree.parse(svg_path).getroot()
     polygons: dict[str, list[np.ndarray]] = {
         "room": [],

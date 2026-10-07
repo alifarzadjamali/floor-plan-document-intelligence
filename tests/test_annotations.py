@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import numpy as np
+import pytest
 
 from floorplan_di.constants import PlanClass
 from floorplan_di.data.masks import parse_points, rasterize_annotation
@@ -22,6 +23,12 @@ def test_parse_points_supports_svg_spacing_and_decimals() -> None:
     assert points.tolist() == [[1, 3], [4, 5], [6, 7]]
 
 
+@pytest.mark.parametrize("coordinate", ["1e999", "1e20"])
+def test_parse_points_rejects_unrepresentable_coordinates(coordinate: str) -> None:
+    with pytest.raises(ValueError, match="coordinates"):
+        parse_points(f"0,0 1,1 {coordinate},2")
+
+
 def test_mapping_and_precedence(tmp_path: Path) -> None:
     path = tmp_path / "model.svg"
     path.write_text(SVG, encoding="utf-8")
@@ -34,3 +41,11 @@ def test_mapping_and_precedence(tmp_path: Path) -> None:
     assert result.mask[9, 9] == PlanClass.DOOR
     assert result.mask[3, 9] == PlanClass.WINDOW
     assert result.mask.dtype == np.uint8
+
+
+def test_rasterize_annotation_rejects_empty_output_dimensions(tmp_path: Path) -> None:
+    path = tmp_path / "model.svg"
+    path.write_text(SVG, encoding="utf-8")
+
+    with pytest.raises(ValueError, match="height and width must be positive"):
+        rasterize_annotation(path, 0, 20)
