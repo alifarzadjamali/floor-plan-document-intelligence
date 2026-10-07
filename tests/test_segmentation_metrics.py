@@ -39,3 +39,36 @@ def test_metrics_ignore_predictions_at_ignored_target_pixels() -> None:
     metrics.update(np.asarray([0, 255]), np.asarray([0, 255]))
 
     assert metrics.matrix.sum() == 1
+
+
+def test_metrics_support_reduced_class_sets() -> None:
+    metrics = ConfusionMatrix(num_classes=2)
+    metrics.update(np.asarray([0, 1]), np.asarray([0, 1]))
+
+    result = metrics.compute()
+
+    assert set(result["per_class"]) == {"background", "room"}
+    assert result["mean_iou_foreground"] == 1.0
+
+
+def test_single_class_metrics_report_undefined_foreground_as_none() -> None:
+    metrics = ConfusionMatrix(num_classes=1)
+    metrics.update(np.asarray([0]), np.asarray([0]))
+
+    assert metrics.compute()["mean_iou_foreground"] is None
+
+
+@pytest.mark.parametrize("field", ["target", "prediction"])
+def test_metrics_reject_non_integer_class_ids(field: str) -> None:
+    target = np.asarray([0.0, 1.0]) if field == "target" else np.asarray([0, 1])
+    prediction = np.asarray([0.0, 1.0]) if field == "prediction" else np.asarray([0, 1])
+
+    with pytest.raises(ValueError, match=f"{field} must contain integer"):
+        ConfusionMatrix().update(target, prediction)
+
+
+def test_empty_metrics_are_json_safe() -> None:
+    result = ConfusionMatrix().compute()
+
+    assert result["mean_iou_all_classes"] is None
+    assert result["mean_dice_foreground"] is None

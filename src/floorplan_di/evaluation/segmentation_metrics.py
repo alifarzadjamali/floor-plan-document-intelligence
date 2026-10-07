@@ -19,6 +19,10 @@ class ConfusionMatrix:
             raise ValueError(
                 f"Shape mismatch: target={target.shape}, prediction={prediction.shape}"
             )
+        if not np.issubdtype(target.dtype, np.integer):
+            raise ValueError("target must contain integer class ids")
+        if not np.issubdtype(prediction.dtype, np.integer):
+            raise ValueError("prediction must contain integer class ids")
         valid = (target >= 0) & (target < self.num_classes)
         valid_prediction = prediction[valid]
         if np.any((valid_prediction < 0) | (valid_prediction >= self.num_classes)):
@@ -64,14 +68,14 @@ class ConfusionMatrix:
                 "recall": _optional_float(recall[index]),
                 "support_pixels": int(target_total[index]),
             }
-            for index, name in enumerate(CLASS_NAMES)
+            for index, name in enumerate(CLASS_NAMES[: self.num_classes])
         }
         foreground = np.arange(1, self.num_classes)
         return {
-            "mean_iou_all_classes": float(np.nanmean(iou)),
-            "mean_dice_all_classes": float(np.nanmean(dice)),
-            "mean_iou_foreground": float(np.nanmean(iou[foreground])),
-            "mean_dice_foreground": float(np.nanmean(dice[foreground])),
+            "mean_iou_all_classes": _optional_mean(iou),
+            "mean_dice_all_classes": _optional_mean(dice),
+            "mean_iou_foreground": _optional_mean(iou[foreground]),
+            "mean_dice_foreground": _optional_mean(dice[foreground]),
             "per_class": per_class,
             "confusion_matrix": self.matrix.tolist(),
         }
@@ -79,3 +83,8 @@ class ConfusionMatrix:
 
 def _optional_float(value: np.floating) -> float | None:
     return None if np.isnan(value) else float(value)
+
+
+def _optional_mean(values: np.ndarray) -> float | None:
+    finite = values[~np.isnan(values)]
+    return float(finite.mean()) if finite.size else None
