@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 import torch
 
-from floorplan_di.training.train import calculate_class_weights
+from floorplan_di.training.train import _MeanLoss, calculate_class_weights
 
 
 def test_class_weights_are_accumulated_from_manifest_stream(tmp_path: Path) -> None:
@@ -28,6 +28,20 @@ def test_class_weights_reject_empty_manifest(tmp_path: Path) -> None:
 
     with pytest.raises(ValueError, match="No labelled pixels"):
         calculate_class_weights(manifest, cap=10.0)
+
+
+def test_epoch_loss_weights_short_final_batch_without_retaining_graph() -> None:
+    losses = _MeanLoss(torch.device("cpu"))
+    losses.update(torch.tensor(2.0, requires_grad=True), 4)
+    losses.update(torch.tensor(7.0, requires_grad=True), 1)
+
+    assert losses.compute() == pytest.approx(3.0)
+    assert not losses.total.requires_grad
+
+
+def test_epoch_loss_rejects_empty_loader() -> None:
+    with pytest.raises(ValueError, match="empty loader"):
+        _MeanLoss(torch.device("cpu")).compute()
 
 
 def test_class_weights_handle_most_classes_absent(tmp_path: Path) -> None:

@@ -70,6 +70,23 @@ def calculate_class_weights(manifest_path: Path, cap: float) -> torch.Tensor:
     return torch.tensor(weights, dtype=torch.float32)
 
 
+class _MeanLoss:
+    """Sample-weighted batch losses with only one device sync at epoch end."""
+
+    def __init__(self, device: torch.device) -> None:
+        self.total = torch.zeros((), device=device, dtype=torch.float64)
+        self.samples = 0
+
+    def update(self, loss: torch.Tensor, batch_size: int) -> None:
+        self.total.add_(loss.detach().to(torch.float64) * batch_size)
+        self.samples += batch_size
+
+    def compute(self) -> float:
+        if self.samples == 0:
+            raise ValueError("Cannot compute loss for an empty loader")
+        return float((self.total / self.samples).item())
+
+
 def evaluate(
     model: nn.Module,
     loader: DataLoader,
@@ -79,16 +96,16 @@ def evaluate(
 ) -> tuple[dict[str, Any], float]:
     model.eval()
     confusion = ConfusionMatrix()
-    losses: list[float] = []
+    losses = _MeanLoss(device)
     with torch.inference_mode():
         for batch in loader:
             images = batch["pixel_values"].to(device, non_blocking=True)
             labels = batch["labels"].to(device, non_blocking=True)
             logits = _resize_logits(model(pixel_values=images).logits, labels)
             loss = criterion(logits, labels) + dice_weight * multiclass_dice_loss(logits, labels)
-            losses.append(float(loss.item()))
+            losses.update(loss, images.shape[0])
             confusion.update(labels.cpu().numpy(), logits.argmax(dim=1).cpu().numpy())
-    return confusion.compute(), float(np.mean(losses))
+    return confusion.compute(), losses.compute()
 
 
 def _scheduler(optimizer: AdamW, warmup_steps: int, total_steps: int) -> LambdaLR:
@@ -177,7 +194,7 @@ def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
         epoch_start = perf_counter()
         model.train()
         train_dataset.set_epoch(epoch)
-        losses: list[float] = []
+        losses = _MeanLoss(device)
         for batch in tqdm(train_loader, desc=f"Epoch {epoch}/{config['epochs']}"):
             images = batch["pixel_values"].to(device, non_blocking=True)
             labels = batch["labels"].to(device, non_blocking=True)
@@ -193,7 +210,7 @@ def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
             scaler.step(optimizer)
             scaler.update()
             scheduler.step()
-            losses.append(float(loss.item()))
+            losses.update(loss, images.shape[0])
 
         metrics, val_loss = evaluate(
             model, val_loader, device, criterion, config["dice_loss_weight"]
@@ -201,7 +218,7 @@ def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
         score = float(metrics[config["selection_metric"]])
         row = {
             "epoch": epoch,
-            "train_loss": float(np.mean(losses)),
+            "train_loss": losses.compute(),
             "validation_loss": val_loss,
             "selection_score": score,
             "elapsed_seconds": perf_counter() - epoch_start,
