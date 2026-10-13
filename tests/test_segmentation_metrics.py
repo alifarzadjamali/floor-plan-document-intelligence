@@ -72,3 +72,26 @@ def test_empty_metrics_are_json_safe() -> None:
 
     assert result["mean_iou_all_classes"] is None
     assert result["mean_dice_foreground"] is None
+    assert result["pixel_accuracy"] is None
+    assert result["balanced_accuracy"] is None
+    assert result["frequency_weighted_iou"] is None
+
+
+def test_accuracy_metrics_distinguish_class_imbalance() -> None:
+    metrics = ConfusionMatrix()
+    metrics.update(np.asarray([0, 0, 0, 1, 255]), np.asarray([0, 0, 1, 1, 255]))
+    result = metrics.compute()
+
+    assert result["pixel_accuracy"] == pytest.approx(0.75)
+    assert result["balanced_accuracy"] == pytest.approx(5 / 6)
+    assert result["frequency_weighted_iou"] == pytest.approx(0.625)
+
+
+def test_accuracy_metrics_penalize_predictions_of_absent_classes() -> None:
+    metrics = ConfusionMatrix()
+    metrics.update(np.asarray([0, 0]), np.asarray([0, 1]))
+    result = metrics.compute()
+
+    assert result["pixel_accuracy"] == 0.5
+    assert result["balanced_accuracy"] == 0.5
+    assert result["frequency_weighted_iou"] == 0.5

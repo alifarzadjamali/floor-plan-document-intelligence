@@ -71,7 +71,16 @@ class ConfusionMatrix:
             for index, name in enumerate(CLASS_NAMES[: self.num_classes])
         }
         foreground = np.arange(1, self.num_classes)
+        total = float(target_total.sum())
+        present = target_total > 0
         return {
+            "pixel_accuracy": float(true_positive.sum() / total) if total else None,
+            "balanced_accuracy": _optional_mean(recall),
+            "frequency_weighted_iou": (
+                float(np.sum(target_total[present] * iou[present]) / total)
+                if total
+                else None
+            ),
             "mean_iou_all_classes": _optional_mean(iou),
             "mean_dice_all_classes": _optional_mean(dice),
             "mean_iou_foreground": _optional_mean(iou[foreground]),
