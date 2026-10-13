@@ -118,6 +118,17 @@ def _scheduler(optimizer: AdamW, warmup_steps: int, total_steps: int) -> LambdaL
     return LambdaLR(optimizer, factor)
 
 
+def _step_optimizer(
+    scaler: torch.amp.GradScaler, optimizer: AdamW, scheduler: LambdaLR
+) -> None:
+    """Do not consume a learning-rate step when AMP skips non-finite gradients."""
+    previous_scale = scaler.get_scale()
+    scaler.step(optimizer)
+    scaler.update()
+    if scaler.get_scale() >= previous_scale:
+        scheduler.step()
+
+
 def _save_checkpoint(
     path: Path,
     model: nn.Module,
@@ -207,9 +218,7 @@ def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-            scaler.step(optimizer)
-            scaler.update()
-            scheduler.step()
+            _step_optimizer(scaler, optimizer, scheduler)
             losses.update(loss, images.shape[0])
 
         metrics, val_loss = evaluate(

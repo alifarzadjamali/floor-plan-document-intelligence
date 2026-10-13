@@ -1,10 +1,11 @@
 import json
 from pathlib import Path
+from unittest.mock import Mock
 
 import pytest
 import torch
 
-from floorplan_di.training.train import _MeanLoss, calculate_class_weights
+from floorplan_di.training.train import _MeanLoss, _step_optimizer, calculate_class_weights
 
 
 def test_class_weights_are_accumulated_from_manifest_stream(tmp_path: Path) -> None:
@@ -42,6 +43,19 @@ def test_epoch_loss_weights_short_final_batch_without_retaining_graph() -> None:
 def test_epoch_loss_rejects_empty_loader() -> None:
     with pytest.raises(ValueError, match="empty loader"):
         _MeanLoss(torch.device("cpu")).compute()
+
+
+@pytest.mark.parametrize("new_scale,steps", [(512.0, 0), (1024.0, 1), (2048.0, 1)])
+def test_scheduler_only_advances_after_successful_amp_update(new_scale: float, steps: int) -> None:
+    scaler = Mock()
+    scaler.get_scale.side_effect = [1024.0, new_scale]
+    optimizer, scheduler = Mock(), Mock()
+
+    _step_optimizer(scaler, optimizer, scheduler)
+
+    scaler.step.assert_called_once_with(optimizer)
+    scaler.update.assert_called_once_with()
+    assert scheduler.step.call_count == steps
 
 
 def test_class_weights_handle_most_classes_absent(tmp_path: Path) -> None:
