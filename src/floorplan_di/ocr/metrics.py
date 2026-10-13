@@ -7,12 +7,28 @@ from floorplan_di.ocr.entities import classify_entity, normalise_text
 
 def levenshtein_distance(reference: Sequence[str], hypothesis: Sequence[str]) -> int:
     """Return edit distance using memory proportional to the shorter input."""
-    if len(hypothesis) > len(reference):
+    start = 0
+    reference_end, hypothesis_end = len(reference), len(hypothesis)
+    while start < min(reference_end, hypothesis_end) and reference[start] == hypothesis[start]:
+        start += 1
+    while (
+        reference_end > start
+        and hypothesis_end > start
+        and reference[reference_end - 1] == hypothesis[hypothesis_end - 1]
+    ):
+        reference_end -= 1
+        hypothesis_end -= 1
+    if start == min(reference_end, hypothesis_end):
+        return abs(reference_end - hypothesis_end)
+    if hypothesis_end > reference_end:
         reference, hypothesis = hypothesis, reference
-    previous = list(range(len(hypothesis) + 1))
-    for row, source in enumerate(reference, start=1):
+        reference_end, hypothesis_end = hypothesis_end, reference_end
+    previous = list(range(hypothesis_end - start + 1))
+    for row in range(1, reference_end - start + 1):
+        source = reference[start + row - 1]
         current = [row]
-        for column, target in enumerate(hypothesis, start=1):
+        for column in range(1, hypothesis_end - start + 1):
+            target = hypothesis[start + column - 1]
             current.append(
                 min(
                     previous[column] + 1,
