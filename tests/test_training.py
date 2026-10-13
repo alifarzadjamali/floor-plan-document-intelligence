@@ -28,3 +28,28 @@ def test_class_weights_reject_empty_manifest(tmp_path: Path) -> None:
 
     with pytest.raises(ValueError, match="No labelled pixels"):
         calculate_class_weights(manifest, cap=10.0)
+
+
+def test_class_weights_handle_most_classes_absent(tmp_path: Path) -> None:
+    manifest = tmp_path / "train.jsonl"
+    manifest.write_text(json.dumps({"pixel_counts": [100, 10, 0, 0, 0]}), encoding="utf-8")
+    weights = calculate_class_weights(manifest, cap=8.0)
+
+    assert torch.isfinite(weights).all()
+    assert (weights > 0).all()
+    assert weights.mean().item() == pytest.approx(1.0)
+    assert weights[0] < weights[1]
+
+
+@pytest.mark.parametrize("cap", [0, -1, float("nan"), float("inf")])
+def test_class_weights_reject_invalid_cap(tmp_path: Path, cap: float) -> None:
+    with pytest.raises(ValueError, match="cap must be finite and positive"):
+        calculate_class_weights(tmp_path / "unused.jsonl", cap=cap)
+
+
+@pytest.mark.parametrize("count", [float("nan"), float("inf"), -1])
+def test_class_weights_reject_invalid_counts(tmp_path: Path, count: float) -> None:
+    manifest = tmp_path / "train.jsonl"
+    manifest.write_text(json.dumps({"pixel_counts": [count, 1, 2, 3, 4]}), encoding="utf-8")
+    with pytest.raises(ValueError, match="Invalid pixel_counts"):
+        calculate_class_weights(manifest, cap=8.0)

@@ -41,6 +41,8 @@ def _resize_logits(logits: torch.Tensor, labels: torch.Tensor) -> torch.Tensor:
 
 
 def calculate_class_weights(manifest_path: Path, cap: float) -> torch.Tensor:
+    if not math.isfinite(cap) or cap <= 0:
+        raise ValueError("class weight cap must be finite and positive")
     counts = np.zeros(5, dtype=np.float64)
     records = 0
     with manifest_path.open(encoding="utf-8") as stream:
@@ -48,14 +50,21 @@ def calculate_class_weights(manifest_path: Path, cap: float) -> torch.Tensor:
             if not line.strip():
                 continue
             pixel_counts = np.asarray(json.loads(line)["pixel_counts"], dtype=np.float64)
-            if pixel_counts.shape != counts.shape or np.any(pixel_counts < 0):
+            if (
+                pixel_counts.shape != counts.shape
+                or not np.all(np.isfinite(pixel_counts))
+                or np.any(pixel_counts < 0)
+            ):
                 raise ValueError(f"Invalid pixel_counts on manifest line {line_number}")
             counts += pixel_counts
             records += 1
     if records == 0 or counts.sum() == 0:
         raise ValueError(f"No labelled pixels in {manifest_path}")
+    if not np.all(np.isfinite(counts)) or not np.isfinite(counts.sum()):
+        raise ValueError("Accumulated pixel counts must be finite")
     frequencies = counts / counts.sum()
-    weights = np.median(frequencies) / np.maximum(frequencies, 1e-12)
+    # Absent classes must not drive the median to zero and poison every weight.
+    weights = np.median(frequencies[frequencies > 0]) / np.maximum(frequencies, 1e-12)
     weights = np.minimum(weights, cap)
     weights /= weights.mean()
     return torch.tensor(weights, dtype=torch.float32)
