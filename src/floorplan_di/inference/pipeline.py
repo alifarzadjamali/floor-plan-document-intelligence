@@ -22,6 +22,8 @@ def _resize_probabilities(probability: np.ndarray, width: int, height: int) -> n
     """Resize every class channel in one OpenCV operation."""
     channels_last = np.moveaxis(probability, 0, -1)
     resized = cv2.resize(channels_last, (width, height), interpolation=cv2.INTER_LINEAR)
+    if resized.ndim == 2:
+        resized = resized[..., None]
     return np.moveaxis(resized, -1, 0)
 
 
@@ -64,7 +66,9 @@ class FloorPlanPipeline:
             probability = torch.softmax(logits[0], dim=0).cpu().numpy()
         height, width = image.shape[:2]
         scale = min(self.image_size / width, self.image_size / height)
-        target_width, target_height = round(width * scale), round(height * scale)
+        # Match letterbox_image_and_mask, including its one-pixel minimum.
+        target_width = max(1, round(width * scale))
+        target_height = max(1, round(height * scale))
         top, left = (self.image_size - target_height) // 2, (self.image_size - target_width) // 2
         cropped = probability[:, top : top + target_height, left : left + target_width]
         # Restore the cropped letterbox output to the input image dimensions.
