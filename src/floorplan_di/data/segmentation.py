@@ -96,10 +96,15 @@ def augment_image_and_mask(
         result_image = cv2.GaussianBlur(result_image, (3, 3), sigmaX=0.7)
     if rng.random() < config.jpeg_probability:
         quality = int(rng.integers(config.jpeg_quality_min, config.jpeg_quality_max + 1))
-        encoded, payload = cv2.imencode(".jpg", result_image, [cv2.IMWRITE_JPEG_QUALITY, quality])
+        encoded, payload = cv2.imencode(
+            ".jpg",
+            cv2.cvtColor(result_image, cv2.COLOR_RGB2BGR),
+            [cv2.IMWRITE_JPEG_QUALITY, quality],
+        )
         if encoded:
-            result_image = cv2.imdecode(payload, cv2.IMREAD_COLOR)
-            result_image = cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB)
+            decoded = cv2.imdecode(payload, cv2.IMREAD_COLOR)
+            if decoded is not None:
+                result_image = cv2.cvtColor(decoded, cv2.COLOR_BGR2RGB)
     return result_image, result_mask
 
 
