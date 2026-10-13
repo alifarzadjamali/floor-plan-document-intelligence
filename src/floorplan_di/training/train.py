@@ -3,8 +3,10 @@ from __future__ import annotations
 import csv
 import json
 import math
+import os
 import random
 import shutil
+import tempfile
 from pathlib import Path
 from time import perf_counter
 from typing import Any
@@ -137,20 +139,33 @@ def _save_checkpoint(
     config: dict[str, Any],
     class_weights: torch.Tensor,
     best_score: float,
+    scheduler: LambdaLR | None = None,
+    scaler: torch.amp.GradScaler | None = None,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    torch.save(
-        {
-            "model_state_dict": model.state_dict(),
-            "optimizer_state_dict": optimizer.state_dict(),
-            "epoch": epoch,
-            "config": config,
-            "class_weights": class_weights.cpu(),
-            "best_score": best_score,
-            "torch_version": torch.__version__,
-        },
-        path,
-    )
+    payload = {
+        "model_state_dict": model.state_dict(),
+        "optimizer_state_dict": optimizer.state_dict(),
+        "epoch": epoch,
+        "config": config,
+        "class_weights": class_weights.cpu(),
+        "best_score": best_score,
+        "torch_version": str(torch.__version__),
+        "scheduler_state_dict": scheduler.state_dict() if scheduler is not None else None,
+        "scaler_state_dict": scaler.state_dict() if scaler is not None else None,
+    }
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=path.parent, suffix=".tmp", delete=False) as stream:
+            temporary_path = Path(stream.name)
+            torch.save(payload, stream)
+            stream.flush()
+            os.fsync(stream.fileno())
+        # Replace only after a complete write, preserving the previous file on failure.
+        os.replace(temporary_path, path)
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
 
 
 def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
@@ -237,15 +252,6 @@ def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
             "mean_dice_foreground": metrics["mean_dice_foreground"],
         }
         history.append(row)
-        _save_checkpoint(
-            output / "checkpoints" / "last.pt",
-            model,
-            optimizer,
-            epoch,
-            config,
-            class_weights,
-            best_score,
-        )
         if score > best_score:
             best_score = score
             stale_epochs = 0
@@ -257,12 +263,25 @@ def train(config_path: Path, cache_root: Path, output: Path) -> dict[str, Any]:
                 config,
                 class_weights,
                 best_score,
+                scheduler,
+                scaler,
             )
             (output / "best_validation_metrics.json").write_text(
                 json.dumps(metrics, indent=2) + "\n", encoding="utf-8"
             )
         else:
             stale_epochs += 1
+        _save_checkpoint(
+            output / "checkpoints" / "last.pt",
+            model,
+            optimizer,
+            epoch,
+            config,
+            class_weights,
+            best_score,
+            scheduler,
+            scaler,
+        )
         with (output / "history.csv").open("w", newline="", encoding="utf-8") as stream:
             writer = csv.DictWriter(stream, fieldnames=history[0].keys())
             writer.writeheader()
