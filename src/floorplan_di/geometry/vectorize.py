@@ -30,6 +30,8 @@ def _orientation(component: np.ndarray) -> float | None:
         return None
     covariance = np.cov(np.column_stack((xs, ys)), rowvar=False)
     values, vectors = np.linalg.eigh(covariance)
+    if values[-1] <= 0 or values[-1] - values[0] <= 1e-6 * values[-1]:
+        return None
     vector = vectors[:, int(np.argmax(values))]
     return round(float(math.degrees(math.atan2(vector[1], vector[0])) % 180), 1)
 
