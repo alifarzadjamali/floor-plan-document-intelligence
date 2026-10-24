@@ -13,17 +13,23 @@ def summarise_structured_records(records: Iterable[dict[str, object]]) -> dict[s
     if not rows:
         raise ValueError("At least one structured-evaluation record is required")
     count_error = {}
+    count_bias = {}
     for category in COUNT_CATEGORIES:
         total_error = sum(
             abs(int(row[f"predicted_{category}"]) - int(row[f"ground_truth_{category}"]))
             for row in rows
         )
         count_error[category] = total_error / len(rows)
+        count_bias[category] = sum(
+            int(row[f"predicted_{category}"]) - int(row[f"ground_truth_{category}"])
+            for row in rows
+        ) / len(rows)
     attempted = sum(int(row["attempted_entities"]) for row in rows)
     vectorized = sum(int(row["vectorized_entities"]) for row in rows)
     return {
         "plans": len(rows),
         "mean_absolute_count_error": count_error,
+        "mean_signed_count_error": count_bias,
         "attempted_detected_entities": attempted,
         "successfully_vectorized_entities": vectorized,
         "vectorization_rate": vectorized / attempted if attempted else None,
