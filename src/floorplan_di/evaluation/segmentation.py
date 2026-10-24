@@ -61,7 +61,8 @@ def evaluate_checkpoint(
             )
             if device.type == "cuda":
                 torch.cuda.synchronize()
-            durations.append((perf_counter() - start) / images.shape[0])
+            seconds_per_plan = (perf_counter() - start) / images.shape[0]
+            durations.extend([seconds_per_plan] * images.shape[0])
             predictions = logits.argmax(dim=1).cpu().numpy().astype(np.uint8)
             targets = labels.numpy()
             confusion.update(targets, predictions)
