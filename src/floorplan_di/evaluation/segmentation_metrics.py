@@ -77,6 +77,9 @@ class ConfusionMatrix:
         present = target_total > 0
         return {
             "pixel_accuracy": float(true_positive.sum() / total) if total else None,
+            "micro_iou": float(true_positive.sum() / (2 * total - true_positive.sum()))
+            if total
+            else None,
             "balanced_accuracy": _optional_mean(recall),
             "frequency_weighted_iou": (
                 float(np.sum(target_total[present] * iou[present]) / total)
