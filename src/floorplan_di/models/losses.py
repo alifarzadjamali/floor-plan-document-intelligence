@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import math
+
 import torch
 
 
 def multiclass_dice_loss(
     logits: torch.Tensor, target: torch.Tensor, epsilon: float = 1e-6
 ) -> torch.Tensor:
+    if not math.isfinite(epsilon) or epsilon <= 0:
+        raise ValueError("epsilon must be finite and positive")
     # Accumulate in float32 even under autocast; avoid an N x C x H x W target.
     probabilities = logits.softmax(dim=1, dtype=torch.float32)
     classes = logits.shape[1]
