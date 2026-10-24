@@ -12,6 +12,16 @@ def summarise_structured_records(records: Iterable[dict[str, object]]) -> dict[s
     rows = list(records)
     if not rows:
         raise ValueError("At least one structured-evaluation record is required")
+    for row in rows:
+        counts = [
+            int(row[f"{source}_{category}"])
+            for category in COUNT_CATEGORIES
+            for source in ("predicted", "ground_truth")
+        ]
+        attempted = int(row["attempted_entities"])
+        vectorized = int(row["vectorized_entities"])
+        if any(count < 0 for count in counts) or not 0 <= vectorized <= attempted:
+            raise ValueError("Entity counts must be nonnegative and vectorized cannot exceed attempted")
     count_error = {}
     count_bias = {}
     for category in COUNT_CATEGORIES:
