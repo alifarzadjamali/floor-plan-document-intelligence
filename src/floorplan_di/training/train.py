@@ -65,10 +65,12 @@ def calculate_class_weights(manifest_path: Path, cap: float) -> torch.Tensor:
     if not np.all(np.isfinite(counts)) or not np.isfinite(counts.sum()):
         raise ValueError("Accumulated pixel counts must be finite")
     frequencies = counts / counts.sum()
-    # Absent classes must not drive the median to zero and poison every weight.
-    weights = np.median(frequencies[frequencies > 0]) / np.maximum(frequencies, 1e-12)
-    weights = np.minimum(weights, cap)
-    weights /= weights.mean()
+    present = frequencies > 0
+    weights = np.zeros_like(frequencies)
+    weights[present] = np.minimum(
+        np.median(frequencies[present]) / frequencies[present], cap
+    )
+    weights[present] /= weights[present].mean()
     return torch.tensor(weights, dtype=torch.float32)
 
 
