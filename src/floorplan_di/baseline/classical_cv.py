@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 import cv2
@@ -24,7 +25,21 @@ class BaselineConfig:
         unknown = set(values) - set(cls.__dataclass_fields__)
         if unknown:
             raise ValueError(f"Unknown baseline settings: {sorted(unknown)}")
-        return cls(**values)
+        config = cls(**values)
+        positive = (
+            config.adaptive_block_size,
+            config.line_kernel_fraction,
+            config.minimum_line_kernel,
+            config.wall_dilation_fraction,
+            config.closing_kernel,
+            config.minimum_room_area_fraction,
+            config.room_barrier_dilation_fraction,
+        )
+        if any(not math.isfinite(value) or value <= 0 for value in positive):
+            raise ValueError("Morphology sizes and fractions must be finite and positive")
+        if not math.isfinite(config.adaptive_c):
+            raise ValueError("adaptive_c must be finite")
+        return config
 
 
 def _odd(value: int) -> int:

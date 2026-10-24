@@ -21,7 +21,9 @@ def summarise_structured_records(records: Iterable[dict[str, object]]) -> dict[s
         attempted = int(row["attempted_entities"])
         vectorized = int(row["vectorized_entities"])
         if any(count < 0 for count in counts) or not 0 <= vectorized <= attempted:
-            raise ValueError("Entity counts must be nonnegative and vectorized cannot exceed attempted")
+            raise ValueError(
+                "Entity counts must be nonnegative and vectorized cannot exceed attempted"
+            )
     count_error = {}
     count_bias = {}
     for category in COUNT_CATEGORIES:
