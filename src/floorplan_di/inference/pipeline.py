@@ -73,6 +73,8 @@ class FloorPlanPipeline:
         cropped = probability[:, top : top + target_height, left : left + target_width]
         # Restore the cropped letterbox output to the input image dimensions.
         restored = _resize_probabilities(cropped, width, height)
+        restored = np.clip(restored, 0.0, 1.0)
+        restored /= restored.sum(axis=0, keepdims=True)
         return restored.argmax(axis=0).astype(np.uint8), restored
 
     def run(
