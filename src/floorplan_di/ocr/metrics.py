@@ -71,6 +71,10 @@ def benchmark_metrics(pairs: Iterable[tuple[str, str]]) -> dict[str, float | int
             room_exact += is_exact
     return {
         "samples": samples,
+        "character_errors": character_errors,
+        "reference_characters": characters,
+        "word_errors": word_errors,
+        "reference_words": words,
         "cer": character_errors / max(characters, 1),
         "wer": word_errors / max(words, 1),
         "exact_match_accuracy": exact / max(samples, 1),
