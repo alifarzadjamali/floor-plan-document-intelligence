@@ -88,7 +88,9 @@ def augment_image_and_mask(
     if rng.random() < config.brightness_contrast_probability:
         alpha = float(rng.uniform(0.86, 1.14))
         beta = float(rng.uniform(-16, 16))
-        result_image = cv2.convertScaleAbs(result_image, alpha=alpha, beta=beta)
+        result_image = np.clip(result_image.astype(np.float32) * alpha + beta, 0, 255).astype(
+            np.uint8
+        )
     if rng.random() < config.gaussian_noise_probability:
         noise = rng.normal(0, 5, size=result_image.shape).astype(np.float32)
         result_image = np.clip(result_image.astype(np.float32) + noise, 0, 255).astype(np.uint8)
