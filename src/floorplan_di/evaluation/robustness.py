@@ -39,7 +39,7 @@ def perturb(image: np.ndarray, name: str, seed: int = 42, is_mask: bool = False)
     if name == "brightness":
         return np.clip(image.astype(np.int16) + 20, 0, 255).astype(np.uint8)
     if name == "contrast":
-        return cv2.convertScaleAbs(image, alpha=1.18, beta=-18)
+        return np.clip(image.astype(np.float32) * 1.18 - 18, 0, 255).astype(np.uint8)
     if name == "blur":
         return cv2.GaussianBlur(image, (3, 3), 0.7)
     if name == "noise":
