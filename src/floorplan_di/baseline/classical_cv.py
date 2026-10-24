@@ -46,6 +46,8 @@ def predict(image_rgb: np.ndarray, config: BaselineConfig) -> np.ndarray:
     """Infer room and wall masks using only image morphology."""
     if image_rgb.ndim != 3 or image_rgb.shape[2] != 3:
         raise ValueError("Expected an RGB image with shape HxWx3")
+    if image_rgb.dtype != np.uint8 or min(image_rgb.shape[:2]) < 3:
+        raise ValueError("Expected a uint8 RGB image with each side at least 3 pixels")
     gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
     short_side = min(gray.shape)
     block_size = _odd(min(config.adaptive_block_size, short_side - 1))
