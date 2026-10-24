@@ -129,6 +129,8 @@ def vectorize_mask(
             raise ValueError(f"probability must have shape {expected_probability_shape}")
         if not np.all(np.isfinite(probability)):
             raise ValueError("probability must contain only finite values")
+        if np.any((probability < 0) | (probability > 1)):
+            raise ValueError("probability values must be between 0 and 1")
     minimum_areas = (room_min_area, wall_min_area, opening_min_area)
     if any(area < 1 for area in minimum_areas):
         raise ValueError("minimum component areas must be positive")
