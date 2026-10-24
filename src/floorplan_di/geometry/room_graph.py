@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from heapq import nsmallest
 
 import cv2
@@ -14,6 +15,8 @@ def link_doors_to_rooms(
     doors: list[dict[str, object]], rooms: list[dict[str, object]], threshold: float = 45.0
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     """Infer a room edge only when a door is near two distinct room boundaries."""
+    if not math.isfinite(threshold) or threshold < 0:
+        raise ValueError("threshold must be finite and nonnegative")
     door_links: list[dict[str, object]] = []
     graph: list[dict[str, object]] = []
     room_contours = [
