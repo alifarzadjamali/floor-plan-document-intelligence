@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import math
+
 import cv2
 import numpy as np
 
@@ -12,6 +14,8 @@ def link_text_to_rooms(
     tokens: list[dict[str, object]], rooms: list[dict[str, object]], nearest_threshold: float = 30.0
 ) -> list[dict[str, object]]:
     """Assign text-box centres only when inside, or conservatively near, a room."""
+    if not math.isfinite(nearest_threshold) or nearest_threshold < 0:
+        raise ValueError("nearest_threshold must be finite and nonnegative")
     links: list[dict[str, object]] = []
     room_contours = [
         (room, np.asarray(room["polygon"], dtype=np.float32).reshape((-1, 1, 2)))
