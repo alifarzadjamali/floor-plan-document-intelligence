@@ -43,8 +43,8 @@ def reliability_bins(
         count = counts[index]
         result.append(
             {
-                "lower": round(lower, 3),
-                "upper": round(upper, 3),
+                "lower": lower,
+                "upper": upper,
                 "count": count,
                 "mean_confidence": confidence_sums[index] / count
                 if count
