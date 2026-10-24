@@ -184,6 +184,8 @@ class CachedSegmentationDataset(Dataset[dict[str, torch.Tensor | str]]):
 def select_training_samples(
     samples: list[CubiCasaSample], size: int, seed: int
 ) -> list[CubiCasaSample]:
+    if size < 1:
+        raise ValueError("training sample size must be positive")
     if size > len(samples):
         raise ValueError(f"Requested {size} training plans but split contains only {len(samples)}")
     selected = random.Random(seed).sample(samples, size)
