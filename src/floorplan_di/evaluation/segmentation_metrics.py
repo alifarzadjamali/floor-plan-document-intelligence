@@ -67,6 +67,8 @@ class ConfusionMatrix:
                 "precision": _optional_float(precision[index]),
                 "recall": _optional_float(recall[index]),
                 "support_pixels": int(target_total[index]),
+                "false_positive_pixels": int(predicted_total[index] - true_positive[index]),
+                "false_negative_pixels": int(target_total[index] - true_positive[index]),
             }
             for index, name in enumerate(CLASS_NAMES[: self.num_classes])
         }
