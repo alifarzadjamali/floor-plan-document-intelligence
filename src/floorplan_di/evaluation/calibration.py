@@ -46,10 +46,10 @@ def reliability_bins(
                 "lower": round(lower, 3),
                 "upper": round(upper, 3),
                 "count": count,
-                "mean_confidence": round(confidence_sums[index] / count, 4)
+                "mean_confidence": confidence_sums[index] / count
                 if count
                 else None,
-                "empirical_accuracy": round(correct_sums[index] / count, 4)
+                "empirical_accuracy": correct_sums[index] / count
                 if count
                 else None,
             }
