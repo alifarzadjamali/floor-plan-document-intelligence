@@ -63,7 +63,7 @@ def evaluate_checkpoint(
                 torch.cuda.synchronize()
             durations.append((perf_counter() - start) / images.shape[0])
             predictions = logits.argmax(dim=1).cpu().numpy().astype(np.uint8)
-            targets = labels.numpy().astype(np.uint8)
+            targets = labels.numpy()
             confusion.update(targets, predictions)
             if batch_index * batch_size < examples:
                 start_index = batch_index * batch_size
